@@ -5,7 +5,7 @@ Prerequisites
 -------------
 Design Studio, Release 1.3 SP1 or higher
 
-SAP BW or HANA as DataSources with some kind of address data, which can be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne)
+SAP BW or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne)
 
 NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)
 

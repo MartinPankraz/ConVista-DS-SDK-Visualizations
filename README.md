@@ -9,15 +9,15 @@ SAP BW or HANA as DataSources with some kind of address data, which can be mappe
 
 NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)
 
-Google API Key that you can get from Google’s API Console (note that local mode works without a key) for Google geocoder (used by both components)
+Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components).
 Contents
 --------
-This section describes briefly how the Design Studio extensions mentioned below work and relevant property settings to get you up and running. Architecture and functionality of these SDK components are implemented in a very similar way to reduce maintenance efforts and continued development. Therefore all of the descriptions below will apply to both of the extensions. For differences in functionality, see section “How it works”.
+This section briefly describes how the Design Studio extensions mentioned below work and the relevant property settings to get you up and running. The architecture and functionality of these SDK components are implemented in a very similar way to reduce maintenance efforts and continued development. Therefore all of the descriptions below will apply to both of the extensions. For differences in functionality, see section “How it works”.
 Properties
 ----------
 <b><i>DataBinding group<i><b>
 
-Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP specified a limit of 10.000 data cells to be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).
+Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP has specified a limit of 10,000 data cells that can be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).
 
 <b><i>Geo Database group<i><b>
 
@@ -47,34 +47,34 @@ This field contains your Google API key (can be left empty in local mode for dev
 
 <b>Address Dimension<b>
 
-Specifies dimension (or column name) in your DataSource, containing the address data, for example “Rheinauhafen 15, Cologne”
+Specifies the dimension (or column name) in your DataSource, containing the address data, for example “Rheinauhafen 15, Cologne”
 
 <b>Marker-Content Dimension<b>
 
-Specifies dimension (or row/column name) in your DataSource, containing the data to be displayed when a marker (not a cluster) is clicked
+Specifies the dimension (or row/column name) in your DataSource, containing the data to be displayed when a marker (not a cluster) is clicked
 
 <b>Date Dimension<b>
 
-Specifies dimension (or row/column name) in your DataSource, containing the dates associated with your key figures
+Specifies the dimension (or row/column name) in your DataSource, containing the dates associated with your key figures
 
 <b>Keyfigure1 Name<b>
 
-Specifies dimension (or row/column name) in your DataSource, containing your first key figure
+Specifies the dimension (or row/column name) in your DataSource, containing your first key figure
 
 <b>Keyfigure1 (t-1)<b>
 
-This dimensions specification enables users to display key figure value developments over time. For example:
+This dimensions specification enables users to display the key figure value developments over time. For example:
 Actual cost		|	Actual cost (last year)
 €1234,56		|	€1000,00
 Trends will be displayed by green or red arrows in combination with corresponding percentages next to a clustered marker.
 
 <b>Keyfigure1 Clustering Steps<b>
 
-Specifies value limits for different display behavior. For example green (10), yellow or red (500) cluster marker. Example input: ["10","50","100","200","500"]. This is also customizable via CSS.
+Specifies the value limits for different display behavior. For example, green (10), yellow or red (500) cluster marker. Example input: ["10","50","100","200","500"]. This is also customizable via CSS.
 
 <b>Keyfigure2 Name<b>
 
-Specifies dimension (or row/column name) in your DataSource containing your second key figure
+Specifies the dimension (or row/column name) in your DataSource containing your second key figure
 
 <b>Keyfigure2 (t-1)<b>
 
@@ -86,17 +86,17 @@ Works accordingly to Keyfigure1
 
 <b>Keyfigure Variation Tolerance (%)<b>
 
-Specifies tolerance in percentage to suppress trend display. Typically users want a 5% discrepancy interval that should be treated as stagnation.
+Specifies the tolerance (in percentage) used to suppress trend display. Typically users want a 5% discrepancy interval that should be treated as stagnation.
 
 Events
 ------
 <b>On Marker Clicked<b>
 
-This event fires in case a plain marker (not a clustered one) is clicked. This action opens a message box on the map displaying the data specified in property Marker-Content Dimension. It enables you also to handle marker information (for example address, ID, etc.) outside the extension e.g. for further filtering in charts.
+This event occurs in case a plain marker (not a clustered one) is clicked. This action opens a message box on the map displaying the data specified in property Marker-Content Dimension and enables you also to handle marker information (for example address, ID, etc.) outside the extension e.g. for further filtering in charts.
 
 <b>On Cluster Clicked<b>
 
-This event works the same way but on cluster level except that no message box is displayed.
+This event works the same way but on the cluster level with the exception that no message box is displayed.
 
 Extensions API
 --------------
@@ -104,31 +104,31 @@ The following methods are available in SAP Design Studios Script Editor for the 
 
 <b>String getAddress()<b>
 
-Returns address information associated with the marker clicked last. (You should call this one within the event handler for marker clicked.)
+Returns address information associated with the last clicked marker. (You should call this one within the event handler for marker clicked.)
 
 <b>String getClusterSelection(String dimension)<b>
 
-Returns information specified by the method argument dimension (e.g. “Date”) associated with the cluster clicked last (you should call this one within the event handler for cluster clicked) as JSON object.
+Returns the information specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
 For example:
 {“dimension_name”: [“20140101”,”20140102”,…]}
 
 <b>String getClusterSelectionFilterData(String dimension)<b>
 
-Returns information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) associated with the cluster clicked last (you should call this one within the event handler for cluster clicked) as JSON object.
+Returns the information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
 For example:
 [“20140101”,”20140102”,…]	->	This can be used for chart filtering for instance.
 
 <b>void setCurrentKeyfigureDisplay(String keyFigureName)<b>
 
-Changes key figure display setting for all of the clusters during runtime. That way you can control programmatically which key figure is shown to the user.
+Changes the key figure display setting for all of the clusters during runtime. This way you can control programmatically which key figure is shown to the user.
 
 <b>String getCurrentKeyfigureDisplay()<b>
 
-Returns current key figure name used to display key figures on clusters.
+Returns the current key figure name used to display key figures on clusters.
 
 Geo Coding and Geo-Data Persistence
 -----------------------------------
-Google’s geo coding API can be used for free to a certain degree. In order to lighten workload on your account we introduced two possible ways to store your geo-referenced data determined by the API at first run. First approach is installing an Apache CouchDB instance and pointing the extension to the database URL. Secondly you can use current browser’s internal IndexedDB which sets up a full blown database tied to your domain. With IndexedDB, please note that for development purposes you might need to use a static jetty port because that’s already part of the domain. Otherwise you might set up a database instance with every program execution during SDK development. This is no problem outside the SDK. You could also possibly use a different RESTful and JSON-capable database instead of CouchDB. Just give me a hint if you need further information or assistance on that matter.
+Google’s geo coding API can be used for free to a certain degree. In order to lighten workload on your account we have introduced two possible ways to store your geo-referenced data that has been determined by the API at first run. The first approach is by installing an Apache CouchDB instance and pointing the extension to the database URL. Secondly you can use current browser’s internal IndexedDB which sets up a full blown database that is tied to your domain. With IndexedDB, please note that for development purposes, you might need to use a static jetty port, as that is already part of the domain. Otherwise you might set up a database instance with every program execution during SDK development. This is no problem outside the SDK. You could also possibly use a different RESTful and JSON-capable database instead of CouchDB. Just give me a hint if you need further information or assistance on that matter.
 How it works (short version)
 ----------------------------
 On first run the app logic will look for key figures and their corresponding description dimensions in the attached DataSource. Setting up all of your markers and clusters will take some time as the geocoder restricts traffic while using the free plan. Persistent storage of your geo data will make sure you don’t call the API more than once for every address entry in your DataSource (see section above).

@@ -18,7 +18,8 @@ Properties
 <b><i>DataBinding group<i><b>
 
 Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP specified a limit of 10.000 data cells to be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).
-Geo Database group
+
+<b><i>Geo Database group<i><b>
 
 <b>CSS Class<b>
 
@@ -26,11 +27,11 @@ Name your custom CSS class to override default behavior
 
 <b>Address DB URL<b>
 
-Specifies URL where Apache CouchDB is running. Please note that you might need to set CORS settings due to CROSS ORIGIN request policy in browsers. (Just ask me if you need further information.)
+Specifies URL where Apache CouchDB is running. Please note that you might need to set CORS settings due to CROSS ORIGIN request policy in browsers. Default is http://127.0.0.1:5984/<your database name>. Use GET to gather info and POST to add geo data. Just ask me if you need further information.
 
 <b>Address DB URL Extension<b>
 
-URL extension for REST interface to read geo data bulk-wise from Apache CouchDB. Default is http://127.0.0.1:5984/<your database name>. Use GET to gather info and POST to add geo data. 
+URL extension for REST interface to read geo data bulk-wise from Apache CouchDB. Default is "/_all_docs?include_docs=true"
 
 <b>Google API Key<b>
 

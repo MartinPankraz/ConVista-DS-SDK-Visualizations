@@ -1,0 +1,59 @@
+.labels {
+     color: black;
+     background-color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 11px;
+     font-weight: bold;
+     text-align: center;
+     width: auto;     
+     border: 1px solid gray;
+     white-space: nowrap;
+     opacity: 1.0;
+	 }
+	 
+.map-info-window{
+	min-width: 100px;
+	min-height: 100px;
+	max-width: 400px;
+	max-height: 400px;
+	}
+	
+.marker-cluster div:after {
+	content: attr(data-content);
+	color:grey;
+	font-size: 80%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:bold;
+    position:absolute;
+    left:56px;
+    top:0px;
+	}
+	
+.marker-cluster:hover div:after{
+	color:black;
+	font-size: 100%;
+	}
+
+.arrow-up:after {
+	content:"";
+    border-color:  transparent transparent green transparent;
+    border-style:solid;
+    border-width:10px;
+    width:0;
+    height:0;
+    position:absolute;
+    bottom:45px;
+    left:40px
+	}
+
+.arrow-down:after {
+	content: "";
+    border-color:  red transparent transparent transparent;
+    border-style:solid;
+    border-width:10px;
+    width:0;
+    height:0;
+    position:absolute;
+    bottom:45px;
+    left:40px
+	}

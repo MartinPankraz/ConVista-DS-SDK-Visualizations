@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.convista.maps"
+	title="Design Studio SDK Extension ConVista GoogleMap"
+	version="1.0"
+	vendor="ConVista, Pankraz">
+	<group title="ConVista Visualization Components"
+		id="ConVistaComponents" visible="true" /><group title="Geo Database"
+		id="GeoDB" />
+
+	<component id="DataMap" title="ConVista GoogleMap" icon="res/icon.png"
+		handlerType="div" databound="true" group="ConVistaComponents">
+		<jsInclude>res/js/numeral.min.js</jsInclude>
+		<jsInclude>res/js/component.min.js</jsInclude>
+		<cssInclude>res/css/maps.css</cssInclude>
+		<property id="addressdimension" title="Address Dimension"
+			type="String" />
+		<property id="runtimedata" title="Runtime JSON Data"
+			type="ResultSet" />
+		<property type="ScriptText" title="On Marker Clicked"
+			id="onMarkerClicked" group="Events">
+		</property>
+		<property type="ScriptText" title="On Cluster Clicked"
+			id="onClusterClick" group="Events">
+		</property>
+		<property type="String" title="Address" id="address"
+			visible="false">
+		</property>
+		<property type="String" title="Cluster selected, all"
+			id="clusterselection" visible="false">
+		</property>
+		<property type="String" title="Cluster selected, address only"
+			id="addressselection" visible="false">
+		</property>
+		<property type="String" title="Cluster selected, date only"
+			id="dateselection" visible="false">
+		</property>
+		<property type="String" title="Cluster selected, id only"
+			id="idselection" visible="false">
+		</property>
+		<property type="String" title="Marker-Content Dimension"
+			id="textdimension">
+		</property>
+		<property type="String" title="Date Dimension"
+			id="datedimension">
+		</property>
+		<property type="String" title="Keyfigure1 Name"
+			id="keyfigurename1">
+		</property>
+		<property type="String" title="Keyfigure1 (t-1)"
+			id="keyfigurename1diff" visible="false">
+		</property>
+		<property type="String" title="Keyfigure1 Clustering Steps"
+			id="keyfigurename1clustersteps">
+		</property>
+		<property type="String" title="Keyfigure2 Name"
+			id="keyfigurename2">
+		</property>
+		<property type="String" title="Keyfigure2 (t-1)"
+			id="keyfigurename2diff" visible="false">
+		</property>
+		<property type="String" title="Keyfigure2 Clustering Steps"
+			id="keyfigurename2clustersteps">
+		</property>
+		<property type="int" title="Keyfigure Variation Tolerance (%)"
+			id="keyfiguretolerance" visible="false">
+		</property>
+		<property type="String" title="Current Keyfigure Display"
+			id="keyfiguretodisplay" visible="false">
+		</property>
+		<property type="Url" title="Address DB URL" id="databaseaddress"
+			group="GeoDB">
+		</property>
+		<property type="String" title="Address DB URL Extension"
+			id="databaseaddressextension" group="GeoDB">
+		</property>
+		<property id="apikey" title="Google API Key"
+			type="String" group="GeoDB"/>
+		<property id="apiload" title="init api flag"
+			type="boolean" visible="false"/>
+		<initialization>
+			<defaultValue property="WIDTH">300</defaultValue>
+			<defaultValue property="HEIGHT">200</defaultValue>
+			<defaultValue property="runtimedata">{}</defaultValue>
+			<defaultValue property="addressdimension">
+			</defaultValue>
+			<defaultValue property="textdimension">
+			</defaultValue>
+			<defaultValue property="datedimension">
+			</defaultValue>
+			<defaultValue property="keyfigurename1">
+			</defaultValue>
+			<defaultValue property="keyfigurename1clustersteps">
+				["5","20","50","100"]
+			</defaultValue>
+			<defaultValue property="keyfigurename2">
+			</defaultValue>
+			<defaultValue property="keyfigurename2clustersteps">
+				["500","1000","5000","10000"]
+			</defaultValue>
+			<defaultValue property="keyfigurename1diff">
+			</defaultValue>
+			<defaultValue property="keyfigurename2diff">
+			</defaultValue>
+			<defaultValue property="keyfiguretolerance">
+				5
+			</defaultValue>
+			<defaultValue property="databaseaddress">
+			</defaultValue>
+			<defaultValue property="databaseaddressextension">
+			</defaultValue>
+			<defaultValue property="apikey">
+			</defaultValue>
+			<defaultValue property="apiload">
+				true
+			</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

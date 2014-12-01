@@ -145,7 +145,7 @@ This extension uses Google Maps as map implementation and the Google Maps JavaSc
 
 Functionality to display trends in key figure development over time, next to the clusters is not yet implemented. This is only available with OSM right now.
 
-Please note that you shouldn’t use both components at a time in one Dashboard. This is a result of the mechanism that enables us to insert your Google API key at design time as you specified it in the component’s properties.
+Please note that you shouldn’t use both components at a time in one Dashboard. This is a result of the mechanism that enables us to insert your Google API key at design time as you specified it in the component’s properties. If you can't help it contact me for a quick workaround.
 
 Installation
 ------------

@@ -159,7 +159,7 @@ Installation
 
 •	Have fun using our map extensions (you might need to refresh the project after dropping the maps onto your canvas in Design Studio once)
 
-•	Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas 
+•	Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
 
 License
 -------

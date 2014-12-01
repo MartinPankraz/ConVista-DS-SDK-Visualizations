@@ -134,9 +134,10 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <b>ConVista GoogleMap<b>
 
-This extension uses Google Maps as map implementation and the Google Maps JavaScript API v3 to work with the map itself.
+This extension uses Google Maps as map implementation and the Google Maps JavaScript API v3 to work with the map itself. Google StreetView is also available.
+
 Functionality to display trends in key figure development over time, next to the clusters is not yet implemented. This is only available with OSM right now.
-Google StreetView is also available.
+
 Please note that you shouldn’t use both components at a time in one Dashboard. This is a result of the mechanism that enables us to insert your Google API key at design time as you specified it in the component’s properties.
 
 Installation

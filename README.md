@@ -3,7 +3,7 @@ ConVista-DS-SDK-Visualizations
 Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology.
 Prerequisites
 -------------
-Design Studio, Release 1.3 SP1
+Design Studio, Release 1.3 SP1 or higher
 
 SAP BW or HANA as DataSources with some kind of address data, which can be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne)
 

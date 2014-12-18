@@ -163,7 +163,7 @@ Installation
 
 Trouble shooting
 ----------------
-Please note that Design Studio's background processing functionality in combination with hideLoadingState on one of the maps will result in strange marker update behaviour. It seems like the DS framework doesn't update the extensions hooks correctly. You may, however use background processing without hiding loading state of the map just fine.
+Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState<i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.
 
 License
 -------

@@ -149,7 +149,7 @@ Please note that you shouldn’t use both components at a time in one Dashboard.
 
 Installation
 ------------
-•	Download the ConVistaMapsExtension.zip ZIP file (You may do this by clicking the Download ZIP button)
+•	Download the ConVistaMapsExtension.zip ZIP file (you may do this by clicking the Download ZIP button)
 
 •	Click Tools in Design Studio > install Extension to Design Studio…
 

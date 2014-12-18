@@ -161,6 +161,10 @@ Installation
 
 •	Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
 
+Trouble shooting
+----------------
+Please note that Design Studio's background processing functionality in combination with hideLoadingState on one of the maps will result in strange marker update behaviour. It seems like the DS framework doesn't update the extensions hooks correctly. You may, however use background processing without hiding loading state of the map just fine.
+
 License
 -------
 This software product is licensed under the Apache License 2.0.

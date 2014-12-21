@@ -134,18 +134,22 @@ How it works (short version)
 On first run the app logic will look for key figures and their corresponding description dimensions in the attached DataSource. Setting up all of your markers and clusters will take some time as the geocoder restricts traffic while using the free plan. Persistent storage of your geo data will make sure you don’t call the API more than once for every address entry in your DataSource (see section above).
 Any update, for example applying an arbitrary filter, to the underlying DataSource will also be propagated to the extension and impact on your view immediately.
 
-<b>ConVista OpenStreetMap<b>
+<b>ConVista OpenStreetMap</b>
 
 This extension uses OpenStreetMap (OMS) as map implementation and the Leaflet framework to work with the map itself.
 In contrast to Google Maps, OMS enables you to host your own tiles server. That way you can be independent from external resources and even work offline.
 
-<b>ConVista GoogleMap<b>
+<b>ConVista GoogleMap</b>
 
 This extension uses Google Maps as map implementation and the Google Maps JavaScript API v3 to work with the map itself. Google StreetView is also available.
 
 Functionality to display trends in key figure development over time, next to the clusters is not yet implemented. This is only available with OSM right now.
 
 Please note that you shouldn’t use both components at a time in one Dashboard. This is a result of the mechanism that enables us to insert your Google API key at design time as you specified it in the component’s properties. If you can't help it contact me for a quick workaround.
+
+<b>Test data out of the box with custom data source (DS 1.4+ required!)</b>
+
+If you don't have any geo referencable data ready to display on our maps extensions or you just want to get a quick hands-on, just donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
 
 Installation
 ------------
@@ -159,7 +163,7 @@ Installation
 
 •	Have fun using our map extensions (you might need to refresh the project after dropping the maps onto your canvas in Design Studio once)
 
-•	Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
+Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
 
 Trouble shooting
 ----------------

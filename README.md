@@ -149,7 +149,7 @@ Please note that you shouldn’t use both components at a time in one Dashboard.
 
 <b>Test data out of the box with custom data source (DS 1.4+ required!)</b>
 
-If you don't have any geo referencable data ready to display on our maps extensions or you just want to get a quick hands-on, just donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
+If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, just donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
 
 Installation
 ------------

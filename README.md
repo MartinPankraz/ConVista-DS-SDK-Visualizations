@@ -5,7 +5,7 @@ Prerequisites
 -------------
 Design Studio, Release 1.3 SP1 or higher
 
-SAP BW or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne)
+SAP BW or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne). Alternatively you could also use my custom data source providing test data for a quick hands-on (https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip). Please note that you will need SAP Design Studio 1.4 or higher.
 
 NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)
 
@@ -149,7 +149,7 @@ Please note that you shouldn’t use both components at a time in one Dashboard.
 
 <b>Test data out of the box with custom data source (DS 1.4+ required!)</b>
 
-If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, just donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
+If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
 
 Installation
 ------------

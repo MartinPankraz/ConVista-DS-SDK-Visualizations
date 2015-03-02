@@ -32,7 +32,7 @@ Name your custom CSS class to override default behavior
 
 Specifies URL where Apache CouchDB is running. Please note that you might need to set CORS settings due to CROSS ORIGIN request policy in browsers.
 
-Default is http://127.0.0.1:5984/[your database name].
+Default is http://127.0.0.1:5984/ [your database name].
 
 Use GET to gather info and POST to add geo data. Just ask me if you need further information.
 

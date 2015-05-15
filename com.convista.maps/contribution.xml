@@ -11,7 +11,6 @@
 
 	<component id="DataMap" title="ConVista GoogleMap" icon="res/icon.png"
 		handlerType="div" databound="true" group="ConVistaComponents">
-		<jsInclude>res/js/numeral.min.js</jsInclude>
 		<jsInclude>res/js/component.min.js</jsInclude>
 		<cssInclude>res/css/maps.css</cssInclude>
 		<property id="addressdimension" title="Address Dimension"
@@ -84,17 +83,22 @@
 			<defaultValue property="HEIGHT">200</defaultValue>
 			<defaultValue property="runtimedata">{}</defaultValue>
 			<defaultValue property="addressdimension">
+				ZADDRESS
 			</defaultValue>
 			<defaultValue property="textdimension">
+				0NOTIFICATN
 			</defaultValue>
 			<defaultValue property="datedimension">
+				0DATE
 			</defaultValue>
 			<defaultValue property="keyfigurename1">
+				Number of Notifications
 			</defaultValue>
 			<defaultValue property="keyfigurename1clustersteps">
 				["5","20","50","100"]
 			</defaultValue>
 			<defaultValue property="keyfigurename2">
+				Current Cost
 			</defaultValue>
 			<defaultValue property="keyfigurename2clustersteps">
 				["500","1000","5000","10000"]

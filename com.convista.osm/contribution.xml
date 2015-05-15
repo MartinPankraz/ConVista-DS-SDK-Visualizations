@@ -7,13 +7,6 @@
 		id="GeoDB" />
 	<component id="DataMap" title="ConVista OpenStreetMap"
 		icon="res/icon.png" handlerType="div" databound="true" group="ConVistaComponents">
-		<jsInclude>res/js/leaflet.js</jsInclude>
-		<jsInclude>res/js/leaflet-providers.min.js</jsInclude>
-		<jsInclude>res/js/leaflet.label.js</jsInclude>
-		<jsInclude>res/js/leaflet.markercluster.js</jsInclude>
-		<jsInclude>res/js/numeral.min.js</jsInclude>
-		<jsInclude>res/js/easy-button.min.js</jsInclude>
-		<jsInclude>res/js/FunctionButton.min.js</jsInclude>
 		<jsInclude>res/js/component.min.js</jsInclude>
 		<cssInclude>res/js/css/MarkerCluster.Default.css</cssInclude>
 		<cssInclude>res/js/css/leaflet.label.css</cssInclude>
@@ -89,24 +82,31 @@
 			<defaultValue property="HEIGHT">200</defaultValue>
 			<defaultValue property="runtimedata">{}</defaultValue>
 			<defaultValue property="addressdimension">
+				ZADDRESS
 			</defaultValue>
 			<defaultValue property="textdimension">
+				0NOTIFICATN
 			</defaultValue>
 			<defaultValue property="datedimension">
+				0DATE
 			</defaultValue>
 			<defaultValue property="keyfigurename1">
+				Number of Notifications
 			</defaultValue>
 			<defaultValue property="keyfigurename1clustersteps">
 				["10","50","100","200"]
 			</defaultValue>
 			<defaultValue property="keyfigurename2">
+				Current Cost
 			</defaultValue>
 			<defaultValue property="keyfigurename2clustersteps">
 				["500","1000","5000","10000"]
 			</defaultValue>
 			<defaultValue property="keyfigurename1diff">
+				Number of Notifications (last year)
 			</defaultValue>
 			<defaultValue property="keyfigurename2diff">
+				Current Cost (last year)
 			</defaultValue>
 			<defaultValue property="keyfiguretolerance">
 				5

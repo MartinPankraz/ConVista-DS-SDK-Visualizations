@@ -3,6 +3,8 @@ ConVista-DS-SDK-Visualizations
 Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology.
 See also my blog entry on SCN: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
 
+<b>New version arrived today (15th of May 2015) now using requirejs properly</b>
+
 Prerequisites
 -------------
 Design Studio, Release 1.3 SP1 or higher

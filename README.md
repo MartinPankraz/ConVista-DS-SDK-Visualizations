@@ -17,6 +17,9 @@ https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignSt
 NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)
 
 Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components).
+
+Please don't use both maps at once in one dashboard as this might result in strange behaviour.
+
 Contents
 --------
 This section briefly describes how the Design Studio extensions mentioned below work and the relevant property settings to get you up and running. The architecture and functionality of these SDK components are implemented in a very similar way to reduce maintenance efforts and continued development. Therefore all of the descriptions below will apply to both of the extensions. For differences in functionality, see section “How it works”.

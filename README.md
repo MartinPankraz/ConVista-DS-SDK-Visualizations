@@ -25,17 +25,17 @@ Contents
 This section briefly describes how the Design Studio extensions mentioned below work and the relevant property settings to get you up and running. The architecture and functionality of these SDK components are implemented in a very similar way to reduce maintenance efforts and continued development. Therefore all of the descriptions below will apply to both of the extensions. For differences in functionality, see section “How it works”.
 Properties
 ----------
-<b><i>DataBinding group<i><b>
+<b><i>DataBinding group</i></b>
 
 Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP has specified a limit of 10,000 data cells that can be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).
 
-<b><i>Geo Database group<i><b>
+<b><i>Geo Database group</i></b>
 
-<b>CSS Class<b>
+<b>CSS Class</b>
 
 Name your custom CSS class to override default behavior
 
-<b>Address DB URL<b>
+<b>Address DB URL</b>
 
 Specifies URL where Apache CouchDB is running. Please note that you might need to set CORS settings due to CROSS ORIGIN request policy in browsers.
 
@@ -43,68 +43,68 @@ Default is http://127.0.0.1:5984/ [your database name].
 
 Use GET to gather info and POST to add geo data. Just ask me if you need further information.
 
-<b>Address DB URL Extension<b>
+<b>Address DB URL Extension</b>
 
 URL extension for REST interface to read geo data bulk-wise from Apache CouchDB. Default is:
 
 /_all_docs?include_docs=true
 
-<b>Google API Key<b>
+<b>Google API Key</b>
 
 This field contains your Google API key (can be left empty in local mode for development purposes)
 
-<b><i>Display group<i><b>
+<b><i>Display group</i></b>
 
-<b>Address Dimension<b>
+<b>Address Dimension</b>
 
 Specifies the dimension (or column name) in your DataSource, containing the address data, for example “Rheinauhafen 15, Cologne”
 
-<b>Marker-Content Dimension<b>
+<b>Marker-Content Dimension</b>
 
 Specifies the dimension (or row/column name) in your DataSource, containing the data to be displayed when a marker (not a cluster) is clicked
 
-<b>Date Dimension<b>
+<b>Date Dimension</b>
 
 Specifies the dimension (or row/column name) in your DataSource, containing the dates associated with your key figures
 
-<b>Keyfigure1 Name<b>
+<b>Keyfigure1 Name</b>
 
 Specifies the dimension (or row/column name) in your DataSource, containing your first key figure
 
-<b>Keyfigure1 (t-1)<b>
+<b>Keyfigure1 (t-1)</b>
 
 This dimensions specification enables users to display the key figure value developments over time. For example:
 Actual cost		|	Actual cost (last year)
 €1234,56		|	€1000,00
 Trends will be displayed by green or red arrows in combination with corresponding percentages next to a clustered marker.
 
-<b>Keyfigure1 Clustering Steps<b>
+<b>Keyfigure1 Clustering Steps</b>
 
 Specifies the value limits for different display behavior. For example, green (10), yellow or red (500) cluster marker. Example input: ["10","50","100","200","500"]. This is also customizable via CSS.
 
-<b>Keyfigure2 Name<b>
+<b>Keyfigure2 Name</b>
 
 Specifies the dimension (or row/column name) in your DataSource containing your second key figure
 
-<b>Keyfigure2 (t-1)<b>
+<b>Keyfigure2 (t-1)</b>
 
 Works accordingly to Keyfigure1
 
-<b>Keyfigure2 Clustering Steps<b>
+<b>Keyfigure2 Clustering Steps</b>
 
 Works accordingly to Keyfigure1
 
-<b>Keyfigure Variation Tolerance (%)<b>
+<b>Keyfigure Variation Tolerance (%)</b>
 
 Specifies the tolerance (in percentage) used to suppress trend display. Typically users want a 5% discrepancy interval that should be treated as stagnation.
 
 Events
 ------
-<b>On Marker Clicked<b>
+<b>On Marker Clicked</b>
 
 This event occurs in case a plain marker (not a clustered one) is clicked. This action opens a message box on the map displaying the data specified in property Marker-Content Dimension and enables you also to handle marker information (for example address, ID, etc.) outside the extension e.g. for further filtering in charts.
 
-<b>On Cluster Clicked<b>
+<b>On Cluster Clicked</b>
 
 This event works the same way but on the cluster level with the exception that no message box is displayed.
 
@@ -112,27 +112,27 @@ Extensions API
 --------------
 The following methods are available in SAP Design Studios Script Editor for the extension components.
 
-<b>String getAddress()<b>
+<b>String getAddress()</b>
 
 Returns address information associated with the last clicked marker. (You should call this one within the event handler for marker clicked.)
 
-<b>String getClusterSelection(String dimension)<b>
+<b>String getClusterSelection(String dimension)</b>
 
 Returns the information specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
 For example:
 {“dimension_name”: [“20140101”,”20140102”,…]}
 
-<b>String getClusterSelectionFilterData(String dimension)<b>
+<b>String getClusterSelectionFilterData(String dimension)</b>
 
 Returns the information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
 For example:
 [“20140101”,”20140102”,…]	->	This can be used for chart filtering for instance.
 
-<b>void setCurrentKeyfigureDisplay(String keyFigureName)<b>
+<b>void setCurrentKeyfigureDisplay(String keyFigureName)</b>
 
 Changes the key figure display setting for all of the clusters during runtime. This way you can control programmatically which key figure is shown to the user.
 
-<b>String getCurrentKeyfigureDisplay()<b>
+<b>String getCurrentKeyfigureDisplay()</b>
 
 Returns the current key figure name used to display key figures on clusters.
 

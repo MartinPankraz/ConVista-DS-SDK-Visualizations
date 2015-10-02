@@ -15,6 +15,10 @@
 		<cssInclude>res/css/maps.css</cssInclude>
 		<property id="addressdimension" title="Address Dimension"
 			type="String" />
+		<property id="lat" title="Latitude Dimension"
+			type="String" />
+		<property id="lon" title="Longitude Dimension"
+			type="String" />
 		<property id="runtimedata" title="Runtime JSON Data"
 			type="ResultSet" />
 		<property type="ScriptText" title="On Marker Clicked"

@@ -19,6 +19,12 @@
 			type="String" />
 		<property id="lon" title="Longitude Dimension"
 			type="String" />
+		<property id="centerlat" title="Latitude Dimension to Center"
+			type="float" visible="false"/>
+		<property id="centerlon" title="Longitude Dimension to Center"
+			type="float" visible="false"/>
+		<property id="zoom" title="Zoom property"
+			type="int" visible="false"/>
 		<property id="runtimedata" title="Runtime JSON Data"
 			type="ResultSet" />
 		<property type="ScriptText" title="On Marker Clicked"
@@ -122,6 +128,15 @@
 			</defaultValue>
 			<defaultValue property="apiload">
 				true
+			</defaultValue>
+			<defaultValue property="centerlat">
+				50.938405
+			</defaultValue>
+			<defaultValue property="centerlon">
+				6.953648
+			</defaultValue>
+			<defaultValue property="zoom">
+				8
 			</defaultValue>
 		</initialization>
 	</component>

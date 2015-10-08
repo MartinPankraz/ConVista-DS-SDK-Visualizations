@@ -8,6 +8,33 @@ class com.convista.maps.DataMap extends Component {
 	void setAddress(String address) {*
 		this.address = address;
 	*}
+	/**
+	 * Center maps on lat/lon and zoom level. For example
+	 * DATAMAP_1.centerMap(-52.31041, -63.62642, 8);
+	 */
+	void centerMap(float lat, float lon, int zoom) {*
+		this.centerlat = lat;
+		this.centerlon = lon;
+		this.zoom = zoom;
+	*}
+	/**
+	 * Retrieve current zoom level
+	 */
+	int getZoom(){*
+		return this.zoom;
+	*}
+	/**
+	 * Retrieve latitude value of last center
+	 */
+	float getCenterLatitude(){*
+		return this.centerlat;
+	*}
+	/**
+	 * Retrieve longitude value of last center
+	 */
+	float getCenterLongitude(){*
+		return this.centerlon;
+	*}
 	
 	/* Returns tuples associated with cluster hovered over.
 	   @param dimension specify which datapart you would like to receive

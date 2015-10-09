@@ -25,6 +25,8 @@
 			type="float" visible="false"/>
 		<property id="zoom" title="Zoom property"
 			type="int" visible="false"/>
+		<property id="maxzoom" title="Clustering Max Zoom"
+			type="int" visible="true"/>
 		<property id="runtimedata" title="Runtime JSON Data"
 			type="ResultSet" />
 		<property type="ScriptText" title="On Marker Clicked"
@@ -137,6 +139,9 @@
 			</defaultValue>
 			<defaultValue property="zoom">
 				8
+			</defaultValue>
+			<defaultValue property="maxzoom">
+				10
 			</defaultValue>
 		</initialization>
 	</component>

@@ -24,6 +24,18 @@ class com.convista.maps.DataMap extends Component {
 		return this.zoom;
 	*}
 	/**
+	 * Set clustering max zoom level
+	 */
+	void setClusteringMaxZoom(int zoom){*
+		this.maxzoom = zoom;
+	*}
+	/**
+	 * Retrieve current clustering max zoom level
+	 */
+	int getClusteringMaxZoom(){*
+		return this.maxzoom;
+	*}
+	/**
 	 * Retrieve latitude value of last center
 	 */
 	float getCenterLatitude(){*
@@ -38,9 +50,45 @@ class com.convista.maps.DataMap extends Component {
 	
 	/* Returns tuples associated with cluster hovered over.
 	   @param dimension specify which datapart you would like to receive
-	   as an array of strings ["ADDRESS","DATE", "ID"] or simply ["ALL"].	
+	   as an array of strings '["ADDRESS","DATE", "ID"]' or simply '["ALL"]'.	
 	*/
 	String getClusterSelection(String dimension) {*
+	
+	var result = "{";
+	var input = JSON.parse(dimension);
+	
+		for(var i=0;i<input.length;i++){
+		
+			if(input[i] === "ALL"){
+				result = this.clusterselection;
+				/* simply return*/
+				return result;
+			}
+			else if(input[i] === "ADDRESS"){
+				result += this.addressselection;
+			}
+			else if(input[i] === "DATE"){
+				result += this.dateselection;
+			}
+			else if(input[i] === "ID"){
+				result += this.idselection;
+			}
+			else return "datapart not supported! Use ADDRESS, DATE, ID or ALL.";
+			
+			/*separate JSON sub docs with colons*/
+			if(i<input.length-1){
+				result += ",";
+			}
+		}
+		result += "}";
+		return result;
+	*}
+	
+	/* Returns tuples associated with marker clicked.
+	   @param dimension specify which datapart you would like to receive
+	   as an array of strings '["ADDRESS","DATE", "ID"]' or simply '["ALL"]'.	
+	*/
+	String getMarkerSelection(String dimension) {*
 	
 	var result = "{";
 	var input = JSON.parse(dimension);
@@ -77,6 +125,28 @@ class com.convista.maps.DataMap extends Component {
 	 * @param dimension can be one of the following values ("ADDRESS", "DATE", "ID").
 	 */
 	String getClusterSelectionFilterData(String dimension){*
+		
+		if(dimension === "ADDRESS"){
+			/* simply cut json key value pair, keep data and discard value (dimension name)*/
+			return JSON.parse(this.addressselection.split(":")[1]);
+		}
+		else if(dimension === "DATE"){
+			/* simply cut json key value pair, keep data and discard value (dimension name)*/
+			return JSON.parse(this.dateselection.split(":")[1]);
+		}
+		else if(dimension === "ID"){
+			/* simply cut json key value pair, keep data and discard value (dimension name)*/
+			return JSON.parse(this.idselection.split(":")[1]);
+		}
+		else return "datapart not supported! Use ADDRESS, DATE or ID.";
+		
+	*}
+	
+	/* This method provides dimension data covered by the chosen marker especially for filtering purposes.
+	 * In Contrast to getMarkerSelection it only provides a single value for the given dimension.
+	 * @param dimension can be one of the following values ("ADDRESS", "DATE", "ID").
+	 */
+	String getMarkerSelectionFilterData(String dimension){*
 		
 		if(dimension === "ADDRESS"){
 			/* simply cut json key value pair, keep data and discard value (dimension name)*/

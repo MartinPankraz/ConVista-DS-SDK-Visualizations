@@ -222,17 +222,17 @@ If you don't have any geo-referencable data ready to display on our maps extensi
 
 Installation
 ------------
-•	Download the ConVistaMapsExtension.zip ZIP file (you may do this by clicking the Download ZIP button. Please note that yu will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip)
+•	Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip
 
 •	Click Tools in Design Studio > install Extension to Design Studio…
 
-•	Choose “archive” as installation source (navigate to ZIP file) in Dialogue
+•	Choose “archive” as installation source (navigate to ZIP file) in dialog
 
 •	Accept license and restart Design Studio
 
 •	Have fun using our map extensions (you might need to refresh the project after dropping the maps onto your canvas in Design Studio once)
 
-Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
+Meet me at ConVista Infoday or our world renowned carnival event (traditional german costume festival) in Cologne to chat about our Design Studio and Dashboarding ideas :-)
 
 Trouble shooting
 ----------------

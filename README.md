@@ -199,7 +199,7 @@ How it works (short version)
 On first run the app logic will look for key figures and their corresponding description dimensions in the attached DataSource. Setting up all of your markers and clusters will take some time as the geocoder restricts traffic while using the free plan. Persistent storage of your geo data will make sure you don’t call the API more than once for every address entry in your DataSource (see section above).
 Any update, for example applying an arbitrary filter, to the underlying DataSource will also be propagated to the extension and impact on your view immediately.
 
-<b>Again, if you are using the new lat-long feature this section doesn't apply to you. Your makers will show up right away.</b>
+<b><i>Again, if you are using the new lat-long feature this section doesn't apply to you. Your makers will show up right away.</i></b>
 
 <b>ConVista OpenStreetMap</b>
 

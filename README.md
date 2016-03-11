@@ -1,16 +1,20 @@
 ConVista-DS-SDK-Visualizations
 ==============================
-Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology.
-See also my blog entry on SCN: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
+Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology and HTML editors to put some shiny comments.
 
-<b>New version arrived today (15th of May 2015) now using requirejs properly</b>
+See also my blog entries on SCN regarding
+
+maps: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
+
+DesignStudio comments: 
+
+<b>Breaking News: New Component EasyComment added to the repository.</b>
 
 Prerequisites
 -------------
-Design Studio, Release 1.3 SP1 or higher
+Design Studio, Release 1.6 SP0 or higher
 
-SAP BW or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne). Alternatively you could also use my custom data source providing test data for a quick hands-on.
-Please note that you will need SAP Design Studio 1.4 or higher.
+SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on..
 
 https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip
 
@@ -18,11 +22,14 @@ NetWeaver or BO sever platform to deploy the extensions for production purposes 
 
 Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components).
 
-Please don't use both maps at once in one dashboard as this might result in strange behaviour.
 
 Contents
 --------
-This section briefly describes how the Design Studio extensions mentioned below work and the relevant property settings to get you up and running. The architecture and functionality of these SDK components are implemented in a very similar way to reduce maintenance efforts and continued development. Therefore all of the descriptions below will apply to both of the extensions. For differences in functionality, see section “How it works”.
+This section briefly describes how the Design Studio extensions mentioned below work and the relevant property settings to get you up and running. The architecture and functionality of the maps SDK components are implemented in a very similar way to reduce maintenance efforts and continued development. Therefore all of the descriptions below will apply to both of the maps extensions. For differences in functionality, see section “How it works”.
+
+The newest addition to the repository the EasyComment component is discussed at the bottom of this section.
+
+
 Properties
 ----------
 <b><i>DataBinding group</i></b>
@@ -161,6 +168,18 @@ Please note that you shouldn’t use both components at a time in one Dashboard.
 
 If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
 
+ConVista EasyComment
+--------------------
+This component enables you to put comments onto your dashboard. You can find a detailed description how to integrate it with SAP backend here: 
+
+<b>Properties</b>
+
+You can customize the commentary editor toolbars using the property Toolbar Settings. For the Document toolbar you can even decide on item level. Please note that the save button will always be present because it is tied to the On Save Button Clicked event.
+
+<b>Events</b>
+
+The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.
+
 Installation
 ------------
 •	Download the ConVistaMapsExtension.zip ZIP file (you may do this by clicking the Download ZIP button)
@@ -171,9 +190,9 @@ Installation
 
 •	Accept license and restart Design Studio
 
-•	Have fun using our map extensions (you might need to refresh the project after dropping the maps onto your canvas in Design Studio once)
+•	Have fun using our extensions
 
-Meet me at ConVista Infoday or our world renowned carnival (traditional german costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
+Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)
 
 Trouble shooting
 ----------------

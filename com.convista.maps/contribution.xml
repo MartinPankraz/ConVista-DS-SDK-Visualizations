@@ -28,7 +28,7 @@
 		<property id="maxzoom" title="Clustering Max Zoom"
 			type="int" visible="true"/>
 		<property id="runtimedata" title="Runtime JSON Data"
-			type="ResultSet" />
+			type="ResultSet" visible="false"/>
 		<property type="ScriptText" title="On Marker Clicked"
 			id="onMarkerClicked" group="Events">
 		</property>
@@ -93,7 +93,6 @@
 		<initialization>
 			<defaultValue property="WIDTH">300</defaultValue>
 			<defaultValue property="HEIGHT">200</defaultValue>
-			<defaultValue property="runtimedata">{}</defaultValue>
 			<defaultValue property="addressdimension">
 				ZADDRESS
 			</defaultValue>

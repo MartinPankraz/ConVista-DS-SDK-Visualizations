@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.convista.comment"
+	title="Design Studio SDK Extension ConVista Commentary Solution"
+	version="1.0"
+	vendor="ConVista, Pankraz">
+	
+	<group title="ConVista Visualization Components"
+		id="ConVistaComponents" visible="true"/>
+	<component
+		id="Comment"
+		title="ConVista Commentary Solution"
+		icon="res/icon.png"
+		handlerType="div"
+		databound="false" group="ConVistaComponents">
+
+		<jsInclude>res/js/ckeditor/ckeditor.js</jsInclude>
+		<jsInclude>res/js/ckeditor/config.js</jsInclude>
+		<jsInclude>res/js/ckeditor/styles.js</jsInclude>
+		<jsInclude>res/js/component.js</jsInclude>
+		<cssInclude>res/js/ckeditor/skins/moono/editor.css</cssInclude>
+		<cssInclude>res/js/ckeditor/contents.css</cssInclude>
+		
+		<property
+			id="DHttpMethod"
+			type="String"
+			title="HTTP Method Type"
+			group="Display"
+			visible="true">
+			<possibleValue>GET</possibleValue>
+			<possibleValue>POST</possibleValue>
+		</property>
+		
+		<property
+			id="DServerUrl"
+			type="String"
+			title="Backend Connection String"
+			group="Display"
+			visible="true">
+		</property>
+		
+		<property
+			id="htmldata"
+			type="String"
+			title="HTML string data container"
+			group="Display"
+			visible="false">
+		</property>
+		
+		<property
+			id="saveDataTrigger"
+			type="String"
+			title="Save Data Trigger"
+			group="Display"
+			visible="false">
+		</property>
+		
+		<property
+			id="myId"
+			type="String"
+			title="CKEditor instance identifier"
+			group="Display"
+			visible="false">
+		</property>
+		
+		<property id="toolbars" type="Object" title="Toolbar Settings">
+			<property id="document" type="Object" title="Document">
+				<property id="Source" type="boolean" title="Source"/>
+				<property id="NewPage" type="boolean" title="New Page"/>
+				<property id="Preview" type="boolean" title="Preview"/>
+				<property id="Print" type="boolean" title="Print"/>
+				<property id="Templates" type="boolean" title="Templates"/>
+			</property>
+			<property id="clipboard" type="boolean" title="Clipboard"/>
+			<property id="editing" type="boolean" title="Editing"/>
+			<property id="forms" type="boolean" title="Forms"/>
+			<property id="paragraph" type="boolean" title="Paragraph"/>
+			<property id="links" type="boolean" title="Links"/>
+			<property id="insert" type="boolean" title="Insert"/>
+			<property id="styles" type="boolean" title="Styles"/>
+			<property id="colors" type="boolean" title="Colors"/>
+			<property id="tools" type="boolean" title="Tools"/>
+			<property id="about" type="boolean" title="About" />
+		</property>
+		
+		<property
+			id="onSave"
+			type="ScriptText"
+			title="On Save Button Clicked"
+			group="Events" />
+			
+		<initialization>
+			<defaultValue property="WIDTH">650</defaultValue>
+			<defaultValue property="HEIGHT">300</defaultValue>
+			<defaultValue property="DHttpMethod">POST</defaultValue>
+			<defaultValue property="document">true</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

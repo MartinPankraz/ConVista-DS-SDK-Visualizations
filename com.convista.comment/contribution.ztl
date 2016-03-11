@@ -1,0 +1,69 @@
+class com.convista.comment.Comment extends Component {
+
+	/**
+	 * Set desired HTTP method. GET and POST are available.
+	 */
+	void setHttpMethod(String method){*
+		this.DHttpMethod = method;
+	*}
+	/**
+	 * Get desired HTTP method. GET and POST are the possible values.
+	 */
+	String getHttpMethod(){*
+		return this.DHttpMethod;
+	*}
+	/**
+	 * Set the targeted server URL
+	 */
+	void setServerUrl(String url){*
+		this.DServerUrl = url;
+	*}
+	/**
+	 * Get the targeted server URL
+	 */
+	String getServerUrl(){*
+		return this.DServerUrl;
+	*}
+	/**
+	 * Send the current HTML string from the editor pane to the server. Make sure to setup the method POST beforehand! 
+	 */
+	void saveHTMLOnServer(){*
+		this.saveDataTrigger = calcTimestamp();
+	*}
+	/**
+	 * Load the current HTML string from the server. Make sure to setup the method GET beforehand! 
+	 */
+	void loadHTMLFromServer(){*
+		this.saveDataTrigger = calcTimestamp();
+	*}
+	void setHTMLString(String html){*
+		this.htmldata = html;
+	*}
+	String getHTMLString(){*
+		return this.htmldata;
+	*}
+	/**
+	 * Activate toolbars by name. Possible values are:
+	 * document, clipboard, editing, forms, paragraph, links, insert, styles, colors, tools, about.
+	 * Default toolbar is basicstyles, which cannot be deactivated. The save button is also mandatory!
+	 */
+	void setToolbarActive(String key, boolean active){*
+		var current = this.toolbars || [];
+		
+		for(var itm in current){
+			 if(itm === key){
+				current[key] = active;
+			}
+		}
+
+		this.toolbars = current;
+	*}
+	
+	@Visibility(private)
+	/**
+	 *	Workaround for strange DesignStudio lifecycle handling when calling functions via scriptting triggers
+	 */
+	String calcTimestamp() {*
+		return new Date().valueOf();
+	*}
+}

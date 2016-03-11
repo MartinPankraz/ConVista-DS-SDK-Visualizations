@@ -6,6 +6,7 @@ See also my blog entries on SCN regarding
 maps: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
 
 DesignStudio comments: 
+http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments
 
 <b>Breaking News: New Component EasyComment added to the repository.</b>
 
@@ -14,7 +15,8 @@ Prerequisites
 Design Studio, Release 1.6 SP0 or higher
 
 
-SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on..
+SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on.
+
 https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip
 
 NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)

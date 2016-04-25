@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Design Studio SDK Extension ConVista Commentary Solution
+Bundle-Name: ConVista EasyComment
 Bundle-SymbolicName: com.convista.comment;singleton:=true
 Bundle-Version: 1.0
 Require-Bundle: com.sap.ip.bi.zen.rt.components.sdk.eclipse

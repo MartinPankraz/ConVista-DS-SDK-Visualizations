@@ -2,7 +2,7 @@
 <sdkExtension
 	xmlns="http://www.sap.com/bi/zen/sdk"
 	id="com.convista.comment"
-	title="Design Studio SDK Extension ConVista Commentary Solution"
+	title="ConVista EasyComment"
 	version="1.0"
 	vendor="ConVista, Pankraz">
 	
@@ -10,15 +10,13 @@
 		id="ConVistaComponents" visible="true"/>
 	<component
 		id="Comment"
-		title="ConVista Commentary Solution"
+		title="ConVista EasyComment"
 		icon="res/icon.png"
 		handlerType="div"
-		databound="false" group="ConVistaComponents">
+		databound="false" group="ConVistaComponents"
+		modes="commons m">
 
-		<jsInclude>res/js/ckeditor/ckeditor.js</jsInclude>
-		<jsInclude>res/js/ckeditor/config.js</jsInclude>
-		<jsInclude>res/js/ckeditor/styles.js</jsInclude>
-		<jsInclude>res/js/component.js</jsInclude>
+		<requireJs modes="commons m">res/js/component</requireJs>
 		<cssInclude>res/js/ckeditor/skins/moono/editor.css</cssInclude>
 		<cssInclude>res/js/ckeditor/contents.css</cssInclude>
 		
@@ -49,17 +47,25 @@
 		</property>
 		
 		<property
-			id="saveDataTrigger"
-			type="String"
-			title="Save Data Trigger"
+			id="initHeight"
+			type="int"
+			title="Initial Height"
 			group="Display"
-			visible="false">
+			visible="true">
 		</property>
 		
 		<property
-			id="myId"
+			id="resizeEnabled"
+			type="boolean"
+			title="Resize Enabled"
+			group="Display"
+			visible="true">
+		</property>
+		
+		<property
+			id="saveDataTrigger"
 			type="String"
-			title="CKEditor instance identifier"
+			title="Save Data Trigger"
 			group="Display"
 			visible="false">
 		</property>
@@ -91,10 +97,16 @@
 			group="Events" />
 			
 		<initialization>
+			<defaultValue property="TOP_MARGIN">0</defaultValue>
+			<defaultValue property="LEFT_MARGIN">0</defaultValue>
+			<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
+			<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
 			<defaultValue property="WIDTH">650</defaultValue>
-			<defaultValue property="HEIGHT">300</defaultValue>
+			<defaultValue property="HEIGHT">200</defaultValue>
 			<defaultValue property="DHttpMethod">POST</defaultValue>
 			<defaultValue property="document">true</defaultValue>
+			<defaultValue property="initHeight">200</defaultValue>
+			<defaultValue property="resizeEnabled">true</defaultValue>
 		</initialization>
 	</component>
 </sdkExtension>

@@ -9,7 +9,7 @@ DesignStudio comments:
 http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments
 
 Hierarchy selection component:
-
+http://scn.sap.com/community/businessobjects-design-studio/blog/2016/08/12/design-studio-sdk-hierarchy-selector-component-go-catch-em-all
 
 <b>Breaking News: New Component Hierarchy Selector added to the repository.</b>
 

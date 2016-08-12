@@ -1,6 +1,6 @@
 ConVista-DS-SDK-Visualizations
 ==============================
-Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology and HTML editors to put some shiny comments.
+Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments and hierarchy selection component.
 
 See also my blog entries on SCN regarding
 maps: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
@@ -8,7 +8,10 @@ maps: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01
 DesignStudio comments: 
 http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments
 
-<b>Breaking News: New Component EasyComment added to the repository.</b>
+Hierarchy selection component:
+
+
+<b>Breaking News: New Component Hierarchy Selector added to the repository.</b>
 
 Prerequisites
 -------------
@@ -26,7 +29,7 @@ Google API Key that you can get from Google’s API Console (please note that lo
 
 Contents
 --------
-The newest addition to the repository the EasyComment component is discussed at the bottom of this section.
+The newest additions to the repository the EasyComment and the hierarchy component are discussed at the bottom of this section.
 
 
 Properties
@@ -237,6 +240,58 @@ You can customize the commentary editor toolbars using the property Toolbar Sett
 <b>Events</b>
 
 The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.
+
+ConVista Hierarchy Selector
+---------------------------
+This component enables you to consume BW hierarchies exposed through data sources. One single root node is a minimum requirement for the hierarchy. Otherwise only the branch for the first node will be shown. 
+
+<b>Properties</b>
+
+• <i>Navigation Mode</i>
+
+Use Paginator or Scrollbar in case of display overflow
+
+• <i>Visible Row Count</i>
+
+Decide how many rows shall be displayed initially
+
+• <i>Visible Row Count Mode</i>
+
+Decide if the component shall stretch automatically (auto), stay fixed (fixed) or be flexible (interactive)
+
+• <i>Row Height in px</i>
+
+Define the amount of pixel to be used for each row height
+
+• <i>Level for Expand All Option</i>
+
+Define the level to which the tree shall expand on click of the top right button
+
+• <i>Expand first Level on Start</i>
+
+Decide if the root node shall be collapsed at start or not
+
+• <i>Display row lines</i>
+
+Decide if you want to see the table row lines or not
+
+• <i>Hide Key on KEY_TEXT display</i>
+
+In order to be able to use the method <i>getSelectionKeysBexReady</i> for external keys you will need to enable key_text or text_key as display option on your data source. The reason is that the external representation of the key is transmitted to the SDK component only then. Having done that you might still want to show only the text on the tree. This option will allow you to do so.
+
+<b>Important Methods</b>
+
+• <i>getSelectionKeysBexReady(boolean internalKeyFormat,optional boolean completeKey)</i>
+
+You have to decide if you want the shortened internal or the external representation of the key (please not my comment regarding that above). If you need the full technical key (e.g. 0HIERARCHY/0HIER_NODE/1234) flag the optional second parameter completeKey with true.
+
+• <i>getFilterExtBexReady()</i>
+
+This method will return a string which can be fed into Design Studio Scripting method setFilterExt right away. It even takes care of SAP's special node syntax (e.g +OPERATIVE CASH FLOWS(Text Node))
+
+<b>Events</b>
+
+The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.
 
 Installation
 ------------

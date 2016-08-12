@@ -1,0 +1,55 @@
+class com.convista.ui5treetable.UI5HierarchySelector extends Component {
+	/**
+	 * Sets Navigation Mode Property
+	 */	
+	void setNavigationMode( /* &nbsp; */  choice navigationMode){*
+		this.DNavigationMode = navigationMode;
+	*}
+
+	/**
+	 * Get the Navigation Mode Property
+	 */	
+	choice getNavigationMode() {*
+		return this.DNavigationMode;
+	*}
+	/**
+	 * Get key of the assigned hierarchy 
+	 */	
+	String getHierachyKey(){*
+		return this.DHierarchyKey;
+	*}
+	/**
+	 * Get text of the assigned hierarchy 
+	 */		
+	String getHierachyText(){*
+		return this.DHierarchyText;
+	*}
+
+	/**
+	 * Gets Selection As a BEx ready String
+	 * @param internalKeyFormat Flag if you want internal or external representation (make sure to have KEY_TEXT or TEXT_KEY option active for ext!)
+	 * @param completeKey Flag if you want the complete key or just the identifier (impacts only the internal key!) 0HIERARCHY/0HIER_NODE/1234 vs. 1234
+	 */	
+	String getSelectionKeysBexReady(boolean internalKeyFormat,optional boolean completeKey) {*
+		var result = "";
+		if(completeKey){
+			result = this.DCheckBoxSelectionFull;	
+		}else{
+			if(internalKeyFormat){
+				result = this.DCheckBoxSelection;	
+			}else{
+				result = this.DCheckBoxSelectionExt;
+			}
+ 
+		}
+		return result;
+	*}
+	
+	/**
+	 * Gets Filter value As a BEx ready String
+	 */	
+	String getFilterExtBexReady() {*
+		return this.DFilterSelectionExt;
+	*}
+
+}

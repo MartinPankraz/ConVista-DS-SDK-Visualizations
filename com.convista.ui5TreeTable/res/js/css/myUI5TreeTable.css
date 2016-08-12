@@ -1,0 +1,34 @@
+.myUI5Table-auto-size {
+		
+}
+
+div[class*="myUI5Table-auto-size"] > div{
+	height: 100%;
+	width: 100%;
+}
+
+.treeTableLabel{
+	line-height:23px;
+}
+
+.treeTableButtonRight {
+	position: absolute;
+	right: -15px;
+}
+
+.treeTableButtonRight > span {
+	color:#adadad!important;
+}
+
+.treeTableNoRowLines {
+    
+}
+
+div[class*="treeTableNoRowLines"] td {
+	border-bottom: 0px solid red;
+}
+
+span[class*="myTriCb"] {
+	display: block!important;
+	text-overflow: ellipsis;
+}

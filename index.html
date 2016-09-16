@@ -2,27 +2,43 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Convista-ds-sdk-visualizations by MartinPankraz</title>
+    <title>ConVista-ds-sdk-visualizations by MartinPankraz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-84264765-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Convista-ds-sdk-visualizations</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations" class="btn">View on GitHub</a>
-      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/tarball/master" class="btn">Download .tar.gz</a>
+    <section class="pageoriginal-header">
+	  <img src="images/ConVista_Logo_RGB_blue.png" height="102" width="293">
+      <h1 class="projectoriginal-name">Design Studio Extensions</h1>
+      <h2 class="projectoriginal-tagline"></h2>
+      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations" class="btnoriginal">View on GitHub</a>
+      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/zipball/master" class="btnoriginal">Download .zip</a>
+      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/tarball/master" class="btnoriginal">Download .tar.gz</a>
     </section>
 
-    <section class="main-content">
+    <section class="mainoriginal-content">
       <h1>
 <a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista-DS-SDK-Visualizations</h1>
 
-<p>Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments, hierarchy selection and a chat component.</p>
+<p>Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments and hierarchy selection component.</p>
 
 <p>See also my blog entries on SCN regarding
 maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights">http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights</a></p>
@@ -37,18 +53,22 @@ maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2
 
 <p>Find detailed descriptions and an API overview here: <a href="http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/">http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/</a></p>
 
-<h2>
-<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h2>
 
-<p>Design Studio, Release 1.6 SP0 or higher</p>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<h2>Prerequisites</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#prerequisitesid"></button>
+  <div id="prerequisitesid" class="collapse">
+    <p>Design Studio, Release 1.6 SP0 or higher</p>
 
-<p>SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on.</p>
+ <p>SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on.</p>
 
-<p><a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
+ <p><a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
 
-<p>NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
+ <p>NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
 
-<p>Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
+ <p>Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
+  </div>
+</div>
 
 <h2>
 <a id="contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents</h2>
@@ -61,8 +81,12 @@ maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2
 
 <p>• ConVista GoogleMap &amp; OSM</p>
 
+
 <h2>
 <a id="convista-easycomment" class="anchor" href="#convista-easycomment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista EasyComment</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#easycommentid"></button>
+
+<div id="easycommentid" class="collapse">
 
 <p>This component enables you to put comments onto your dashboard. You can find a detailed description how to integrate it with SAP backend here: </p>
 
@@ -73,9 +97,14 @@ maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2
 <p><b>Events</b></p>
 
 <p>The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.</p>
+</div>
+
 
 <h2>
 <a id="convista-chat" class="anchor" href="#convista-chat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Chat</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#convistachatid"></button>
+
+<div id="convistachatid" class="collapse">
 
 <p>This component enables you to setup a fully blown chat component. For backend integration we recommend using the SCN SDK component WSPusher which is an implementation of the WebSocket standard also done by me. You can find the code and the component here: <a href="https://github.com/org-scn-design-studio-community/sdkpackage">https://github.com/org-scn-design-studio-community/sdkpackage</a></p>
 
@@ -154,8 +183,14 @@ maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2
 
 <p>This event fires in case an item of the chat component is clicked. It makes sense to call the method getCurrentActiveMessageId along with it to learn which item was clicked.</p>
 
+
+</div>
+
+
 <h2>
-<a id="convista-hierarchy-selector" class="anchor" href="#convista-hierarchy-selector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Hierarchy Selector</h2>
+<a id="convista-hierarchy-selector" class="anchor" href="#convista-hierarchy-selector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Hierarchy Selector</h2><button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#hierarchyid"></button>
+
+<div id="hierarchyid" class="collapse">
 
 <p>This component enables you to consume BW hierarchies exposed through data sources. One single root node is a minimum requirement for the hierarchy. Otherwise only the branch for the first node will be shown. </p>
 
@@ -207,8 +242,14 @@ maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2
 
 <p>The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.</p>
 
+</div>
+
+
+
 <h2>
-<a id="convista-maps-implementation" class="anchor" href="#convista-maps-implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Maps Implementation</h2>
+<a id="convista-maps-implementation" class="anchor" href="#convista-maps-implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Maps Implementation</h2><button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#convistamapsid"></button>
+
+<div id="convistamapsid" class="collapse">
 
 <p>The following section covers the properties, functions and events of our google maps and OpenStreetMap implementation. Our OSM component is deprecated by now because SAP offers a standard version.</p>
 
@@ -380,6 +421,8 @@ For example:
 
 <p>Get  current maps zoom level</p>
 
+
+
 <h2>
 <a id="geo-coding-and-geo-data-persistence" class="anchor" href="#geo-coding-and-geo-data-persistence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Geo Coding and Geo-Data Persistence</h2>
 
@@ -414,8 +457,16 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p>If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from <a href="https://github.com/MartinPankraz/DesignStudioSDK-Components">https://github.com/MartinPankraz/DesignStudioSDK-Components</a> and include it to your project and the maps extensions as usual.</p>
 
+
+</div>
+
+
+
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#installationid"></button>
+
+<div id="installationid" class="collapse">
 
 <p>• Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip</p>
 
@@ -429,8 +480,11 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p>Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</p>
 
+</div>
+
 <h2>
 <a id="trouble-shooting" class="anchor" href="#trouble-shooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trouble shooting</h2>
+
 
 <p>Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState</i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.</p>
 
@@ -446,10 +500,11 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations">Convista-ds-sdk-visualizations</a> is maintained by <a href="https://github.com/MartinPankraz">MartinPankraz</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      <footer class="siteoriginal-footer">
+	  <a href="https://github.com/MartinPankraz"><img src="images/ConVista_Logo_footer.png" height="30" width="515"></a><br>
+	  <span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+		
+		
       </footer>
 
     </section>

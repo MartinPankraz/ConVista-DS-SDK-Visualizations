@@ -1,0 +1,143 @@
+class com.convista.chat.UI5Chat extends Component {
+	
+	void createMessage(String myUser, String myTitle, String myText, String myPriority, String myChatId, optional String picture ){*
+		
+		var date = new Date().valueOf();
+		var myPicture = picture || "";
+		
+		var current = this.DMessages || [];  
+	    current.push({
+	    	myId : calcTimestamp(),
+	    	chatId: myChatId,
+	    	user : myUser,
+			title : myTitle,
+			datetime : date,
+			text : myText,
+			picture: myPicture,
+			priority : myPriority  
+	    });  
+	    this.DMessages = current; // Write back changed object
+	    //flag message added trigger
+	    this.DMessageAddTrigger = true;
+	*}
+	
+	void addMessage(String myUser, String myTitle, String myText, String myPriority, String myDate, String myId, String myChatId, optional String picture){*
+		
+		var myPicture = picture || "";
+		
+		var current = this.DMessages || [];  
+	    current.push({
+	    	myId : myId,
+	    	chatId: myChatId,
+	    	user : myUser,
+			title : myTitle,
+			datetime : myDate,
+			text : myText,
+			picture: myPicture,
+			priority : myPriority  
+	    });  
+	    this.DMessages = current; // Write back changed object
+	    //flag message added trigger
+	    this.DMessageAddTrigger = true;
+	*}
+	
+	void addMessageList (String obj, optional boolean override){*
+		var current = [];
+		try{
+			var myArray = JSON.parse(obj);
+
+			if(!override){
+				current = this.DMessages || [];
+			}
+			for(var i=0;i<myArray.length;i++){
+				var pointer = myArray[i];
+				var myPicture = pointer.picture || "";
+				current.push({
+			    	myId : pointer.myId,
+			    	chatId: pointer.chatId,
+			    	user : pointer.user,
+					title : pointer.title,
+					datetime : pointer.datetime,
+					text : pointer.text,
+					picture: myPicture,
+					priority : pointer.priority  
+			    });  
+			}
+		}catch(err){
+			
+		}
+	    this.DMessages = current; // Write back changed object
+	  //flag message added trigger
+	    this.DMessageAddTrigger = true;
+	*}
+	
+	/**
+	 * Delete Message after given id
+	 */
+	void deleteMessage (String id) {*
+		
+		var current = this.DMessages || [];
+		
+		for(var i=0;i<current.length;i++){
+			if(current[i].myId === id){
+				current.splice(i,1);
+			  //flag message deleted trigger
+				this.DMessages = current;
+				this.DMessageAddTrigger = true;
+				break;
+			}
+		}
+	
+	*}
+	/**
+	 * Delete several Messages after given id array
+	 */
+	void deleteMessages (array ids) {*
+		
+		var current = this.DMessages || [];
+		
+		for(var i=0;i<current.length;i++){
+			for(var j=0;j<ids.length;j++){
+				if(current[i].myId === ids[j]){
+					current.splice(i,1);
+				  //flag message deleted trigger
+					this.DMessages = current;
+				    this.DMessageAddTrigger = true;
+					break;
+				}	
+			}
+		}
+	*}
+	/**
+	 * Clear messages array
+	 */
+	void clear(){*
+		this.DMessages = [];
+	*}
+	/**
+	 * Get the content of the reply popup box (commons mode only!)
+	 */
+	String getReplyMessage(){*
+		return this.DReplyMessage;
+	*}
+	
+	String getCurrentActiveMessageId(){*
+		return this.DBackendMessageID;
+	*}
+	
+	String getDChatIdentifier(){*
+		return this.DChatIdentifier;
+	*}
+	
+	String setDChatIdentifier(String identifier){*
+		this.DChatIdentifier = identifier;
+	*}
+	
+	@Visibility(private)
+	/**
+	 *	Workaround for strange DesignStudio lifecycle handling when calling functions via scriptting triggers
+	 */
+	String calcTimestamp() {*
+		return ""+new Date().getTime();
+	*}
+}

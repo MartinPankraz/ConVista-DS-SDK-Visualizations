@@ -11,7 +11,9 @@ http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-
 Hierarchy selection component:
 
 
-<b>Breaking News: New Component Hierarchy Selector added to the repository.</b>
+<b>Breaking News: New Components Hierarchy Selector and ConVista SDK Chat added to the repository.</b>
+
+Find detailed descriptions and an API overview here: http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/
 
 Prerequisites
 -------------
@@ -29,10 +31,15 @@ Google API Key that you can get from Google’s API Console (please note that lo
 
 Contents
 --------
-The newest additions to the repository the EasyComment and the hierarchy component are discussed at the bottom of this section.
+The newest additions to the repository the EasyComment, the hierarchy and the chat component are discussed at the bottom of this section.
 
 
-Properties
+Maps Implementation
+----------
+
+The following section covers the properties, functions and events of our google maps and OpenStreetMap implementation. Our OSM component is deprecated by now because SAP offers a standard version.
+
+Maps Properties
 ----------
 <b><i>DataBinding group</i></b>
 
@@ -240,6 +247,86 @@ You can customize the commentary editor toolbars using the property Toolbar Sett
 <b>Events</b>
 
 The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.
+
+ConVista Chat
+--------------------
+This component enables you to setup a fully blown chat component. For backend integration we recommend using the SCN SDK component WSPusher which is an implementation of the WebSocket standard also done by me. You can find the code and the component here: https://github.com/org-scn-design-studio-community/sdkpackage
+
+<b>Properties</b>
+
+• <i>Chat Messages</i>
+
+This property allows you to define messages upfront manually. Furthermore it is used when messages are added to the component through Design Studio Scripting. It uses the new SDK type Array and Object.
+
+• <i>Enable SAP Social (commons only)</i>
+
+Enable the UI5 social feature. This adds a "reply" text link to your messages, which opens an input dialog. The user's actions are exposed to the chat components events. This feature is only available if the component is run in commons mode.
+
+• <i>Date Pattern</i>
+
+Define the date pattern using LDML format which is required by sap.ui.core.format.DateFormat.
+
+• <i>Date Style</i>
+
+Define the date style using LDML format which is required by sap.ui.core.format.DateFormat.
+
+<b>Methods</b>
+
+• <i>createMessage</i>
+
+Create a message using current timestamp.
+
+• <i>addMessage</i>
+
+Add a new message defining all properties yourself.
+
+• <i>addMessageList</i>
+
+Add a list of messages to the chat component. The JSON strings needs the following structure:
+
+	[{
+		"myId": "1",
+		"chatId": "TEST",
+		"user": "Martin",
+		"title": "My first commons post!",
+		"datetime": "20160905100120",
+		"text": "This is looking really cool. What do you think Jose?",
+		"picture": "zen/mimes/TEST_TIMELINE/img/mpankraz.jpg",
+		"priority": "Low"
+	},
+	{…}]
+	
+The optional flag override enables you to decide if you want to append messages or replace with new ones.
+
+• <i>getCurrentActiveMessageId</i>
+
+Get identifier (JSON attribute myId) of last selected chat item.
+
+• <i>clear</i>
+
+Clear complete chat view.
+
+• <i>deleteMessage</i>
+
+Delete single message by id from chat view.
+
+• <i>deleteMessages</i>
+
+Delete list of messages by array of ids from chat view. The JSON strings needs the following structure:
+
+[1, 2, 3, 4568, 455]
+
+
+
+<b>Events</b>
+
+• <i>On Reply (commons mode only)</i>
+
+This even fires if send button the SAP social inpu dialog is hit. This event is only active if the component is run in commons mode.
+
+• <i>On Message Close/Select</i>
+
+This event fires in case an item of the chat component is clicked. It makes sense to call the method getCurrentActiveMessageId along with it to learn which item was clicked.
 
 ConVista Hierarchy Selector
 ---------------------------

@@ -1,0 +1,66 @@
+.cc-chat-layout:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cc-chat-layout .sapSuiteUiCommonsTimelineItemBox:hover {
+	background-color: rgba(100, 200, 200, 0.1);
+}
+
+.heightOverride > div {
+	height: 100%!important;
+}
+
+.heightOverride > div > div{
+	height: 100%!important;
+}
+
+.heightOverride > div > div > div{
+	height: 100%!important;
+}
+
+.heightOverride > div > div > div > div{
+	height: 100%!important;
+}
+
+
+.myMessageActive {
+	border-style: dashed!important;
+	border-width: 2px!important;
+}
+
+.myArrowActive {
+	border-bottom-style: dashed!important;
+	border-left-style: dashed!important;
+	border-width: 2px!important;
+}
+
+span[class="sapSuiteUiCommonsTimelineItemShellUser"]{
+	font-weight: bold;
+}
+
+.myMessagePriorityHigh {
+	border-color: #e52929!important;
+}
+
+.myMessagePriorityMedium {
+	border-color: #008a3b!important;
+}
+
+.myMessagePriorityLow {
+	border-color: #f0ab00!important;
+}
+
+.myMessagePriorityNone {
+	border-color: #007cc0!important;
+}
+
+.descriptionStyle .sapMNLI-Description{
+	width: 70%;
+}
+
+.descriptionStyle:hover{
+	cursor: pointer;
+	cursor: hand;
+	background-color: rgba(255, 255, 255, 0.7);
+}

@@ -1,6 +1,6 @@
 ConVista-DS-SDK-Visualizations
 ==============================
-Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments and hierarchy selection component.
+Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments, hierarchy selection and a chat component.
 
 See also my blog entries on SCN regarding
 maps: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
@@ -31,7 +31,155 @@ Google API Key that you can get from Google’s API Console (please note that lo
 
 Contents
 --------
-The newest additions to the repository the EasyComment, the hierarchy and the chat component are discussed at the bottom of this section.
+• ConVista EasyComment
+• ConVista Hierarchy Selector
+• ConVista Chat
+• ConVista GoogleMap & OSM
+
+
+ConVista EasyComment
+--------------------
+This component enables you to put comments onto your dashboard. You can find a detailed description how to integrate it with SAP backend here: 
+
+<b>Properties</b>
+
+You can customize the commentary editor toolbars using the property Toolbar Settings. For the Document toolbar you can even decide on item level. Please note that the save button will always be present because it is tied to the On Save Button Clicked event.
+
+<b>Events</b>
+
+The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.
+
+ConVista Chat
+--------------------
+This component enables you to setup a fully blown chat component. For backend integration we recommend using the SCN SDK component WSPusher which is an implementation of the WebSocket standard also done by me. You can find the code and the component here: https://github.com/org-scn-design-studio-community/sdkpackage
+
+<b>Properties</b>
+
+• <i>Chat Messages</i>
+
+This property allows you to define messages upfront manually. Furthermore it is used when messages are added to the component through Design Studio Scripting. It uses the new SDK type Array and Object.
+
+• <i>Enable SAP Social (commons only)</i>
+
+Enable the UI5 social feature. This adds a "reply" text link to your messages, which opens an input dialog. The user's actions are exposed to the chat components events. This feature is only available if the component is run in commons mode.
+
+• <i>Date Pattern</i>
+
+Define the date pattern using LDML format which is required by sap.ui.core.format.DateFormat.
+
+• <i>Date Style</i>
+
+Define the date style using LDML format which is required by sap.ui.core.format.DateFormat.
+
+<b>Methods</b>
+
+• <i>createMessage</i>
+
+Create a message using current timestamp.
+
+• <i>addMessage</i>
+
+Add a new message defining all properties yourself.
+
+• <i>addMessageList</i>
+
+Add a list of messages to the chat component. The JSON strings needs the following structure:
+
+	[{
+		"myId": "1",
+		"chatId": "TEST",
+		"user": "Martin",
+		"title": "My first commons post!",
+		"datetime": "20160905100120",
+		"text": "This is looking really cool. What do you think Jose?",
+		"picture": "zen/mimes/TEST_TIMELINE/img/mpankraz.jpg",
+		"priority": "Low"
+	},
+	{…}]
+	
+The optional flag override enables you to decide if you want to append messages or replace with new ones.
+
+• <i>getCurrentActiveMessageId</i>
+
+Get identifier (JSON attribute myId) of last selected chat item.
+
+• <i>clear</i>
+
+Clear complete chat view.
+
+• <i>deleteMessage</i>
+
+Delete single message by id from chat view.
+
+• <i>deleteMessages</i>
+
+Delete list of messages by array of ids from chat view. The JSON strings needs the following structure:
+
+[1, 2, 3, 4568, 455]
+
+
+
+<b>Events</b>
+
+• <i>On Reply (commons mode only)</i>
+
+This even fires if send button the SAP social inpu dialog is hit. This event is only active if the component is run in commons mode.
+
+• <i>On Message Close/Select</i>
+
+This event fires in case an item of the chat component is clicked. It makes sense to call the method getCurrentActiveMessageId along with it to learn which item was clicked.
+
+ConVista Hierarchy Selector
+---------------------------
+This component enables you to consume BW hierarchies exposed through data sources. One single root node is a minimum requirement for the hierarchy. Otherwise only the branch for the first node will be shown. 
+
+<b>Properties</b>
+
+• <i>Navigation Mode</i>
+
+Use Paginator or Scrollbar in case of display overflow
+
+• <i>Visible Row Count</i>
+
+Decide how many rows shall be displayed initially
+
+• <i>Visible Row Count Mode</i>
+
+Decide if the component shall stretch automatically (auto), stay fixed (fixed) or be flexible (interactive)
+
+• <i>Row Height in px</i>
+
+Define the amount of pixel to be used for each row height
+
+• <i>Level for Expand All Option</i>
+
+Define the level to which the tree shall expand on click of the top right button
+
+• <i>Expand first Level on Start</i>
+
+Decide if the root node shall be collapsed at start or not
+
+• <i>Display row lines</i>
+
+Decide if you want to see the table row lines or not
+
+• <i>Hide Key on KEY_TEXT display</i>
+
+In order to be able to use the method <i>getSelectionKeysBexReady</i> for external keys you will need to enable key_text or text_key as display option on your data source. The reason is that the external representation of the key is transmitted to the SDK component only then. Having done that you might still want to show only the text on the tree. This option will allow you to do so.
+
+<b>Important Methods</b>
+
+• <i>getSelectionKeysBexReady(boolean internalKeyFormat,optional boolean completeKey)</i>
+
+You have to decide if you want the shortened internal or the external representation of the key (please not my comment regarding that above). If you need the full technical key (e.g. 0HIERARCHY/0HIER_NODE/1234) flag the optional second parameter completeKey with true.
+
+• <i>getFilterExtBexReady()</i>
+
+This method will return a string which can be fed into Design Studio Scripting method setFilterExt right away. It even takes care of SAP's special node syntax (e.g +OPERATIVE CASH FLOWS(Text Node))
+
+<b>Events</b>
+
+The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.
 
 
 Maps Implementation
@@ -236,149 +384,6 @@ Please note that you shouldn’t use both components at a time in one Dashboard.
 
 If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from https://github.com/MartinPankraz/DesignStudioSDK-Components and include it to your project and the maps extensions as usual.
 
-ConVista EasyComment
---------------------
-This component enables you to put comments onto your dashboard. You can find a detailed description how to integrate it with SAP backend here: 
-
-<b>Properties</b>
-
-You can customize the commentary editor toolbars using the property Toolbar Settings. For the Document toolbar you can even decide on item level. Please note that the save button will always be present because it is tied to the On Save Button Clicked event.
-
-<b>Events</b>
-
-The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.
-
-ConVista Chat
---------------------
-This component enables you to setup a fully blown chat component. For backend integration we recommend using the SCN SDK component WSPusher which is an implementation of the WebSocket standard also done by me. You can find the code and the component here: https://github.com/org-scn-design-studio-community/sdkpackage
-
-<b>Properties</b>
-
-• <i>Chat Messages</i>
-
-This property allows you to define messages upfront manually. Furthermore it is used when messages are added to the component through Design Studio Scripting. It uses the new SDK type Array and Object.
-
-• <i>Enable SAP Social (commons only)</i>
-
-Enable the UI5 social feature. This adds a "reply" text link to your messages, which opens an input dialog. The user's actions are exposed to the chat components events. This feature is only available if the component is run in commons mode.
-
-• <i>Date Pattern</i>
-
-Define the date pattern using LDML format which is required by sap.ui.core.format.DateFormat.
-
-• <i>Date Style</i>
-
-Define the date style using LDML format which is required by sap.ui.core.format.DateFormat.
-
-<b>Methods</b>
-
-• <i>createMessage</i>
-
-Create a message using current timestamp.
-
-• <i>addMessage</i>
-
-Add a new message defining all properties yourself.
-
-• <i>addMessageList</i>
-
-Add a list of messages to the chat component. The JSON strings needs the following structure:
-
-	[{
-		"myId": "1",
-		"chatId": "TEST",
-		"user": "Martin",
-		"title": "My first commons post!",
-		"datetime": "20160905100120",
-		"text": "This is looking really cool. What do you think Jose?",
-		"picture": "zen/mimes/TEST_TIMELINE/img/mpankraz.jpg",
-		"priority": "Low"
-	},
-	{…}]
-	
-The optional flag override enables you to decide if you want to append messages or replace with new ones.
-
-• <i>getCurrentActiveMessageId</i>
-
-Get identifier (JSON attribute myId) of last selected chat item.
-
-• <i>clear</i>
-
-Clear complete chat view.
-
-• <i>deleteMessage</i>
-
-Delete single message by id from chat view.
-
-• <i>deleteMessages</i>
-
-Delete list of messages by array of ids from chat view. The JSON strings needs the following structure:
-
-[1, 2, 3, 4568, 455]
-
-
-
-<b>Events</b>
-
-• <i>On Reply (commons mode only)</i>
-
-This even fires if send button the SAP social inpu dialog is hit. This event is only active if the component is run in commons mode.
-
-• <i>On Message Close/Select</i>
-
-This event fires in case an item of the chat component is clicked. It makes sense to call the method getCurrentActiveMessageId along with it to learn which item was clicked.
-
-ConVista Hierarchy Selector
----------------------------
-This component enables you to consume BW hierarchies exposed through data sources. One single root node is a minimum requirement for the hierarchy. Otherwise only the branch for the first node will be shown. 
-
-<b>Properties</b>
-
-• <i>Navigation Mode</i>
-
-Use Paginator or Scrollbar in case of display overflow
-
-• <i>Visible Row Count</i>
-
-Decide how many rows shall be displayed initially
-
-• <i>Visible Row Count Mode</i>
-
-Decide if the component shall stretch automatically (auto), stay fixed (fixed) or be flexible (interactive)
-
-• <i>Row Height in px</i>
-
-Define the amount of pixel to be used for each row height
-
-• <i>Level for Expand All Option</i>
-
-Define the level to which the tree shall expand on click of the top right button
-
-• <i>Expand first Level on Start</i>
-
-Decide if the root node shall be collapsed at start or not
-
-• <i>Display row lines</i>
-
-Decide if you want to see the table row lines or not
-
-• <i>Hide Key on KEY_TEXT display</i>
-
-In order to be able to use the method <i>getSelectionKeysBexReady</i> for external keys you will need to enable key_text or text_key as display option on your data source. The reason is that the external representation of the key is transmitted to the SDK component only then. Having done that you might still want to show only the text on the tree. This option will allow you to do so.
-
-<b>Important Methods</b>
-
-• <i>getSelectionKeysBexReady(boolean internalKeyFormat,optional boolean completeKey)</i>
-
-You have to decide if you want the shortened internal or the external representation of the key (please not my comment regarding that above). If you need the full technical key (e.g. 0HIERARCHY/0HIER_NODE/1234) flag the optional second parameter completeKey with true.
-
-• <i>getFilterExtBexReady()</i>
-
-This method will return a string which can be fed into Design Studio Scripting method setFilterExt right away. It even takes care of SAP's special node syntax (e.g +OPERATIVE CASH FLOWS(Text Node))
-
-<b>Events</b>
-
-The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.
 
 Installation
 ------------

@@ -2,12 +2,18 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Convista-ds-sdk-visualizations by MartinPankraz</title>
+    <title>ConVista-ds-sdk-visualizations by MartinPankraz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,15 +25,16 @@
     </script>
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Convista-ds-sdk-visualizations</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations" class="btn">View on GitHub</a>
-      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/tarball/master" class="btn">Download .tar.gz</a>
+    <section class="pageoriginal-header">
+	  <img src="images/ConVista_Logo_RGB_blue.png" height="102" width="293">
+      <h1 class="projectoriginal-name">Design Studio Extensions</h1>
+      <h2 class="projectoriginal-tagline"></h2>
+      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations" class="btnoriginal">View on GitHub</a>
+      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/zipball/master" class="btnoriginal">Download .zip</a>
+      <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/tarball/master" class="btnoriginal">Download .tar.gz</a>
     </section>
 
-    <section class="main-content">
+    <section class="mainoriginal-content">
       <h1>
 <a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista-DS-SDK-Visualizations</h1>
 
@@ -44,27 +51,35 @@ maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2
 
 <p><b>Breaking News: New Component Hierarchy Selector added to the repository.</b></p>
 
+
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+<h2>Prerequisites</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#prerequisitesid"></button>
+  <div id="prerequisitesid" class="collapse">
+    <p>Design Studio, Release 1.6 SP0 or higher</p>
+
+ <p>SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on.</p>
+
+ <p><a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
+
+ <p>NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
+
+ <p>Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
+  </div>
+</div>
+
 <h2>
-<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h2>
+<a id="contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents</h2><button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#contentsid"></button>
 
-<p>Design Studio, Release 1.6 SP0 or higher</p>
-
-<p>SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on.</p>
-
-<p><a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
-
-<p>NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
-
-<p>Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
-
-<h2>
-<a id="contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents</h2>
-
+<div id="contentsid" class="collapse">
 <p>The newest additions to the repository the EasyComment and the hierarchy component are discussed at the bottom of this section.</p>
+</div>
 
 <h2>
 <a id="properties" class="anchor" href="#properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Properties</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#propertiesid"></button>
 
+<div id="propertiesid" class="collapse">
 <p><b><i>DataBinding group</i></b></p>
 
 <p>Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP has specified a limit of 10,000 data cells that can be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).</p>
@@ -153,9 +168,13 @@ Trends will be displayed by green or red arrows in combination with correspondin
 <p><b>Keyfigure Variation Tolerance (%)</b></p>
 
 <p>Specifies the tolerance (in percentage) used to suppress trend display. Typically users want a 5% discrepancy interval that should be treated as stagnation.</p>
+</div>
 
 <h2>
 <a id="events" class="anchor" href="#events" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Events</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#eventsid"></button>
+
+<div id="eventsid" class="collapse">
 
 <p><b>On Marker Clicked</b></p>
 
@@ -230,8 +249,13 @@ For example:
 
 <p>Get  current maps zoom level</p>
 
+</div>
+
 <h2>
 <a id="geo-coding-and-geo-data-persistence" class="anchor" href="#geo-coding-and-geo-data-persistence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Geo Coding and Geo-Data Persistence</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#geodataid"></button>
+
+<div id="geodataid" class="collapse">
 
 <p>Google’s geo coding API can be used for free to a certain degree. In order to lighten workload on your account we have introduced two possible ways to store your geo-referenced data that has been determined by the API at first run. The first approach is by installing an Apache CouchDB instance and pointing the extension to the database URL. Secondly you can use current browser’s internal IndexedDB which sets up a full blown database that is tied to your domain. With IndexedDB, please note that for development purposes, you might need to use a static jetty port, as that is already part of the domain. Otherwise you might set up a database instance with every program execution during SDK development. This is no problem outside the SDK. You could also possibly use a different RESTful and JSON-capable database instead of CouchDB. Just give me a hint if you need further information or assistance on that matter.</p>
 
@@ -264,8 +288,13 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p>If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from <a href="https://github.com/MartinPankraz/DesignStudioSDK-Components">https://github.com/MartinPankraz/DesignStudioSDK-Components</a> and include it to your project and the maps extensions as usual.</p>
 
+</div>
+
 <h2>
 <a id="convista-easycomment" class="anchor" href="#convista-easycomment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista EasyComment</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#easycommentid"></button>
+
+<div id="easycommentid" class="collapse">
 
 <p>This component enables you to put comments onto your dashboard. You can find a detailed description how to integrate it with SAP backend here: </p>
 
@@ -330,8 +359,13 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p>The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.</p>
 
+</div>
+
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#installationid"></button>
+
+<div id="installationid" class="collapse">
 
 <p>• Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip</p>
 
@@ -345,8 +379,11 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p>Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</p>
 
+</div>
+
 <h2>
 <a id="trouble-shooting" class="anchor" href="#trouble-shooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trouble shooting</h2>
+
 
 <p>Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState</i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.</p>
 
@@ -362,10 +399,11 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <p><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations">Convista-ds-sdk-visualizations</a> is maintained by <a href="https://github.com/MartinPankraz">MartinPankraz</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      <footer class="siteoriginal-footer">
+	  <a href="https://github.com/MartinPankraz"><img src="images/ConVista_Logo_footer.png" height="30" width="515"></a><br>
+	  <span class="siteoriginal-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+		
+		
       </footer>
 
     </section>

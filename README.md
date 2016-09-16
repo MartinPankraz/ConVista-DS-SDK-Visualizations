@@ -32,8 +32,11 @@ Google API Key that you can get from Google’s API Console (please note that lo
 Contents
 --------
 • ConVista EasyComment
+
 • ConVista Hierarchy Selector
+
 • ConVista Chat
+
 • ConVista GoogleMap & OSM
 
 
@@ -182,7 +185,7 @@ This method will return a string which can be fed into Design Studio Scripting m
 The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.
 
 
-Maps Implementation
+ConVista Maps Implementation
 ----------
 
 The following section covers the properties, functions and events of our google maps and OpenStreetMap implementation. Our OSM component is deprecated by now because SAP offers a standard version.

@@ -3,10 +3,10 @@ ConVista-DS-SDK-Visualizations
 Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments, hierarchy selection and a chat component.
 
 <h2>Find detailed descriptions, impressions, videos, SCN blog post references and an API overview here:
-
+<br><br>
 http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/ </h2>
 
-<b>Breaking News: New Components Hierarchy Selector and ConVista SDK Chat added to the repository.</b>
+<i>Breaking News: New Components Hierarchy Selector and ConVista SDK Chat added to the repository.</i>
 
 <br>
 

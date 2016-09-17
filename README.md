@@ -2,20 +2,7 @@ ConVista-DS-SDK-Visualizations
 ==============================
 Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments, hierarchy selection and a chat component.
 
-See also my blog entries on SCN regarding
-maps: http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights
-
-DesignStudio comments: 
-http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments
-
-Hierarchy selection component:
-http://scn.sap.com/community/businessobjects-design-studio/blog/2016/08/12/design-studio-sdk-hierarchy-selector-component-go-catch-em-all
-
-Chat component:
-https://scn.sap.com/docs/DOC-75216
-
-
-<h2>Find detailed descriptions and an API overview here:
+<h2>Find detailed descriptions, impressions, videos, SCN blog post references and an API overview here:
 
 http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/ </h2>
 

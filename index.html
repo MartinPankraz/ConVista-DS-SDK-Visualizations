@@ -36,430 +36,511 @@
 
     <section class="mainoriginal-content">
       <h1>
-<a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista-DS-SDK-Visualizations</h1>
+<a id="convista-ds-sdk-visualizations" class="anchor" href="#convista-ds-sdk-visualizations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
 
-<p>Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments and hierarchy selection component.</p>
+<p class="justify">Design Studio SDK Visualization Components by ConVista Consulting to enhance Dashboard KPI analysis and visualization with state-of-the-art maps technology, HTML editors to put some shiny comments, a nice hierarchy selection and collaboration-ready Chat component.</p>
 
-<p>See also my blog entries on SCN regarding
-maps: <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights">http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights</a></p>
+<p><b>See also my blog entries on SCN regarding the provided Design Studio SDK components</b></p>
 
-<p>DesignStudio comments: 
-<a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments">http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments</a></p>
+<br>
 
-<p>Hierarchy selection component:
-<a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2016/08/12/design-studio-sdk-hierarchy-selector-component-go-catch-em-all">http://scn.sap.com/community/businessobjects-design-studio/blog/2016/08/12/design-studio-sdk-hierarchy-selector-component-go-catch-em-all</a></p>
+<table class="table">
+    <thead>
+      <tr>
+        <th nowrap>SCN Blog Entry</th>
+        <th>Impressions</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td nowrap><a href="http://scn.sap.com/docs/DOC-75216"><b><code style="color:#c7254e!important">NEW</code></b>Chat</a></td>
+        <td>
+			<iframe height="300px" width="400px" src="http://www.youtube.com/embed/wYkPBL0BPPY?wmode=transparent"></iframe>
+			<p class="justify"><small>On the video we show how the component can be used. The chat component is tied to the currently loaded BEx query and maintains "chat-rooms" per query. I am logged in with two different users sending each other messages regarding the holdings query.</small></p>
+		</td>
+      </tr>
+	  <tr>
+        <td nowrap><a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2016/08/12/design-studio-sdk-hierarchy-selector-component-go-catch-em-all"><b><code style="color:#c7254e!important">NEW</code></b>Hierarchy Selector</a></td>
+        <td><img src="images/tree.png" height="260" width="265"></td>
+      </tr>
+	  <tr>
+        <td nowrap><a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments">EasyComment</a></td>
+        <td><img src="images/comment.png" height="400" width="526"></td>
+      </tr>
+	  <tr>
+        <td nowrap><a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights">Google Maps & OpenStreetMap</a></td>
+        <td><img src="images/maps.png" height="395" width="416"></td>
+      </tr>
+	</tbody>
+  </table>
 
-<p>Chat component:
-<a href="https://scn.sap.com/docs/DOC-75216">https://scn.sap.com/docs/DOC-75216</a></p>
+<small>New SDK Components added to the repository on 16th of September 2016.</small>
 
-<p><b>Breaking News: New Components Hierarchy Selector and ConVista SDK Chat added to the repository.</b></p>
-
-<p>Find detailed descriptions and an API overview here: <a href="http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/">http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/</a></p>
-
+<br>
 
 <a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-<h2>Prerequisites</h2>
-<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#prerequisitesid"></button>
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#prerequisitesid">Prerequisites</button>
   <div id="prerequisitesid" class="collapse">
-    <p>Design Studio, Release 1.6 SP0 or higher</p>
+    <p class="justify">Design Studio, Release 1.6 SP0 or higher</p>
 
- <p>SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away. Alternatively you could also use my custom data source providing test data for a quick hands-on.</p>
+ <p class="justify">SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away.</p>
+ <p class="justify">Alternatively you could also use my custom data source providing test data for a quick hands-on:
+ <a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
 
- <p><a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
+ <p class="justify">NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
 
- <p>NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
-
- <p>Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
+ <p class="justify">Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
   </div>
 </div>
 
-<h2>
-<a id="contents" class="anchor" href="#contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contents</h2>
+<br>
 
-<p>• ConVista EasyComment</p>
-
-<p>• ConVista Hierarchy Selector</p>
-
-<p>• ConVista Chat</p>
-
-<p>• ConVista GoogleMap &amp; OSM</p>
-
-
-<h2>
-<a id="convista-easycomment" class="anchor" href="#convista-easycomment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista EasyComment</h2>
-<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#easycommentid"></button>
-
-<div id="easycommentid" class="collapse">
-
-<p>This component enables you to put comments onto your dashboard. You can find a detailed description how to integrate it with SAP backend here: </p>
-
-<p><b>Properties</b></p>
-
-<p>You can customize the commentary editor toolbars using the property Toolbar Settings. For the Document toolbar you can even decide on item level. Please note that the save button will always be present because it is tied to the On Save Button Clicked event.</p>
-
-<p><b>Events</b></p>
-
-<p>The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.</p>
-</div>
-
-
-<h2>
-<a id="convista-chat" class="anchor" href="#convista-chat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Chat</h2>
-<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#convistachatid"></button>
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#convistachatid">Chat</button>
 
 <div id="convistachatid" class="collapse">
 
-<p>This component enables you to setup a fully blown chat component. For backend integration we recommend using the SCN SDK component WSPusher which is an implementation of the WebSocket standard also done by me. You can find the code and the component here: <a href="https://github.com/org-scn-design-studio-community/sdkpackage">https://github.com/org-scn-design-studio-community/sdkpackage</a></p>
+<p class="justify">This component enables you to setup a fully blown chat component. For backend integration we recommend using the SCN SDK component <b>WSPusher</b> which is an implementation of the WebSocket standard also done by me. You can find the code and the component here:</p>
+<p><a href="https://github.com/org-scn-design-studio-community/sdkpackage">https://github.com/org-scn-design-studio-community/sdkpackage</a></p>
 
-<p><b>Properties</b></p>
+<h3>Look&Feel for different rendering modes (commons & m)</h3>
 
-<p>• <i>Chat Messages</i></p>
+<table id="chat_mode_pics" class="table" style="overflow:hidden!important;">
+    <tbody>
+	  <tr>
+		<td><img src="images/chat_example_commons.png" height="361" width="306"><p style="text-align:center"><small>Commons mode</small></p></td>
+		<td><img src="images/chat_example_m.png" height="360" width="283"><p style="text-align:center"><small>M mode</small></p></td>
+	  </tr>
+	</tbody>
+</table>
 
-<p>This property allows you to define messages upfront manually. Furthermore it is used when messages are added to the component through Design Studio Scripting. It uses the new SDK type Array and Object.</p>
+<h3>Properties</h3>
 
-<p>• <i>Enable SAP Social (commons only)</i></p>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Property Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chat Messages</td>
+        <td><p class="justify">This property allows you to define messages upfront manually. Furthermore it is used when messages are added to the component through Design Studio Scripting. It uses the new SDK type Array and Object.<p></td>
+      </tr>
+	  <tr>
+        <td>Enable SAP Social (commons only)</td>
+		<td><p class="justify">Enable the UI5 social feature. This adds a "reply" text link to your messages, which opens an input dialog. The user's actions are exposed to the chat components events. This feature is only available if the component is run in commons mode.</p></td>
+	  </tr>
+	  <tr>
+        <td>Date Pattern</td>
+		<td><p class="justify">Define the date pattern using LDML format which is required by sap.ui.core.format.DateFormat.</p></td>
+	  </tr>
+	  <tr>
+        <td>Date Style</td>
+		<td><p class="justify">Define the date style using LDML format which is required by sap.ui.core.format.DateFormat.</p></td>
+	  </tr>
+    </tbody>
+  </table>
 
-<p>Enable the UI5 social feature. This adds a "reply" text link to your messages, which opens an input dialog. The user's actions are exposed to the chat components events. This feature is only available if the component is run in commons mode.</p>
+  <h3>Methods</h3>
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Method Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td>createMessage</td>
+		<td><p class="justify">Create a message using current timestamp.</p></td>
+	  </tr>
+	  <tr>
+        <td>addMessage</td>
+		<td><p class="justify">Add a new message defining all properties yourself.</p></td>
+	  </tr>
+	  <tr>
+        <td>addMessageList</td>
+		<td>
+			<p class="justify">Add a list of messages to the chat component. The JSON strings needs the following structure:</p>
+			<code>[<br>
+			{"myId": "1",<br>
+			"chatId": "TEST",<br>
+			"user": "Martin",<br>
+			"title": "My first commons post!",<br>
+			"datetime": "20160905100120",<br>
+			"text": "This is looking really cool. What do you think Jose?",<br>
+			"picture": "zen/mimes/TEST_TIMELINE/img/mpankraz.jpg",<br>
+			"priority": "Low"},<br>
+			{…}<br>
+			]</code>
+			<br>
+			<p class="justify">The optional flag override enables you to decide if you want to append messages or replace with new ones.</p>
+		</td>
+	  </tr>
+	  <tr>
+        <td>getCurrentActiveMessageId</td>
+		<td><p class="justify">Get identifier (JSON attribute myId) of last selected chat item.</p></td>
+	  </tr>
+	  <tr>
+        <td>clear</td>
+		<td><p class="justify">Clear complete chat view.</p></td>
+	  </tr>
+	  <tr>
+        <td>deleteMessage</td>
+		<td><p class="justify">Delete single message by id from chat view.</p></td>
+	  </tr>
+	  <tr>
+        <td>deleteMessages</td>
+		<td>
+			<p class="justify">Delete list of messages by array of ids from chat view. The JSON strings needs the following structure:</p>
+			<code>["00001", "2", "4d6e8c44-d22f-45f2-bfa0-a36507de2456"]</code>
+		</td>
+	  </tr>
+	</tbody>
+  </table>
 
-<p>• <i>Date Pattern</i></p>
-
-<p>Define the date pattern using LDML format which is required by sap.ui.core.format.DateFormat.</p>
-
-<p>• <i>Date Style</i></p>
-
-<p>Define the date style using LDML format which is required by sap.ui.core.format.DateFormat.</p>
-
-<p><b>Methods</b></p>
-
-<p>• <i>createMessage</i></p>
-
-<p>Create a message using current timestamp.</p>
-
-<p>• <i>addMessage</i></p>
-
-<p>Add a new message defining all properties yourself.</p>
-
-<p>• <i>addMessageList</i></p>
-
-<p>Add a list of messages to the chat component. The JSON strings needs the following structure:</p>
-
-<pre><code>[{
-    "myId": "1",
-    "chatId": "TEST",
-    "user": "Martin",
-    "title": "My first commons post!",
-    "datetime": "20160905100120",
-    "text": "This is looking really cool. What do you think Jose?",
-    "picture": "zen/mimes/TEST_TIMELINE/img/mpankraz.jpg",
-    "priority": "Low"
-},
-{…}]
-</code></pre>
-
-<p>The optional flag override enables you to decide if you want to append messages or replace with new ones.</p>
-
-<p>• <i>getCurrentActiveMessageId</i></p>
-
-<p>Get identifier (JSON attribute myId) of last selected chat item.</p>
-
-<p>• <i>clear</i></p>
-
-<p>Clear complete chat view.</p>
-
-<p>• <i>deleteMessage</i></p>
-
-<p>Delete single message by id from chat view.</p>
-
-<p>• <i>deleteMessages</i></p>
-
-<p>Delete list of messages by array of ids from chat view. The JSON strings needs the following structure:</p>
-
-<p>[1, 2, 3, 4568, 455]</p>
-
-<p><b>Events</b></p>
-
-<p>• <i>On Reply (commons mode only)</i></p>
-
-<p>This even fires if send button the SAP social inpu dialog is hit. This event is only active if the component is run in commons mode.</p>
-
-<p>• <i>On Message Close/Select</i></p>
-
-<p>This event fires in case an item of the chat component is clicked. It makes sense to call the method getCurrentActiveMessageId along with it to learn which item was clicked.</p>
-
+<h3>Events</h3>
+	
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Event Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td>On Reply (commons mode only)</td>
+		<td><p class="justify">This even fires if send button the SAP social inpu dialog is hit. This event is only active if the component is run in commons mode.</p></td>
+	  </tr>
+	  <tr>
+        <td>On Message Close/Select</td>
+		<td><p class="justify">This event fires in case an item of the chat component is clicked. It makes sense to call the method getCurrentActiveMessageId along with it to learn which item was clicked.</p></td>
+	  </tr>	  
+	</tbody>
+  </table>
 
 </div>
 
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#easycommentid">EasyComment</button>
 
-<h2>
-<a id="convista-hierarchy-selector" class="anchor" href="#convista-hierarchy-selector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Hierarchy Selector</h2><button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#hierarchyid"></button>
+<div id="easycommentid" class="collapse">
+
+<p class="justify">This component enables you to put comments onto your dashboard.</p>
+
+<h3>Properties</h3>
+
+<p class="justify">You can customize the commentary editor toolbars using the property Toolbar Settings. For the Document toolbar you can even decide on item level. Please note that the save button will always be present because it is tied to the On Save Button Clicked event.</p>
+
+<h3>Events</h3>
+
+<p class="justify">The On Save Button Click Event exposes the functionality of the toolbar save button. That way you can put DesignStudio scripting which executes after clicking the editor's save button. How to integrate with your backend using this event is discussed in the SCN blog entry already mentioned above.</p>
+
+<h3>SAP Backend Integration</h3>
+
+<p class="justify">You can find directions on how to integrate with SAP backend on my following SCN entries:</p>
+
+<ul class="list-group">
+  <li class="list-group-item"><a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/09/14/about-demanding-clients-and-pushy-servers">Push-based approach</a></li>
+  <li class="list-group-item"><a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2016/03/11/self-made-designstudio-sdk-dashboard-comments">Pull-based approach</a></li>
+</ul>
+
+</div>
+
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#hierarchyid">Hierarchy Selector</button>
 
 <div id="hierarchyid" class="collapse">
 
-<p>This component enables you to consume BW hierarchies exposed through data sources. One single root node is a minimum requirement for the hierarchy. Otherwise only the branch for the first node will be shown. </p>
+<p class="justify">This component enables you to consume BW hierarchies exposed through data sources. One single root node is a minimum requirement for the hierarchy. Otherwise only the branch for the first node will be shown. </p>
 
-<p><b>Properties</b></p>
+<h3>Properties</h3>
 
-<p>• <i>Navigation Mode</i></p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Property Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td>Navigation Mode</td>
+		<td><p class="justify">Use Paginator or Scrollbar in case of display overflow</p></td>
+	  </tr>
+	  <tr>
+        <td>Visible Row Count</td>
+		<td><p class="justify">Decide how many rows shall be displayed initially</p></td>
+	  </tr>
+	  <tr>
+        <td>Visible Row Count Mode</td>
+		<td><p class="justify">Decide if the component shall stretch automatically (auto), stay fixed (fixed) or be flexible (interactive)</p></td>
+	  </tr>
+	  <tr>
+        <td>Row Height in px</td>
+		<td><p class="justify">Define the amount of pixel to be used for each row height</p></td>
+	  </tr>
+	  <tr>
+        <td>Level for Expand All Option</td>
+		<td><p class="justify">Define the level to which the tree shall expand on click of the top right button</p></td>
+	  </tr>
+	  <tr>
+        <td>Expand first Level on Start</td>
+		<td><p class="justify">Decide if the root node shall be collapsed at start or not</p></td>
+	  </tr>
+	  <tr>
+        <td>Display row lines</td>
+		<td><p class="justify">Decide if you want to see the table row lines or not</p></td>
+	  </tr>
+	  <tr>
+        <td>Hide Key on KEY_TEXT display</td>
+		<td><p class="justify">In order to be able to use the method <i>getSelectionKeysBexReady</i> for external keys you will need to enable key_text or text_key as display option on your data source. The reason is that the external representation of the key is transmitted to the SDK component only then. Having done that you might still want to show only the text on the tree. This option will allow you to do so.</p></td>
+	  </tr>
+	</tbody>
+  </table>
+  
+<h3>Important Methods</h3>
 
-<p>Use Paginator or Scrollbar in case of display overflow</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Method Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td>getSelectionKeysBexReady</td>
+		<td><p class="justify">You have to decide if you want the shortened internal or the external representation of the key (please not my comment regarding that above). If you need the full technical key (e.g. 0HIERARCHY/0HIER_NODE/1234) flag the optional second parameter completeKey with true.</p></td>
+	  </tr>
+	  <tr>
+        <td>getFilterExtBexReady</td>
+		<td><p class="justify">This method will return a string which can be fed into Design Studio Scripting method setFilterExt right away. It even takes care of SAP's special node syntax (e.g +OPERATIVE CASH FLOWS(Text Node))</p></td>
+	  </tr>
+	</tbody>
+  </table>
 
-<p>• <i>Visible Row Count</i></p>
+  
+<h3>Events</h3>  
 
-<p>Decide how many rows shall be displayed initially</p>
-
-<p>• <i>Visible Row Count Mode</i></p>
-
-<p>Decide if the component shall stretch automatically (auto), stay fixed (fixed) or be flexible (interactive)</p>
-
-<p>• <i>Row Height in px</i></p>
-
-<p>Define the amount of pixel to be used for each row height</p>
-
-<p>• <i>Level for Expand All Option</i></p>
-
-<p>Define the level to which the tree shall expand on click of the top right button</p>
-
-<p>• <i>Expand first Level on Start</i></p>
-
-<p>Decide if the root node shall be collapsed at start or not</p>
-
-<p>• <i>Display row lines</i></p>
-
-<p>Decide if you want to see the table row lines or not</p>
-
-<p>• <i>Hide Key on KEY_TEXT display</i></p>
-
-<p>In order to be able to use the method <i>getSelectionKeysBexReady</i> for external keys you will need to enable key_text or text_key as display option on your data source. The reason is that the external representation of the key is transmitted to the SDK component only then. Having done that you might still want to show only the text on the tree. This option will allow you to do so.</p>
-
-<p><b>Important Methods</b></p>
-
-<p>• <i>getSelectionKeysBexReady(boolean internalKeyFormat,optional boolean completeKey)</i></p>
-
-<p>You have to decide if you want the shortened internal or the external representation of the key (please not my comment regarding that above). If you need the full technical key (e.g. 0HIERARCHY/0HIER_NODE/1234) flag the optional second parameter completeKey with true.</p>
-
-<p>• <i>getFilterExtBexReady()</i></p>
-
-<p>This method will return a string which can be fed into Design Studio Scripting method setFilterExt right away. It even takes care of SAP's special node syntax (e.g +OPERATIVE CASH FLOWS(Text Node))</p>
-
-<p><b>Events</b></p>
-
-<p>The On CheckBox Selected Event fires every time the user hits a checkbox on the tree.</p>
+<p class="justify">The <b>On CheckBox Selected</b> Event fires every time the user hits a checkbox on the tree.</p>
 
 </div>
 
 
-
-<h2>
-<a id="convista-maps-implementation" class="anchor" href="#convista-maps-implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConVista Maps Implementation</h2><button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#convistamapsid"></button>
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#convistamapsid">Maps</button>
 
 <div id="convistamapsid" class="collapse">
 
-<p>The following section covers the properties, functions and events of our google maps and OpenStreetMap implementation. Our OSM component is deprecated by now because SAP offers a standard version.</p>
+<p class="justify">The following section covers the properties, functions and events of our google maps and OpenStreetMap implementation. Our OSM component is deprecated by now because SAP offers a standard version.</p>
 
-<h2>
-<a id="maps-properties" class="anchor" href="#maps-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Maps Properties</h2>
+<h3>Maps Properties</h3>
 
-<p><b><i>DataBinding group</i></b></p>
+<h4>DataBinding group</h4>
 
-<p>Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP has specified a limit of 10,000 data cells that can be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).</p>
+<p class="justify">Specify the DataSource containing the data to be visualized with maps extension here. Please note that SAP has specified a limit of 10,000 data cells that can be transferred to SDK extensions (see SAP Design Studio Developer Guide on that matter).</p>
 
-<p><b><i>Geo Database group</i></b></p>
+<h4>Geo Database group</h4>
 
-<p><b>CSS Class</b></p>
+<p class="justify"><b>CSS Class</b></p>
 
-<p>Name your custom CSS class to override default behavior</p>
+<p class="justify">Name your custom CSS class to override default behavior</p>
 
-<p><b>Address DB URL</b></p>
+<p class="justify"><b>Address DB URL</b></p>
 
-<p>Specifies URL where Apache CouchDB is running. Please note that you might need to set CORS settings due to CROSS ORIGIN request policy in browsers.</p>
+<p class="justify">Specifies URL where Apache CouchDB is running. Please note that you might need to set CORS settings due to CROSS ORIGIN request policy in browsers.</p>
 
-<p>Default is <a href="http://127.0.0.1:5984/">http://127.0.0.1:5984/</a> [your database name].</p>
+<p class="justify">Default is <a href="http://127.0.0.1:5984/">http://127.0.0.1:5984/</a> [your database name].</p>
 
-<p>Use GET to gather info and POST to add geo data. Just ask me if you need further information.</p>
+<p class="justify">Use GET to gather info and POST to add geo data. Just ask me if you need further information.</p>
 
-<p><b>Address DB URL Extension</b></p>
+<p class="justify"><b>Address DB URL Extension</b></p>
 
-<p>URL extension for REST interface to read geo data bulk-wise from Apache CouchDB. Default is:</p>
+<p class="justify">URL extension for REST interface to read geo data bulk-wise from Apache CouchDB. Default is:</p>
 
-<p>/_all_docs?include_docs=true</p>
+<p class="justify">/_all_docs?include_docs=true</p>
 
-<p><b>Google API Key</b></p>
+<p class="justify"><b>Google API Key</b></p>
 
-<p>This field contains your Google API key (can be left empty in local mode for development purposes)
+<p class="justify">This field contains your Google API key (can be left empty in local mode for development purposes)
 <br></p>
 
-<p>You can leave all of the above entries empty if you want to use the new lat-long feature.
+<p class="justify">You can leave all of the above entries empty if you want to use the new lat-long feature.
 <br></p>
 
-<p><b><i>Display group</i></b></p>
+<h4>Display group</h4>
 
-<p><b>Address Dimension</b></p>
+<p class="justify"><b>Address Dimension</b></p>
 
-<p>Specifies the dimension (or column name) in your DataSource, containing the address data, for example “Rheinauhafen 15, Cologne”. If you want to use the lat-long feature leave it empty!</p>
+<p class="justify">Specifies the dimension (or column name) in your DataSource, containing the address data, for example “Rheinauhafen 15, Cologne”. If you want to use the lat-long feature leave it empty!</p>
 
-<p><b>Latitude Dimension</b></p>
+<p class="justify"><b>Latitude Dimension</b></p>
 
-<p>Specifies the dimension (or column name) in your DataSource, containing the latitude data, for example “50.927276”. You will need to look up the key figure/characteristic's name on the data sources initial view</p>
+<p class="justify">Specifies the dimension (or column name) in your DataSource, containing the latitude data, for example “50.927276”. You will need to look up the key figure/characteristic's name on the data sources initial view</p>
 
-<p><b>Longitude Dimension</b></p>
+<p class="justify"><b>Longitude Dimension</b></p>
 
-<p>Specifies the dimension (or column name) in your DataSource, containing the longitude data, for example “6.966115”. You will need to look up the key figure/characteristic's name on the data sources initial view</p>
+<p class="justify">Specifies the dimension (or column name) in your DataSource, containing the longitude data, for example “6.966115”. You will need to look up the key figure/characteristic's name on the data sources initial view</p>
 
-<p><b>Clustering Max Zoom</b></p>
+<p class="justify"><b>Clustering Max Zoom</b></p>
 
-<p>Specifies the maximum zoom level until when to use the clustering mechanism. If you zoom further in clustering will be switched off and activated again on zoom out.</p>
+<p class="justify">Specifies the maximum zoom level until when to use the clustering mechanism. If you zoom further in clustering will be switched off and activated again on zoom out.</p>
 
-<p><b>Marker-Content Dimension</b></p>
+<p class="justify"><b>Marker-Content Dimension</b></p>
 
-<p>Specifies the dimension (or row/column name) in your DataSource, containing the data to be displayed when a marker (not a cluster) is clicked</p>
+<p class="justify">Specifies the dimension (or row/column name) in your DataSource, containing the data to be displayed when a marker (not a cluster) is clicked</p>
 
-<p><b>Date Dimension</b></p>
+<p class="justify"><b>Date Dimension</b></p>
 
-<p>Specifies the dimension (or row/column name) in your DataSource, containing the dates associated with your key figures</p>
+<p class="justify">Specifies the dimension (or row/column name) in your DataSource, containing the dates associated with your key figures</p>
 
-<p><b>Keyfigure1 Name</b></p>
+<p class="justify"><b>Keyfigure1 Name</b></p>
 
-<p>Specifies the dimension (or row/column name) in your DataSource, containing your first key figure</p>
+<p class="justify">Specifies the dimension (or row/column name) in your DataSource, containing your first key figure</p>
 
-<p><b>Keyfigure1 (t-1)</b></p>
+<p class="justify"><b>Keyfigure1 (t-1)</b></p>
 
-<p>This dimensions specification enables users to display the key figure value developments over time. For example:
+<p class="justify">This dimensions specification enables users to display the key figure value developments over time. For example:
 Actual cost     |   Actual cost (last year)
 €1234,56      |   €1000,00
 Trends will be displayed by green or red arrows in combination with corresponding percentages next to a clustered marker.</p>
 
-<p><b>Keyfigure1 Clustering Steps</b></p>
+<p class="justify"><b>Keyfigure1 Clustering Steps</b></p>
 
-<p>Specifies the value limits for different display behavior. For example, green (10), yellow or red (500) cluster marker. Example input: ["10","50","100","200","500"]. This is also customizable via CSS.</p>
+<p class="justify">Specifies the value limits for different display behavior. For example, green (10), yellow or red (500) cluster marker. Example input: ["10","50","100","200","500"]. This is also customizable via CSS.</p>
 
-<p><b>Keyfigure2 Name</b></p>
+<p class="justify"><b>Keyfigure2 Name</b></p>
 
-<p>Specifies the dimension (or row/column name) in your DataSource containing your second key figure</p>
+<p class="justify">Specifies the dimension (or row/column name) in your DataSource containing your second key figure</p>
 
-<p><b>Keyfigure2 (t-1)</b></p>
+<p class="justify"><b>Keyfigure2 (t-1)</b></p>
 
-<p>Works accordingly to Keyfigure1</p>
+<p class="justify">Works accordingly to Keyfigure1</p>
 
-<p><b>Keyfigure2 Clustering Steps</b></p>
+<p class="justify"><b>Keyfigure2 Clustering Steps</b></p>
 
-<p>Works accordingly to Keyfigure1</p>
+<p class="justify">Works accordingly to Keyfigure1</p>
 
-<p><b>Keyfigure Variation Tolerance (%)</b></p>
+<p class="justify"><b>Keyfigure Variation Tolerance (%)</b></p>
 
-<p>Specifies the tolerance (in percentage) used to suppress trend display. Typically users want a 5% discrepancy interval that should be treated as stagnation.</p>
+<p class="justify">Specifies the tolerance (in percentage) used to suppress trend display. Typically users want a 5% discrepancy interval that should be treated as stagnation.</p>
 
-<h2>
-<a id="events" class="anchor" href="#events" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Events</h2>
 
-<p><b>On Marker Clicked</b></p>
 
-<p>This event occurs in case a plain marker (not a clustered one) is clicked. This action opens a message box on the map displaying the data specified in property Marker-Content Dimension and enables you also to handle marker information (for example address, ID, etc.) outside the extension e.g. for further filtering in charts.</p>
+<h3>Methods</h3>
 
-<p><b>On Cluster Clicked</b></p>
+<p class="justify">The following methods are available in SAP Design Studios Script Editor for the extension components.</p>
 
-<p>This event works the same way but on cluster level with the exception that no message box is displayed. The clicked cluster is highlighted instead.</p>
+<p class="justify"><b>String getAddress()</b></p>
 
-<h2>
-<a id="extensions-api" class="anchor" href="#extensions-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extensions API</h2>
+<p class="justify">Returns address information associated with the last clicked marker. (You should call this one within the event handler for marker clicked.)</p>
 
-<p>The following methods are available in SAP Design Studios Script Editor for the extension components.</p>
+<p class="justify"><b>String getClusterSelection(String dimension)</b></p>
 
-<p><b>String getAddress()</b></p>
-
-<p>Returns address information associated with the last clicked marker. (You should call this one within the event handler for marker clicked.)</p>
-
-<p><b>String getClusterSelection(String dimension)</b></p>
-
-<p>Returns the information specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
+<p class="justify">Returns the information specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
 For example:
 {“dimension_name”: [“20140101”,”20140102”,…]}</p>
 
-<p><b>String getMarkerSelection(String dimension)</b></p>
+<p class="justify"><b>String getMarkerSelection(String dimension)</b></p>
 
-<p>Returns the information specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked marker (you should call this one within the event handler for marker clicked) as a JSON object.
+<p class="justify">Returns the information specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked marker (you should call this one within the event handler for marker clicked) as a JSON object.
 For example:
 '{“dimension_name”: [“20140101”,”20140102”,…]}'</p>
 
-<p><b>String getClusterSelectionFilterData(String dimension)</b></p>
+<p class="justify"><b>String getClusterSelectionFilterData(String dimension)</b></p>
 
-<p>Returns the information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
+<p class="justify">Returns the information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked cluster (you should call this one within the event handler for cluster clicked) as a JSON object.
 For example:
 [“20140101”,”20140102”,…] -&gt;  This can be used for chart filtering for instance.</p>
 
-<p><b>String getMarkerSelectionFilterData(String dimension)</b></p>
+<p class="justify"><b>String getMarkerSelectionFilterData(String dimension)</b></p>
 
-<p>Returns the information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked marker (you should call this one within the event handler for marker clicked) as a JSON object.
+<p class="justify">Returns the information (without dimension name, just raw data) specified by the method argument dimension (e.g. “Date”) that is associated with the last clicked marker (you should call this one within the event handler for marker clicked) as a JSON object.
 For example:
 [“20140101”,”20140102”,…] -&gt;  This can be used for chart filtering for instance.</p>
 
-<p><b>void setCurrentKeyfigureDisplay(String keyFigureName)</b></p>
+<p class="justify"><b>void setCurrentKeyfigureDisplay(String keyFigureName)</b></p>
 
-<p>Changes the key figure display setting for all of the clusters during runtime. This way you can control programmatically which key figure is shown to the user.</p>
+<p class="justify">Changes the key figure display setting for all of the clusters during runtime. This way you can control programmatically which key figure is shown to the user.</p>
 
-<p><b>String getCurrentKeyfigureDisplay()</b></p>
+<p class="justify"><b>String getCurrentKeyfigureDisplay()</b></p>
 
-<p>Returns the current key figure name used to display key figures on clusters.</p>
+<p class="justify">Returns the current key figure name used to display key figures on clusters.</p>
 
-<p><b>void centerMap(lat, lon, zoom)</b></p>
+<p class="justify"><b>void centerMap(lat, lon, zoom)</b></p>
 
-<p>Center map on lat/lon and zoom level. For example DATAMAP_1.centerMap(-52.31041, -63.62642, 8); </p>
+<p class="justify">Center map on lat/lon and zoom level. For example DATAMAP_1.centerMap(-52.31041, -63.62642, 8); </p>
 
-<p><b>float getCenterLatitude</b></p>
+<p class="justify"><b>float getCenterLatitude</b></p>
 
-<p>Get latitude of last center specification.</p>
+<p class="justify">Get latitude of last center specification.</p>
 
-<p><b>float getCenterLongitude</b></p>
+<p class="justify"><b>float getCenterLongitude</b></p>
 
-<p>Get longitude of last center specification.</p>
+<p class="justify">Get longitude of last center specification.</p>
 
-<p><b>int getClusteringMaxZoom</b></p>
+<p class="justify"><b>int getClusteringMaxZoom</b></p>
 
-<p>Retrieve max zoom level setting</p>
+<p class="justify">Retrieve max zoom level setting</p>
 
-<p><b>void setClusteringMaxZoom</b></p>
+<p class="justify"><b>void setClusteringMaxZoom</b></p>
 
-<p>Set max zoom level setting</p>
+<p class="justify">Set max zoom level setting</p>
 
-<p><b>int getZoom</b></p>
+<p class="justify"><b>int getZoom</b></p>
 
-<p>Get  current maps zoom level</p>
+<p class="justify">Get  current maps zoom level</p>
 
+<h3>
+<a id="events" class="anchor" href="#events" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Events</h3>
 
+<p class="justify"><b>On Marker Clicked</b></p>
 
-<h2>
-<a id="geo-coding-and-geo-data-persistence" class="anchor" href="#geo-coding-and-geo-data-persistence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Geo Coding and Geo-Data Persistence</h2>
+<p class="justify">This event occurs in case a plain marker (not a clustered one) is clicked. This action opens a message box on the map displaying the data specified in property Marker-Content Dimension and enables you also to handle marker information (for example address, ID, etc.) outside the extension e.g. for further filtering in charts.</p>
 
-<p>Google’s geo coding API can be used for free to a certain degree. In order to lighten workload on your account we have introduced two possible ways to store your geo-referenced data that has been determined by the API at first run. The first approach is by installing an Apache CouchDB instance and pointing the extension to the database URL. Secondly you can use current browser’s internal IndexedDB which sets up a full blown database that is tied to your domain. With IndexedDB, please note that for development purposes, you might need to use a static jetty port, as that is already part of the domain. Otherwise you might set up a database instance with every program execution during SDK development. This is no problem outside the SDK. You could also possibly use a different RESTful and JSON-capable database instead of CouchDB. Just give me a hint if you need further information or assistance on that matter.</p>
+<p class="justify"><b>On Cluster Clicked</b></p>
 
-<p><b>If you are using the new lat-long feature the above section regarding geo coding and data persistence doesn't apply to you</b></p>
+<p class="justify">This event works the same way but on cluster level with the exception that no message box is displayed. The clicked cluster is highlighted instead.</p>
 
-<h2>
-<a id="how-it-works-short-version" class="anchor" href="#how-it-works-short-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works (short version)</h2>
+<h3>
+<a id="geo-coding-and-geo-data-persistence" class="anchor" href="#geo-coding-and-geo-data-persistence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Geo Coding and Geo-Data Persistence</h3>
 
-<p>On first run the app logic will look for key figures and their corresponding description dimensions in the attached DataSource. Setting up all of your markers and clusters will take some time as the geocoder restricts traffic while using the free plan. Persistent storage of your geo data will make sure you don’t call the API more than once for every address entry in your DataSource (see section above).
+<p class="justify">Google’s geo coding API can be used for free to a certain degree. In order to lighten workload on your account we have introduced two possible ways to store your geo-referenced data that has been determined by the API at first run. The first approach is by installing an Apache CouchDB instance and pointing the extension to the database URL. Secondly you can use current browser’s internal IndexedDB which sets up a full blown database that is tied to your domain. With IndexedDB, please note that for development purposes, you might need to use a static jetty port, as that is already part of the domain. Otherwise you might set up a database instance with every program execution during SDK development. This is no problem outside the SDK. You could also possibly use a different RESTful and JSON-capable database instead of CouchDB. Just give me a hint if you need further information or assistance on that matter.</p>
+
+<p class="justify"><b>If you are using the new lat-long feature the above section regarding geo coding and data persistence doesn't apply to you</b></p>
+
+<h3>
+<a id="how-it-works-short-version" class="anchor" href="#how-it-works-short-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works (short version)</h3>
+
+<p class="justify">On first run the app logic will look for key figures and their corresponding description dimensions in the attached DataSource. Setting up all of your markers and clusters will take some time as the geocoder restricts traffic while using the free plan. Persistent storage of your geo data will make sure you don’t call the API more than once for every address entry in your DataSource (see section above).
 Any update, for example applying an arbitrary filter, to the underlying DataSource will also be propagated to the extension and impact on your view immediately.</p>
 
-<p><b><i>Again, if you are using the new lat-long feature this section doesn't apply to you. Your makers will show up right away.</i></b></p>
+<p class="justify"><b><i>Again, if you are using the new lat-long feature this section doesn't apply to you. Your makers will show up right away.</i></b></p>
 
-<p><b>ConVista OpenStreetMap</b></p>
+<p class="justify"><b>ConVista OpenStreetMap</b></p>
 
-<p>This extension uses OpenStreetMap (OMS) as map implementation and the Leaflet framework to work with the map itself.
+<p class="justify">This extension uses OpenStreetMap (OMS) as map implementation and the Leaflet framework to work with the map itself.
 In contrast to Google Maps, OMS enables you to host your own tiles server. That way you can be independent from external resources and even work offline.</p>
 
-<p>Please note the new lat-long feature is not implemented for my OpenStreetMap because the SAP geomap handles that rather nicely already.</p>
+<p class="justify">Please note the new lat-long feature is not implemented for my OpenStreetMap because the SAP geomap handles that rather nicely already.</p>
 
-<p><b>ConVista GoogleMap</b></p>
+<p class="justify"><b>ConVista GoogleMap</b></p>
 
-<p>This extension uses Google Maps as map implementation and the Google Maps JavaScript API v3 to work with the map itself. Google StreetView is also available. As of today (12th of October 2015) you can use lat-long values provided by your data sources just like with the SAP geomap.</p>
+<p class="justify">This extension uses Google Maps as map implementation and the Google Maps JavaScript API v3 to work with the map itself. Google StreetView is also available. As of today (12th of October 2015) you can use lat-long values provided by your data sources just like with the SAP geomap.</p>
 
-<p>Functionality to display trends in key figure development over time, next to the clusters is not yet implemented. This is only available with OSM right now.</p>
+<p class="justify">Functionality to display trends in key figure development over time, next to the clusters is not yet implemented. This is only available with OSM right now.</p>
 
-<p>Please note that you shouldn’t use both components at a time in one Dashboard. This is a result of the mechanism that enables us to insert your Google API key at design time as you specified it in the component’s properties. If you can't help it contact me for a quick workaround.</p>
+<p class="justify">Please note that you shouldn’t use both components at a time in one Dashboard. This is a result of the mechanism that enables us to insert your Google API key at design time as you specified it in the component’s properties. If you can't help it contact me for a quick workaround.</p>
 
-<p><b>Test data out of the box with custom data source (DS 1.4+ required!)</b></p>
+<p class="justify"><b>Test data out of the box with custom data source (DS 1.4+ required!)</b></p>
 
-<p>If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from <a href="https://github.com/MartinPankraz/DesignStudioSDK-Components">https://github.com/MartinPankraz/DesignStudioSDK-Components</a> and include it to your project and the maps extensions as usual.</p>
+<p class="justify">If you don't have any geo-referencable data ready to display on our maps extensions or you just want to get a quick hands-on, donwload my custom data source <i>MapsExampleDataSource</i> from <a href="https://github.com/MartinPankraz/DesignStudioSDK-Components">https://github.com/MartinPankraz/DesignStudioSDK-Components</a> and include it to your project and the maps extensions as usual.</p>
 
+<h3>
+<a id="trouble-shooting" class="anchor" href="#trouble-shooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trouble Shooting Maps</h3>
+
+<p class="justify">Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState</i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.</p>
 
 </div>
 
@@ -467,41 +548,27 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
-<button type="button" class="btn btn-lg btn-info collapsed" data-toggle="collapse" data-target="#installationid"></button>
 
-<div id="installationid" class="collapse">
-
-<p>• Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip</p>
-
-<p>• Click Tools in Design Studio &gt; install Extension to Design Studio…</p>
-
-<p>• Choose “archive” as installation source (navigate to ZIP file) in dialog</p>
-
-<p>• Accept license and restart Design Studio</p>
-
-<p>• Have fun using our extensions</p>
-
-<p>Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</p>
-
-</div>
-
-<h2>
-<a id="trouble-shooting" class="anchor" href="#trouble-shooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trouble shooting</h2>
-
-
-<p>Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState</i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.</p>
+<ul id="installationid" class="list-group">
+	<li class="list-group-item justify">Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip</li>
+	<li class="list-group-item justify">Click Tools in Design Studio &gt; install Extension to Design Studio…</li>
+	<li class="list-group-item justify">Choose “archive” as installation source (navigate to ZIP file) in dialog</li>
+	<li class="list-group-item justify">Accept license and restart Design Studio</li>
+	<li class="list-group-item justify">Have fun using our extensions</li>
+	<li class="list-group-item justify">Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</li>
+</ul>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>This software product is licensed under the Apache License 2.0.</p>
+<p class="justify">This software product is licensed under the Apache License 2.0.</p>
 
 <h2>
 <a id="final-words" class="anchor" href="#final-words" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Final Words</h2>
 
-<p>Feel free to contact me for any advice on usage, installation, and plain trouble shooting or a chat about the awesomeness of Design Studio SDK if you like. Feedback and improvement suggestions are also very welcome.</p>
+<p class="justify">Feel free to contact me for any advice on usage, installation, and plain trouble shooting or a chat about the awesomeness of Design Studio SDK if you like. Feedback and improvement suggestions are also very welcome.</p>
 
-<p><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
+<p class="justify"><a href="mailto:martin.pankraz@convista.com">martin.pankraz@convista.com</a></p>
 
       <footer class="siteoriginal-footer">
 	  <a href="https://github.com/MartinPankraz"><img src="images/ConVista_Logo_footer.png" height="30" width="515"></a><br>

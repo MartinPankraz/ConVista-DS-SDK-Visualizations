@@ -29,6 +29,26 @@ a {
   .btn.collapsed:after {
 	content: "\e080";
   }
+  
+.ccButton {
+	font-size: 30px!important;
+	margin-top: 2rem!important;
+    margin-bottom: 1rem!important;
+    font-weight: normal!important;
+    color: #159957!important;
+    background-color: white!important;
+}
+
+.ccButton:hover {
+    color: white!important;
+    background-color: #159957!important;
+}
+
+.justify { text-align: justify; }
+
+table[id="chat_mode_pics"] tr > td{
+	border: none!important;
+}
 	
 .btnoriginal {
   display: inline-block!important;
@@ -220,7 +240,7 @@ a {
 
 @media screen and (min-width: 64em) {
   .mainoriginal-content {
-    max-width: 64rem!important;
+    max-width: 65rem!important;
     padding: 2rem 6rem!important;
     margin: 0 auto!important;
     font-size: 1.1rem!important; } }

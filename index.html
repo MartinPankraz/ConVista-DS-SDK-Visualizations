@@ -27,11 +27,14 @@
   <body>
     <section class="pageoriginal-header">
 	  <img src="images/ConVista_Logo_RGB_blue.png" height="102" width="293">
+	  <br>
       <h1 class="projectoriginal-name">Design Studio Extensions</h1>
       <h2 class="projectoriginal-tagline"></h2>
       <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations" class="btnoriginal">View on GitHub</a>
       <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/zipball/master" class="btnoriginal">Download .zip</a>
       <a href="https://github.com/MartinPankraz/ConVista-DS-SDK-Visualizations/tarball/master" class="btnoriginal">Download .tar.gz</a>
+	  <br>
+	  <p style="color:rgba(255, 255, 255, 0.7)">SDK online installation link for current release</p><a href="http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases" style="color:white!important;">http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases</a>
     </section>
 
     <section class="mainoriginal-content">
@@ -69,7 +72,10 @@
       </tr>
 	  <tr>
         <td nowrap><a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/01/google-maps-and-openstreetmap-component-sdk-development-insights">Google Maps & OpenStreetMap</a></td>
-        <td><img src="images/maps.png" height="395" width="416"></td>
+        <td>
+			<img src="images/maps.png" height="395" width="416">
+			<p><a href="https://www.convista.de/en/press/press-detailpage/convista-spot-u-more-than-just-a-dashboard.html"><small>See also ConVista press release</small></a></p>
+		</td>
       </tr>
 	</tbody>
   </table>
@@ -541,20 +547,35 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 <a id="trouble-shooting" class="anchor" href="#trouble-shooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trouble Shooting Maps</h3>
 
 <p class="justify">Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState</i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.</p>
-
+<br>
 </div>
-
-
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
 <ul id="installationid" class="list-group">
-	<li class="list-group-item justify">Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip</li>
-	<li class="list-group-item justify">Click Tools in Design Studio &gt; install Extension to Design Studio…</li>
-	<li class="list-group-item justify">Choose “archive” as installation source (navigate to ZIP file) in dialog</li>
-	<li class="list-group-item justify">Accept license and restart Design Studio</li>
-	<li class="list-group-item justify">Have fun using our extensions</li>
+	<li class="list-group-item justify">
+	<p class="justify">1) You have two options which complement Design Studio SDK install features. The first one is online and the second offline:</p>
+	 <table class="table">
+		<thead>
+			<tr>
+				<th nowrap>Online (recommended)</th>
+				<th nowrap>Offline</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Copy  provided installable link below <a href="http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases">http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases</a></td>
+				<td>Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip</td>
+			</tr>
+		</tbody>
+	 </table>
+	</li>
+	<li class="list-group-item justify">2) Click Tools in Design Studio &gt; install Extension to Design Studio…</li>
+	<li class="list-group-item justify">3) For <b>offline</b> Choose “archive” as installation source (navigate to ZIP file), for <b>online</b> you can just paste the link you copied before and continue.</li>
+	<li class="list-group-item justify">4) Accept license and restart the Design Studio Client</li>
+	<li class="list-group-item justify">5) Don't forget to update the SDK extensions on your server if necessary</li>	
+	<li class="list-group-item justify">6) Have fun using our extensions</li>
 	<li class="list-group-item justify">Meet me at ConVista Infoday or our world renowned carnival (traditional German costume festival) event in Cologne to chat about our Design Studio and Dashboarding ideas :-)</li>
 </ul>
 

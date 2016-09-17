@@ -14,12 +14,12 @@ http://scn.sap.com/community/businessobjects-design-studio/blog/2016/08/12/desig
 Chat component:
 https://scn.sap.com/docs/DOC-75216
 
-<b>Breaking News: New Components Hierarchy Selector and ConVista SDK Chat added to the repository.</b>
 
 <h2>Find detailed descriptions and an API overview here:
 
 http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/ </h2>
 
+<b>Breaking News: New Components Hierarchy Selector and ConVista SDK Chat added to the repository.</b>
 
 Troubleshooting
 ------------

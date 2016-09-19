@@ -18,13 +18,13 @@
  * limitations under the License. 
  */
 
-var libPath = "../"+sap.zen.createStaticSdkMimeUrl("com.convista.comment", "res/js/");
+var libPathComment = "../"+sap.zen.createStaticSdkMimeUrl("com.convista.comment", "res/js/");
 
 require.config({
 		 paths: {
-			editor : libPath+"ckeditor/ckeditor",
-			config : libPath+"ckeditor/config",
-			style : libPath+"ckeditor/styles"
+			editor : libPathComment+"ckeditor/ckeditor",
+			config : libPathComment+"ckeditor/config",
+			style : libPathComment+"ckeditor/styles"
 		 },
 		 shim: {
 		        config:  {

@@ -1,1 +1,6 @@
 /com.convista.comment/designstudio.target
+/com.convista.chat/*.project
+/com.convista.comment/*.project
+/com.convista.maps/*.project
+/com.convista.osm/*.project
+/com.convista.ui5TreeTable/*.project

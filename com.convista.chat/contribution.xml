@@ -32,7 +32,6 @@
 		</property>
 		
 		<property id="DEnableSocial" type="boolean" title="Enable SAP Social (commons only)" visible="true" group="Display"/>
-		<property id="DChatIdentifier" type="String" title="Chat Identifier" visible="true" group="Display"/>
 		
 		<property id="DDatePattern" type="String" title="Date Pattern" visible="true" group="Display"/>
 		<property id="DDateStyle" type="String" title="Date Style" visible="true" group="Display">
@@ -57,7 +56,6 @@
 			<defaultValue property="HEIGHT">auto</defaultValue>
 			<defaultValue property="DMessageAddTrigger">false</defaultValue>
 			<defaultValue property="DEnableSocial">true</defaultValue>
-			<defaultValue property="DChatIdentifier">TEST</defaultValue>
 			<defaultValue property="DDatePattern">yyyyMMddHHmmss</defaultValue>
 			<defaultValue property="DDateStyle">short</defaultValue>
 		</initialization>

@@ -1,5 +1,7 @@
 class com.convista.chat.UI5Chat extends Component {
-	
+	/**
+	 * Create a message using current timestamp
+	 */
 	void createMessage(String myUser, String myTitle, String myText, String myPriority, String myChatId, optional String picture ){*
 		
 		var date = new Date().valueOf();
@@ -20,7 +22,9 @@ class com.convista.chat.UI5Chat extends Component {
 	    //flag message added trigger
 	    this.DMessageAddTrigger = true;
 	*}
-	
+	/**
+	 * Add a message to the chat
+	 */
 	void addMessage(String myUser, String myTitle, String myText, String myPriority, String myDate, String myId, String myChatId, optional String picture){*
 		
 		var myPicture = picture || "";
@@ -40,7 +44,23 @@ class com.convista.chat.UI5Chat extends Component {
 	    //flag message added trigger
 	    this.DMessageAddTrigger = true;
 	*}
-	
+	/**
+	 * Add a list of messages to the chat component. The JSON strings requires the following structure:
+	 *	<code>[{<br>
+	 *		 "myId": "1",<br>
+	 *		 "chatId": "TEST",<br>
+	 *		 "user": "Martin",<br>
+	 *		 "title": "My first commons post!",<br>
+	 *		 "datetime": "20160905100120",<br>
+	 *		 "text": "This is looking really cool. What do you think Jose?",<br>
+	 *		 "picture": "zen/mimes/TEST_TIMELINE/img/mpankraz.jpg",<br>
+	 *		 "priority": "Low"<br>
+	 *		 },<br><br>
+	 *		{...}<br>
+	 *	]</code>
+	 *	
+	 *The optional flag "override" enables you to decide if you want to append messages or replace with new ones.
+	 */
 	void addMessageList (String obj, optional boolean override){*
 		var current = [];
 		try{
@@ -120,17 +140,11 @@ class com.convista.chat.UI5Chat extends Component {
 	String getReplyMessage(){*
 		return this.DReplyMessage;
 	*}
-	
+	/**
+	 * Get Id of last selected chat item
+	 */
 	String getCurrentActiveMessageId(){*
 		return this.DBackendMessageID;
-	*}
-	
-	String getDChatIdentifier(){*
-		return this.DChatIdentifier;
-	*}
-	
-	String setDChatIdentifier(String identifier){*
-		this.DChatIdentifier = identifier;
 	*}
 	
 	@Visibility(private)

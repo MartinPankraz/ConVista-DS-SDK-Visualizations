@@ -1,4 +1,4 @@
-class com.convista.ui5treetable.UI5HierarchySelector extends Component {
+class com.convista.ui5treetable.UI5HierarchySelector extends DataBoundComponent {
 	/**
 	 * Sets Navigation Mode Property
 	 */	

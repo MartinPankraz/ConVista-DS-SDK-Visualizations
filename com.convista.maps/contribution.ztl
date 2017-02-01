@@ -1,4 +1,4 @@
-class com.convista.maps.DataMap extends Component {
+class com.convista.maps.DataMap extends DataBoundComponent {
 	
 	/* Returns address of corresponding marker which has been clicked last. */
 	String getAddress() {*
@@ -172,6 +172,22 @@ class com.convista.maps.DataMap extends Component {
 	/* get name of keyfigure used for clustering display on map*/
 	String getCurrentKeyfigureDisplay(){*
 		return this.keyfiguretodisplay;
+	*}
+	
+	void setUseClustering(boolean clustering){*
+		this.useclustering = clustering;
+	*}
+	
+	boolean getUseClustering(){*
+		return this.useclustering;
+	*}
+	
+	void setShowMarkerLabel(boolean markerLabel){*
+		this.showmarkerlabel = markerLabel;
+	*}
+	
+	boolean getShowMarkerLabel(){*
+		return this.showmarkerlabel;
 	*}
 
 }

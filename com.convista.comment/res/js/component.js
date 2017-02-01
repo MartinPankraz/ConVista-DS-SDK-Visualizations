@@ -83,7 +83,10 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		    	
 				var overridecmd = new CKEDITOR.command(that.editor, {
 		            exec: function(editor){
-						that.fireEvent("onSave");
+		            	var html = that.editor.document.getBody().getHtml();
+		            	//remember html internally before submit so that it can be retrieved on save using getHTMLString
+		            	that.htmldata(html);
+						that.firePropertiesChangedAndEvent(["htmldata"],"onSave");
 		        	}
 		        });
 		        // Replace the old save's exec function with the new one

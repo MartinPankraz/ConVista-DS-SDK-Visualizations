@@ -29,6 +29,10 @@ a {
   .btn.collapsed:after {
 	content: "\e080";
   }
+
+.btn:focus,.btn:active {
+   outline: none !important;
+ }
   
 .ccButton {
 	font-size: 30px!important;

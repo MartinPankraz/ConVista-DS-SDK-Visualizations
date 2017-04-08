@@ -38,6 +38,7 @@
 		<property id="icon" title="Predefined Icons" type="String" group="Icon" visible="true">
 			<possibleValue>Marker</possibleValue>
 			<possibleValue>Car</possibleValue>
+			<possibleValue>Fork Lift</possibleValue>
 		</property>
 		<property id="iconUrl" title="Custom Icon (SVG)" type="Url" group="Icon" visible="true" tooltip="Overrides predefined markers!">
 			<option name="kind" value="Image"/>

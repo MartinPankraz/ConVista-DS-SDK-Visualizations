@@ -2,6 +2,10 @@
 		
 }
 
+span[class*="sapUiTableTreeIcon "]{
+	margin-top: 5px;
+}
+
 div[class*="myUI5Table-auto-size"] > div{
 	height: 100%;
 	width: 100%;
@@ -11,13 +15,35 @@ div[class*="myUI5Table-auto-size"] > div{
 	line-height:23px;
 }
 
+.treeTableLabelM{
+	line-height:30px;
+}
+
 .treeTableButtonRight {
 	position: absolute;
 	right: -15px;
 }
 
+.treeTableButtonRightM {
+	position: absolute;
+	right: 0px;
+}
+
 .treeTableButtonRight > span {
 	color:#adadad!important;
+}
+
+.treeTableButtonRightM > span {
+	color:#adadad!important;
+}
+
+.convistaTreeToolbar{
+	padding-left: 0px!important;
+	background-color: white;
+}
+
+.convistaCollapseButtonM .sapMBtnContent{
+	color:#00679e;
 }
 
 .treeTableNoRowLines {
@@ -25,10 +51,22 @@ div[class*="myUI5Table-auto-size"] > div{
 }
 
 div[class*="treeTableNoRowLines"] td {
-	border-bottom: 0px solid red;
+	border-bottom: 0px solid red!important;
 }
 
 span[class*="myTriCb"] {
 	display: block!important;
 	text-overflow: ellipsis;
+}
+
+.triStateCheckBoxSelected div:before {
+   content: "\e05b";
+  font-family: "SAP-icons";
+  color: #007cc0;
+}
+
+.triStateCheckBoxMixed div:before {
+   content: "\e17b";
+  font-family: "SAP-icons";
+  color: #007cc0;
 }

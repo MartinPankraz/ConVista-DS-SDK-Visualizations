@@ -14,8 +14,9 @@
 		icon="res/icon.png"
 		group="ConVistaComponents"
 		databound="true"
-		modes="commons">
-		<requireJs modes="commons">res/js/component.min</requireJs>
+		modes="commons m">
+		<requireJs modes="commons">res/js/component_commons.min</requireJs>
+		<requireJs modes="m">res/js/component_m.min</requireJs>
 	
 		<property
 			id="data"
@@ -180,7 +181,7 @@
 			<defaultValue property="WIDTH">300</defaultValue>
 			<defaultValue property="HEIGHT">300</defaultValue>
 			<defaultValue property="DNavigationMode">Scrollbar</defaultValue>
-			<defaultValue property="DRowHeight">22</defaultValue>
+			<defaultValue property="DRowHeight">30</defaultValue>
 			<defaultValue property="DVisibleRowCount">12</defaultValue>
 			<defaultValue property="DVisibleRowCountMode">Auto</defaultValue>
 			<defaultValue property="DExpandAllLevel">2</defaultValue>

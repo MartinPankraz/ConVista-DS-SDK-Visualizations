@@ -1,17 +1,5 @@
 class com.convista.ui5treetable.UI5HierarchySelector extends DataBoundComponent {
-	/**
-	 * Sets Navigation Mode Property
-	 */	
-	void setNavigationMode( /* &nbsp; */  choice navigationMode){*
-		this.DNavigationMode = navigationMode;
-	*}
 
-	/**
-	 * Get the Navigation Mode Property
-	 */	
-	choice getNavigationMode() {*
-		return this.DNavigationMode;
-	*}
 	/**
 	 * Get key of the assigned hierarchy 
 	 */	

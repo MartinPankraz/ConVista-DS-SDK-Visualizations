@@ -57,16 +57,6 @@
 			group="Display"
 			visible="false">
 		</property>
-	
-		<property
-			id="DNavigationMode"
-			title="Navigation Mode"
-			type="String"
-			group="Display"
-			visible="true">
-				<possibleValue>Paginator</possibleValue>
-				<possibleValue>Scrollbar</possibleValue>
-		</property>
 		
 		<property
 			id="DCheckBoxSelection"
@@ -173,6 +163,12 @@
 			title="Event for On CheckBox Selected"
 			group="Events" />
 			
+		<property
+			id="onFocusOut"
+			type="ScriptText"
+			title="Event for On Focus Out"
+			group="Events" />
+			
 		<initialization>
 			<defaultValue property="TOP_MARGIN">0</defaultValue>
 			<defaultValue property="LEFT_MARGIN">0</defaultValue>
@@ -180,7 +176,6 @@
 			<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
 			<defaultValue property="WIDTH">300</defaultValue>
 			<defaultValue property="HEIGHT">300</defaultValue>
-			<defaultValue property="DNavigationMode">Scrollbar</defaultValue>
 			<defaultValue property="DRowHeight">30</defaultValue>
 			<defaultValue property="DVisibleRowCount">12</defaultValue>
 			<defaultValue property="DVisibleRowCountMode">Auto</defaultValue>

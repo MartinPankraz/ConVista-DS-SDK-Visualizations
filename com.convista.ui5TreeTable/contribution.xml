@@ -156,6 +156,30 @@
 			group="Display"
 			visible="true">
 		</property>
+		
+		<property
+			id="DExpandText"
+			title="Expand Hint Text"
+			type="String"
+			group="Display"
+			visible="true">
+		</property>
+		
+		<property
+			id="DCollapseText"
+			title="Collapse Hint Text"
+			type="String"
+			group="Display"
+			visible="true">
+		</property>
+		
+		<property
+			id="DSelectedText"
+			title="Text indicating # of selected entries"
+			type="String"
+			group="Display"
+			visible="true">
+		</property>
 	
 		<property
 			id="onCheckBoxSelected"
@@ -183,6 +207,9 @@
 			<defaultValue property="DExpandFirstLevel">true</defaultValue>
 			<defaultValue property="DShowRowLines">false</defaultValue>
 			<defaultValue property="DHideKeyOnKeyTextDisplay">true</defaultValue>
+			<defaultValue property="DExpandText">expand</defaultValue>
+			<defaultValue property="DCollapseText">collapse</defaultValue>
+			<defaultValue property="DSelectedText">selected</defaultValue>
 		</initialization>
 	</component>
 </sdkExtension>

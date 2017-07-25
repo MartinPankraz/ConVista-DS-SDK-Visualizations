@@ -9,14 +9,11 @@ div[class*="myUI5Table-auto-size"] > div:nth-child(1){
 div[class*="myUI5Table-auto-size"] > div:nth-child(2){
 	height: calc(100% - 40px);
 	width: 100%;
+	z-index:1;
 }
 
 span[class*="sapUiTableTreeIcon "]{
 	margin-top: 5px;
-}
-
-.convistaTreeTablePopup {
-	z-index:1;	
 }
 
 .treeTableLabel{
@@ -48,6 +45,7 @@ span[class*="sapUiTableTreeIcon "]{
 .convistaTreeToolbar{
 	padding-left: 0px!important;
 	background-color: white;
+	border: 1px solid #cccccc;
 }
 
 .convistaCollapseButtonM .sapMBtnContent{

@@ -21,7 +21,7 @@ span[class*="sapUiTableTreeIcon "]{
 }
 
 .treeTableLabelM{
-	line-height:30px;
+	line-height:32px;
 }
 
 .treeTableButtonRight {
@@ -46,6 +46,14 @@ span[class*="sapUiTableTreeIcon "]{
 	padding-left: 0px!important;
 	background-color: white;
 	border: 1px solid #cccccc;
+}
+
+.convistaTreeToolbar:hover {
+	border-color: #007cc0;
+}
+
+.convistaTreeToolbar > div {
+	margin-left:0px!important;
 }
 
 .convistaCollapseButtonM .sapMBtnContent{

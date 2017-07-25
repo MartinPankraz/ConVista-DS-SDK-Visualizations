@@ -99,6 +99,14 @@
 		</property>
 		
 		<property
+			id="DTableExpandedInitially"
+			title="Table always expanded?"
+			type="boolean"
+			group="Display"
+			visible="true">
+		</property>
+		
+		<property
 			id="DVisibleRowCount"
 			title="Visible Row Count"
 			type="int"
@@ -158,6 +166,14 @@
 		</property>
 		
 		<property
+			id="DShowColumnHeader"
+			title="Show Table Header"
+			type="boolean"
+			group="Display"
+			visible="true">
+		</property>
+		
+		<property
 			id="DExpandText"
 			title="Expand Hint Text"
 			type="String"
@@ -202,11 +218,13 @@
 			<defaultValue property="HEIGHT">300</defaultValue>
 			<defaultValue property="DRowHeight">30</defaultValue>
 			<defaultValue property="DVisibleRowCount">12</defaultValue>
+			<defaultValue property="DTableExpandedInitially">false</defaultValue>
 			<defaultValue property="DVisibleRowCountMode">Auto</defaultValue>
 			<defaultValue property="DExpandAllLevel">2</defaultValue>
 			<defaultValue property="DExpandFirstLevel">true</defaultValue>
 			<defaultValue property="DShowRowLines">false</defaultValue>
 			<defaultValue property="DHideKeyOnKeyTextDisplay">true</defaultValue>
+			<defaultValue property="DShowColumnHeader">true</defaultValue>
 			<defaultValue property="DExpandText">expand</defaultValue>
 			<defaultValue property="DCollapseText">collapse</defaultValue>
 			<defaultValue property="DSelectedText">selected</defaultValue>

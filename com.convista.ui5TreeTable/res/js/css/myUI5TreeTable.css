@@ -1,14 +1,22 @@
 .myUI5Table-auto-size {
-		
+	border-bottom: 1px solid #e5e5e5;
+}
+
+div[class*="myUI5Table-auto-size"] > div:nth-child(1){
+	width: 100%;
+}
+
+div[class*="myUI5Table-auto-size"] > div:nth-child(2){
+	height: calc(100% - 40px);
+	width: 100%;
 }
 
 span[class*="sapUiTableTreeIcon "]{
 	margin-top: 5px;
 }
 
-div[class*="myUI5Table-auto-size"] > div{
-	height: 100%;
-	width: 100%;
+.convistaTreeTablePopup {
+	z-index:1;	
 }
 
 .treeTableLabel{
@@ -26,7 +34,7 @@ div[class*="myUI5Table-auto-size"] > div{
 
 .treeTableButtonRightM {
 	position: absolute;
-	right: 0px;
+	right: 2px;
 }
 
 .treeTableButtonRight > span {

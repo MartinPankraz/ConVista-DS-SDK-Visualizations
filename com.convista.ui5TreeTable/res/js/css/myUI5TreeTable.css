@@ -1,5 +1,5 @@
 .myUI5Table-auto-size {
-	border-bottom: 1px solid #e5e5e5;
+	
 }
 
 div[class*="myUI5Table-auto-size"] > div:nth-child(1){
@@ -9,6 +9,9 @@ div[class*="myUI5Table-auto-size"] > div:nth-child(1){
 div[class*="myUI5Table-auto-size"] > div:nth-child(2){
 	height: calc(100% - 40px);
 	width: 100%;
+}
+/* Make sure tree table is not overlapping any other component once it is hidden*/
+.convistaTreeTableExpanded {
 	z-index:1;
 }
 
@@ -22,6 +25,7 @@ span[class*="sapUiTableTreeIcon "]{
 
 .treeTableLabelM{
 	line-height:32px;
+	margin-top: 8px;
 }
 
 .treeTableButtonRight {
@@ -32,6 +36,7 @@ span[class*="sapUiTableTreeIcon "]{
 .treeTableButtonRightM {
 	position: absolute;
 	right: 2px;
+	margin-top: 8px;
 }
 
 .treeTableButtonRight > span {
@@ -56,8 +61,13 @@ span[class*="sapUiTableTreeIcon "]{
 	margin-left:0px!important;
 }
 
+.convistaCollapseButtonM {
+	height: 3rem!important;
+}
+
 .convistaCollapseButtonM .sapMBtnContent{
-	color:#00679e;
+	/* color:#00679e; */
+	color:#666666;
 }
 
 .treeTableNoRowLines {

@@ -103,7 +103,7 @@
 			title="Table always expanded?"
 			type="boolean"
 			group="Display"
-			visible="true">
+			visible="false">
 		</property>
 		
 		<property

@@ -9,7 +9,7 @@ class com.convista.chat.UI5Chat extends Component {
 		
 		var current = this.DMessages || [];  
 	    current.push({
-	    	myId : calcTimestamp(),
+	    	myId : this.calcTimestamp(),
 	    	chatId: myChatId,
 	    	user : myUser,
 			title : myTitle,

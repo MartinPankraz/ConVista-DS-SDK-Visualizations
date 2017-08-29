@@ -28,13 +28,13 @@ class com.convista.comment.Comment extends Component {
 	 * Send the current HTML string from the editor pane to the server. Make sure to setup the method POST beforehand! 
 	 */
 	void saveHTMLOnServer(){*
-		this.saveDataTrigger = calcTimestamp();
+		this.saveDataTrigger = this.calcTimestamp();
 	*}
 	/**
 	 * Load the current HTML string from the server. Make sure to setup the method GET beforehand! 
 	 */
 	void loadHTMLFromServer(){*
-		this.saveDataTrigger = calcTimestamp();
+		this.saveDataTrigger = this.calcTimestamp();
 	*}
 	void setHTMLString(String html){*
 		this.htmldata = html;

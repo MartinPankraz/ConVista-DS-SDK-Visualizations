@@ -14,9 +14,9 @@ Installation
 ------------
 1)	You have two options which complement Design Studio SDK install features: The first one is online and the second offline
 
-1.1) Copy the provided installable link http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases or
+1.1) Copy the provided installable link http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases/Lumira (http://martinpankraz.github.io/ConVista-DS-SDK-Visualizations/releases/DS16 for DesignStudio 1.6) or
 
-1.2) Download the ConVistaMapsExtension.zip ZIP file. You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaMapsExtension.zip
+1.2) Download the ConVistaLumiraExtension.zip ZIP file (ConVistaMapsExtension.zip for DS16). You may do this by clicking the Download ZIP button. Please note that you will need to extract the container zip first before you can reach the ConVistaLumiraExtension.zip
 
 2)	Click Tools in Design Studio > install Extension to Design Studio…
 

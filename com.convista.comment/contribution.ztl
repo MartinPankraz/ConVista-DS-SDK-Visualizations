@@ -36,16 +36,21 @@ class com.convista.comment.Comment extends Component {
 	void loadHTMLFromServer(){*
 		this.saveDataTrigger = this.calcTimestamp();
 	*}
+	/**
+	 * Set html string on the editor pane
+	 */
 	void setHTMLString(String html){*
 		this.htmldata = html;
 	*}
+	/**
+	 * get html string from the editor pane
+	 */
 	String getHTMLString(){*
 		return this.htmldata;
 	*}
 	/**
 	 * Activate toolbars by name. Possible values are:
-	 * document, clipboard, editing, forms, paragraph, links, insert, styles, colors, tools, about.
-	 * Default toolbar is basicstyles, which cannot be deactivated. The save button is also mandatory!
+	 * basics, document, clipboard, editing, forms, paragraph, links, insert, styles, colors, tools, about.
 	 */
 	void setToolbarActive(String key, boolean active){*
 		var current = this.toolbars || [];
@@ -57,6 +62,18 @@ class com.convista.comment.Comment extends Component {
 		}
 
 		this.toolbars = current;
+	*}
+	/**
+	 * Hide/show save button.
+	 */
+	void setSaveButtonVisible(boolean visible){*
+		this.saveButtonVisible = visible;
+	*}
+	/**
+	 * Determine if save button is visible or not
+	 */
+	boolean isSaveButtonVisible(){*
+		return this.saveButtonVisible;
 	*}
 	
 	@Visibility(private)

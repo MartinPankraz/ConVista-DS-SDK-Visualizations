@@ -71,6 +71,15 @@
 		</property>
 		
 		<property id="toolbars" type="Object" title="Toolbar Settings">
+			<property id="basics" type="Object" title="Basics">
+				<property id="Bold" type="boolean" title="Bold"/>
+				<property id="Italic" type="boolean" title="Italic"/>
+				<property id="Underline" type="boolean" title="Underline"/>
+				<property id="Strike" type="boolean" title="Strike"/>
+				<property id="Subscript" type="boolean" title="Subscript"/>
+				<property id="Superscript" type="boolean" title="Superscript"/>
+				<property id="RemoveFormat" type="boolean" title="RemoveFormat"/>
+			</property>
 			<property id="document" type="Object" title="Document">
 				<property id="Source" type="boolean" title="Source"/>
 				<property id="NewPage" type="boolean" title="New Page"/>
@@ -78,17 +87,82 @@
 				<property id="Print" type="boolean" title="Print"/>
 				<property id="Templates" type="boolean" title="Templates"/>
 			</property>
-			<property id="clipboard" type="boolean" title="Clipboard"/>
-			<property id="editing" type="boolean" title="Editing"/>
-			<property id="forms" type="boolean" title="Forms"/>
-			<property id="paragraph" type="boolean" title="Paragraph"/>
-			<property id="links" type="boolean" title="Links"/>
-			<property id="insert" type="boolean" title="Insert"/>
-			<property id="styles" type="boolean" title="Styles"/>
-			<property id="colors" type="boolean" title="Colors"/>
-			<property id="tools" type="boolean" title="Tools"/>
-			<property id="about" type="boolean" title="About" />
+			<property id="clipboard" type="Object" title="Clipboard">
+				<property id="Cut" type="boolean" title="Cut"/>
+				<property id="Copy" type="boolean" title="Copy"/>
+				<property id="Paste" type="boolean" title="Paste"/>
+				<property id="PasteText" type="boolean" title="PasteText"/>
+				<property id="PasteFromWord" type="boolean" title="PasteFromWord"/>
+				<property id="Undo" type="boolean" title="Undo"/>
+				<property id="Redo" type="boolean" title="Redo"/>
+			</property>
+			<property id="editing" type="Object" title="Editing">
+				<property id="Find" type="boolean" title="Find"/>
+				<property id="Replace" type="boolean" title="Replace"/>
+				<property id="SelectAll" type="boolean" title="SelectAll"/>
+				<property id="Scayt" type="boolean" title="Scayt"/>
+			</property>
+			<property id="forms" type="Object" title="Forms">
+				<property id="Form" type="boolean" title="Form"/>
+				<property id="Checkbox" type="boolean" title="Checkbox"/>
+				<property id="Radio" type="boolean" title="Radio"/>
+				<property id="TextField" type="boolean" title="TextField"/>
+				<property id="Textarea" type="boolean" title="Textarea"/>
+				<property id="Select" type="boolean" title="Select"/>
+				<property id="Button" type="boolean" title="Button"/>
+				<property id="ImageButton" type="boolean" title="ImageButton"/>
+				<property id="HiddenField" type="boolean" title="HiddenField"/>
+			</property>
+			<property id="paragraph" type="Object" title="Paragraph">
+				<property id="NumberedList" type="boolean" title="NumberedList"/>
+				<property id="BulletedList" type="boolean" title="BulletedList"/>
+				<property id="Outdent" type="boolean" title="Outdent"/>
+				<property id="Indent" type="boolean" title="Indent"/>
+				<property id="Blockquote" type="boolean" title="Blockquote"/>
+				<property id="CreateDiv" type="boolean" title="CreateDiv"/>
+				<property id="JustifyLeft" type="boolean" title="JustifyLeft"/>
+				<property id="JustifyCenter" type="boolean" title="JustifyCenter"/>
+				<property id="JustifyRight" type="boolean" title="JustifyRight"/>
+				<property id="JustifyBlock" type="boolean" title="JustifyBlock"/>
+				<property id="BidiLtr" type="boolean" title="BidiLtr"/>
+				<property id="BidiRtl" type="boolean" title="BidiRtl"/>
+				<property id="Language" type="boolean" title="Language"/>
+			</property>
+			<property id="links" type="Object" title="Links">
+				<property id="Link" type="boolean" title="Link"/>
+				<property id="Unlink" type="boolean" title="Unlink"/>
+				<property id="Anchor" type="boolean" title="Anchor"/>
+			</property>
+			<property id="insert" type="Object" title="Insert">
+				<property id="Image" type="boolean" title="Image"/>
+				<property id="Flash" type="boolean" title="Flash"/>
+				<property id="Table" type="boolean" title="Table"/>
+				<property id="HorizontalRule" type="boolean" title="HorizontalRule"/>
+				<property id="Smiley" type="boolean" title="Smiley"/>
+				<property id="SpecialChar" type="boolean" title="SpecialChar"/>
+				<property id="PageBreak" type="boolean" title="PageBreak"/>
+				<property id="Iframe" type="boolean" title="Iframe"/>
+			</property>
+			<property id="styles" type="Object" title="Styles">
+				<property id="Styles" type="boolean" title="Styles"/>
+				<property id="Format" type="boolean" title="Format"/>
+				<property id="Font" type="boolean" title="Font"/>
+				<property id="FontSize" type="boolean" title="FontSize"/>
+			</property>
+			<property id="colors" type="Object" title="Colors">
+				<property id="TextColor" type="boolean" title="TextColor"/>
+				<property id="BGColor" type="boolean" title="BGColor"/>
+			</property>
+			<property id="tools" type="Object" title="Tools">
+				<property id="Maximize" type="boolean" title="Maximize"/>
+				<property id="ShowBlocks" type="boolean" title="ShowBlocks"/>
+			</property>
+			<property id="about" type="Object" title="About" >
+				<property id="About" type="boolean" title="About"/>
+			</property>
 		</property>
+		
+		<property id="saveButtonVisible" type="boolean" title="Save Button Visible" />
 		
 		<property
 			id="onSave"
@@ -107,6 +181,7 @@
 			<defaultValue property="document">true</defaultValue>
 			<defaultValue property="initHeight">200</defaultValue>
 			<defaultValue property="resizeEnabled">true</defaultValue>
+			<defaultValue property="saveButtonVisible">true</defaultValue>
 		</initialization>
 	</component>
 </sdkExtension>

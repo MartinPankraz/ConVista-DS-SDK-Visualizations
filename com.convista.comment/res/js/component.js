@@ -48,6 +48,7 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		var saveToolbars  = null;
 		var myHeight	  = 0;
 		var _resizeEnabled= false;
+		var _saveButtonVisible = true;
 		
 		var that = this;
 	
@@ -83,6 +84,7 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		    	
 				var overridecmd = new CKEDITOR.command(that.editor, {
 		            exec: function(editor){
+		            	//'http://saps073.sap.convista.local:8000/sap/bc/webrfc?_FUNCTION=Z_WEBRFC_JSON',
 		            	var html = that.editor.document.getBody().getHtml();
 		            	//remember html internally before submit so that it can be retrieved on save using getHTMLString
 		            	that.htmldata(html);
@@ -91,8 +93,12 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		        });
 		        // Replace the old save's exec function with the new one
 		        that.editor.commands.save.exec = overridecmd.exec;
-		    });
-	
+
+//		        CKEDITOR.instances[that._id].document.on('keyup', function(event) {
+//		        	var htmlString = this.getBody().getHtml();
+//		        	that.htmldata(htmlString);
+//		    	});
+		    });	
 		};
 		
 		this.componentDeleted = function() {
@@ -113,27 +119,38 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		    var myToolbarGroups = [];
 		    
 		    //push default toolbar
-		    myToolbarGroups.push({name:"basicstyles", groups:[ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ]});
+		    //myToolbarGroups.push({name:"basicstyles", groups:[ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ]});
 		    
 		    var toolbarGroupsEntryDocument = {};
+		    var toolbarGroupsEntryBasics = {};
 		    
 		    for(var itm in saveToolbars){
 		    	var toolbarGroupsEntry = {};
 		    	toolbarGroupsEntry.name = itm;
 		    	var groupActive = saveToolbars[itm];
 		    	if(groupActive){
-		    		if(itm === 'document'){
-		    			toolbarGroupsEntryDocument.name = toolbarGroupsEntry.name;
-		    			toolbarGroupsEntryDocument.groups = [ 'mode', 'document', 'doctools' ];
-		    			var doc_itms = [];
+		    		if(itm === 'basics'){
+		    			toolbarGroupsEntryBasics.name = "basicstyles";
+		    			toolbarGroupsEntryBasics.groups = [ 'basicstyles', 'cleanup' ];
+		    			var doc_itms_basics = ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'];
 		    			for(var doc_itm in groupActive){
-		    				if(groupActive[doc_itm]){
-		    					doc_itms.push(doc_itm);
+		    				if(!groupActive[doc_itm]){
+		    					var idx_basics = doc_itms_basics.indexOf(doc_itm);
+		    					doc_itms_basics.splice(idx_basics, 1);
 		    				}
 		    			}
-		    			//make sure save is always present!
-		    			doc_itms.push("-");
-		    			doc_itms.push("Save");
+		    			toolbarGroupsEntryBasics.items = doc_itms_basics;
+		    		}
+		    		else if(itm === 'document'){
+		    			toolbarGroupsEntryDocument.name = toolbarGroupsEntry.name;
+		    			toolbarGroupsEntryDocument.groups = [ 'mode', 'document', 'doctools' ];
+		    			var doc_itms = ['Source', 'NewPage', 'Preview', 'Print', 'Templates'];
+		    			for(var doc_itm in groupActive){
+		    				if(!groupActive[doc_itm]){
+		    					var idx_doc = doc_itms.indexOf(doc_itm);
+		    					doc_itms.splice(idx_doc, 1);
+		    				}
+		    			}
 		    			toolbarGroupsEntryDocument.items = doc_itms;
 		    		}else if(itm === 'clipboard'){
 		    			toolbarGroupsEntry.groups = [ 'clipboard', 'undo' ];
@@ -162,12 +179,24 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		    			if(window.console)console.log("Toolbar group unkown: "+itm)
 		    		}
 		    		//save document group at last so that the toolbar appears at the bottom right corner
-		    		if(itm !== 'document'){
+		    		if(itm !== 'document' && itm !== 'basics'){
+		    			for(var doc_itm in groupActive){
+		    				if(!groupActive[doc_itm]){
+		    					var idx = toolbarGroupsEntry.items.indexOf(doc_itm);
+		    					toolbarGroupsEntry.items.splice(idx, 1);
+		    				}
+		    			}
 			    		myToolbarGroups.push(toolbarGroupsEntry);	
 		    		}
 		    	}
 		    }
 		    myToolbarGroups.push(toolbarGroupsEntryDocument);
+		    //make sure basics toolbar is rendered at the beginning 
+		    myToolbarGroups.unshift(toolbarGroupsEntryBasics);
+		    if(_saveButtonVisible){
+			    myToolbarGroups.push({items: ["-", "Save"]});
+		    }
+		    
 	    	//you can run CKCKEDITOR.replace() only once!
 		    if(!this.CKReplacedOnce){
 			    CKEDITOR.replace(this._id,{ toolbar: myToolbarGroups, width:"100%", height:myHeight});
@@ -221,7 +250,8 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 			    }
 			};
 			if(httpMethod === "POST"){
-				xhr.send(that.editor.document.getBody().getHtml());	
+				var html = that.editor.document.getBody().getHtml();
+				xhr.send(html);
 			}else{
 				xhr.send();	
 			}	   
@@ -291,6 +321,18 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 				return _resizeEnabled;
 			} else {
 				_resizeEnabled = value;
+				return this;
+			}
+		};
+		
+		this.saveButtonVisible = function(value){
+			if (value === undefined) {
+				return _saveButtonVisible;
+			} else {
+				if(_saveButtonVisible !== value){
+					that.toolbarChanged = true;
+				}
+				_saveButtonVisible = value;
 				return this;
 			}
 		};

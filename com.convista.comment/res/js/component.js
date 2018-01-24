@@ -93,6 +93,8 @@ define(["sap/designstudio/sdk/component", "editor", "config", "style"], function
 		        });
 		        // Replace the old save's exec function with the new one
 		        that.editor.commands.save.exec = overridecmd.exec;
+		        //show last text for hide/show scenarios
+		        that.editor.document.getBody().setHtml(that.htmldata());
 
 //		        CKEDITOR.instances[that._id].document.on('keyup', function(event) {
 //		        	var htmlString = this.getBody().getHtml();

@@ -1,0 +1,162 @@
+class com.convista.sidenavigation.SideNavigation extends Component {
+	/**
+	 * Set Expanded property of SideNavigation
+	 */
+	void setExpanded(boolean expanded){*
+		this.navigationExpanded = expanded;
+	*}
+	/**
+	 * Get Expanded property of SideNavigation
+	 */
+	boolean getExpanded(){*
+		return this.navigationExpanded;
+	*}
+	/**
+	 * Add top level item (not for fixed items!). Make sure to avoid conflicting keys!
+	 */
+	void addItem(String key, String text, String icon){*
+		var item = {"key":key,"text":text,"icon":icon};
+		var items = JSON.parse(this.jsonItems);
+		items.push(item);
+		this.jsonItems = JSON.stringify(items);
+	*}
+	/**
+	 * Add sub level item (not for fixed items!). Make sure to avoid conflicting keys!
+	 */
+	void addSubItem(String parent, String key, String text){*
+		var item = {"key":key,"text":text};
+		var items = JSON.parse(this.jsonItems);
+		for(var i=0;i<items.length;i++){
+			var currentItem = items[i];
+			if(currentItem.key === parent){
+				if(!currentItem.sub){
+					currentItem.sub = [];
+				}
+				currentItem.sub.push(item);
+				break;
+			}
+		}
+		this.jsonItems = JSON.stringify(items);
+	*}
+	/**
+	 * Delete item from SideNavigation from flexible section
+	 */
+	void deleteItem(String key){*
+		var items = JSON.parse(this.jsonItems);
+		var idx = -1;
+		for(var i=0;i<items.length;i++){
+			if(items[i].key === key){
+				idx = i;
+				break;
+			}
+			if(items[i].sub){
+				for(var j=0;j<items[i].sub.length;j++){
+					var currentSubItem = items[i].sub[j]; 
+					if(currentSubItem.key === key){
+						idx = i;
+						break;
+					}
+				}
+			}
+		}
+		if(idx > -1){
+			items.splice(idx,1);
+			this.jsonItems = JSON.stringify(items);
+		}
+	*}
+	
+	/**
+	 * Add top level fixed item. Make sure to avoid conflicting keys!
+	 */
+	void addFixedItem(String key, String text, String icon){*
+		var item = {"key":key,"text":text,"icon":icon};
+		var items = JSON.parse(this.jsonFixedItems);
+		items.push(item);
+		this.jsonFixedItems = JSON.stringify(items);
+	*}
+	
+	/**
+	 * Delete item from SideNavigation from flexible section
+	 */
+	void deleteFixedItem(String key){*
+		var items = JSON.parse(this.jsonFixedItems);
+		var idx = -1;
+		for(var i=0;i<items.length;i++){
+			if(items[i].key === key){
+				idx = i;
+				break;
+			}
+			if(items[i].sub){
+				for(var j=0;j<items[i].sub.length;j++){
+					var currentSubItem = items[i].sub[j]; 
+					if(currentSubItem.key === key){
+						idx = i;
+						break;
+					}
+				}
+			}
+		}
+		if(idx > -1){
+			items.splice(idx,1);
+			this.jsonFixedItems = JSON.stringify(items);
+		}
+	*}
+	
+	/**
+	 * Create Model from array of json objects. You need a key, a text and an icon for top level entries.
+	 * Add a "sub" property for nested entries. Be aware that only two levels are supported!
+	 * <code> var json = '[{"key":"first", "text":"First", "icon":"sap-icon://action", "sub":[{"key":"fifth", "text":"Fifth"},{"key":"sixth", "text":"Sixth"}]},{"key":"second", "text":"Second", "icon":"sap-icon://action"}]';
+		SIDENAVIGATION_1.setItems(json);</code>
+	 */
+	void setItems(String data){*
+		this.jsonItems = data;
+	*}
+	/**
+	 * Get current items object
+	 */
+	JSON getItems(){*
+		return this.jsonItems; 
+	*}
+	/**
+	 * Create Model from array of json objects. You need a key, a text and an icon. Only top level entries are supported!
+	 * @example: var jsonFixed = '[{"key":"third", "text":"First", "icon":"sap-icon://action"},{"key":"fourth", "text":"Second", "icon":"sap-icon://action"}]';
+		SIDENAVIGATION_1.setFixedItems(jsonFixed);
+	 */
+	void setFixedItems(JSON data){*
+		this.jsonFixedItems = data;
+	*}
+	/**
+	 * Get current fixed items object
+	 */
+	JSON getFixedItems(){*
+		return this.jsonFixedItems; 
+	*}
+	/**
+	 * get key of selected item
+	 */
+	String getSelectedItemKey(){*
+		return this.selectedItemKey;
+	*}
+	/**
+	 * set selection state of item using given key
+	 */
+	void setSelectedItemByKey(String key){*
+		this.selectedItemKey = key;
+		this.selectItemTrigger = this.calcTimestamp();
+	*}
+	/**
+	 * get text of selected item
+	 */
+	String getSelectedItemText(){*
+		return this.selectedItemText;
+	*}
+	
+	@Visibility(private)
+	/**
+	 *	Workaround for strange DesignStudio lifecycle handling when calling functions via scriptting triggers
+	 */
+	String calcTimestamp() {*
+		return new Date().valueOf();
+	*}
+
+}

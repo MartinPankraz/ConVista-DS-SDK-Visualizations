@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.convista.sidenavigation"
+	title="ConVista SideNavigation"
+	version="1.0"
+	vendor="ConVista, Pankraz">
+	<group title="ConVista Visualization Components"
+		id="ConVistaComponents" visible="true" />
+	<component
+		id="SideNavigation"
+		title="ConVista SideNavigation"
+		handlerType="sapui5"
+		icon="res/icon.png"
+		group="ConVistaComponents"
+		modes="commons m">
+		<requireJs modes="commons">res/js/component.min</requireJs>
+		<requireJs modes="m">res/js/component.min</requireJs>
+	
+		<property
+			id="jsonItems"
+			type="String"
+			title="JSON String for Navigationlist"
+			group="Display"
+			visible="false"/>
+			
+		<property
+			id="jsonFixedItems"
+			type="String"
+			title="JSON String for Navigationlist (fixed)"
+			group="Display"
+			visible="false"/>
+		
+		<property
+			id="navigationExpanded"
+			type="boolean"
+			title="SideNavigation Expanded?"
+			group="Display" />
+			
+		<property
+			id="selectedItemKey"
+			type="String"
+			title="Selected Item Key"
+			group="Display"
+			visible="false"/>
+		
+		<property
+			id="selectItemTrigger"
+			type="String"
+			title="Selected Item Key Trigger"
+			group="Display"
+			visible="false"/>
+			
+		<property
+			id="selectedItemText"
+			type="String"
+			title="JSON String for Navigationlist"
+			group="Display"
+			visible="false"/>
+		
+		<property
+			id="onItemSelected"
+			type="ScriptText"
+			title="Event Item Click"
+			group="Events" />
+			
+		<initialization>
+			<defaultValue property="TOP_MARGIN">0</defaultValue>
+			<defaultValue property="LEFT_MARGIN">0</defaultValue>
+			<defaultValue property="BOTTOM_MARGIN">0</defaultValue>
+			<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+			<defaultValue property="WIDTH">300</defaultValue>
+			<defaultValue property="HEIGHT">auto</defaultValue>
+			<defaultValue property="navigationExpanded">true</defaultValue>
+			<defaultValue property="jsonItems">[]</defaultValue>
+			<defaultValue property="jsonFixedItems">[]</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>

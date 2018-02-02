@@ -71,24 +71,33 @@ class com.convista.sidenavigation.SideNavigation extends Component {
 	 */
 	void deleteItem(String key){*
 		var items = JSON.parse(this.jsonItems);
-		var idx = -1;
+		var idx_top = -1;
+		var idx_sub = -1;
+		
 		for(var i=0;i<items.length;i++){
 			if(items[i].key === key){
-				idx = i;
+				idx_top = i;
 				break;
 			}
 			if(items[i].sub){
 				for(var j=0;j<items[i].sub.length;j++){
 					var currentSubItem = items[i].sub[j]; 
 					if(currentSubItem.key === key){
-						idx = i;
+						idx_top = i;
+						idx_sub = j;
 						break;
 					}
 				}
 			}
 		}
-		if(idx > -1){
-			items.splice(idx,1);
+		//found top level node
+		if(idx_top > -1 && idx_sub === -1){
+			items.splice(idx_top,1);
+			this.jsonItems = JSON.stringify(items);
+		}
+		//found sub level node
+		if(idx_sub > -1){
+			items[idx_top].sub.splice(idx_sub,1);
 			this.jsonItems = JSON.stringify(items);
 		}
 	*}

@@ -13,17 +13,40 @@ class com.convista.sidenavigation.SideNavigation extends Component {
 	*}
 	/**
 	 * Add top level item (not for fixed items!). Make sure to avoid conflicting keys!
+	 * 
+	 * @param key unique key of item
+	 * 
+	 * @param text text of item
+	 * 
+	 * @param icon sap icon string, e.g. sap-icon://action
+	 * 
+	 * @param index position where to add new item. First index position is zero!
+	 * 
 	 */
-	void addItem(String key, String text, String icon){*
+	void addItem(String key, String text, String icon, optional int index){*
 		var item = {"key":key,"text":text,"icon":icon};
 		var items = JSON.parse(this.jsonItems);
-		items.push(item);
+		if(index >= 0 && index <= items.length){
+			items.splice(index, 0, item);
+		}else{
+			items.push(item);
+		}
+
 		this.jsonItems = JSON.stringify(items);
 	*}
 	/**
 	 * Add sub level item (not for fixed items!). Make sure to avoid conflicting keys!
+	 * 
+	 * @param parent unique key of parent item
+	 * 
+	 * @param key unique key of sub item
+	 * 
+	 * @param text text of item
+	 * 
+	 * @param index position where to add new item. First index position is zero!
+	 * 
 	 */
-	void addSubItem(String parent, String key, String text){*
+	void addSubItem(String parent, String key, String text, optional int index){*
 		var item = {"key":key,"text":text};
 		var items = JSON.parse(this.jsonItems);
 		for(var i=0;i<items.length;i++){
@@ -32,14 +55,19 @@ class com.convista.sidenavigation.SideNavigation extends Component {
 				if(!currentItem.sub){
 					currentItem.sub = [];
 				}
-				currentItem.sub.push(item);
+				if(index >= 0 && index <= items.length){
+					currentItem.sub.splice(index, 0, item);
+				}else{
+					currentItem.sub.push(item);
+				}
+				
 				break;
 			}
 		}
 		this.jsonItems = JSON.stringify(items);
 	*}
 	/**
-	 * Delete item from SideNavigation from flexible section
+	 * Delete item from SideNavigation from flexible section by given key
 	 */
 	void deleteItem(String key){*
 		var items = JSON.parse(this.jsonItems);
@@ -67,16 +95,29 @@ class com.convista.sidenavigation.SideNavigation extends Component {
 	
 	/**
 	 * Add top level fixed item. Make sure to avoid conflicting keys!
+	 * 
+	 * @param key unique key of item
+	 * 
+	 * @param text text of item
+	 * 
+	 * @param icon sap icon string, e.g. sap-icon://action
+	 * 
+	 * @param index position where to add new item. First index position is zero!
+	 * 
 	 */
-	void addFixedItem(String key, String text, String icon){*
+	void addFixedItem(String key, String text, String icon, optional int index){*
 		var item = {"key":key,"text":text,"icon":icon};
 		var items = JSON.parse(this.jsonFixedItems);
-		items.push(item);
+		if(index >= 0 && index <= items.length){
+			items.splice(index, 0, item);
+		}else{
+			items.push(item);
+		}
 		this.jsonFixedItems = JSON.stringify(items);
 	*}
 	
 	/**
-	 * Delete item from SideNavigation from flexible section
+	 * Delete item from SideNavigation from fixed section by given key
 	 */
 	void deleteFixedItem(String key){*
 		var items = JSON.parse(this.jsonFixedItems);
@@ -105,6 +146,9 @@ class com.convista.sidenavigation.SideNavigation extends Component {
 	/**
 	 * Create Model from array of json objects. You need a key, a text and an icon for top level entries.
 	 * Add a "sub" property for nested entries. Be aware that only two levels are supported!
+	 * 
+	 * @param data json string array of item objects
+	 * 
 	 * <code> var json = '[{"key":"first", "text":"First", "icon":"sap-icon://action", "sub":[{"key":"fifth", "text":"Fifth"},{"key":"sixth", "text":"Sixth"}]},{"key":"second", "text":"Second", "icon":"sap-icon://action"}]';
 		SIDENAVIGATION_1.setItems(json);</code>
 	 */
@@ -119,8 +163,9 @@ class com.convista.sidenavigation.SideNavigation extends Component {
 	*}
 	/**
 	 * Create Model from array of json objects. You need a key, a text and an icon. Only top level entries are supported!
-	 * @example: var jsonFixed = '[{"key":"third", "text":"First", "icon":"sap-icon://action"},{"key":"fourth", "text":"Second", "icon":"sap-icon://action"}]';
+	 * <code> var jsonFixed = '[{"key":"third", "text":"First", "icon":"sap-icon://action"},{"key":"fourth", "text":"Second", "icon":"sap-icon://action"}]';
 		SIDENAVIGATION_1.setFixedItems(jsonFixed);
+	   </code>
 	 */
 	void setFixedItems(JSON data){*
 		this.jsonFixedItems = data;

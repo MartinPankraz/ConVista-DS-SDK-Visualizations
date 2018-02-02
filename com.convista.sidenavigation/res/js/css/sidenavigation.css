@@ -8,3 +8,11 @@
 .scn-pack-SideNavigation .sapTntSideNavigation {
 	height: 100%;
 }
+
+.scn-pack-SideNavigation .sapUiLayoutAbsPos{
+	width: 100%;
+}
+
+.scn-pack-FullSizeChildren .sapTntSideNavigation{
+	width: 100%!important;
+}

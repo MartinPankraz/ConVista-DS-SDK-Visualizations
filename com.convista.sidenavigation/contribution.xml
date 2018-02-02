@@ -13,6 +13,7 @@
 		handlerType="sapui5"
 		icon="res/icon.png"
 		group="ConVistaComponents"
+		propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html"
 		modes="commons m">
 		<requireJs modes="commons">res/js/component.min</requireJs>
 		<requireJs modes="m">res/js/component.min</requireJs>

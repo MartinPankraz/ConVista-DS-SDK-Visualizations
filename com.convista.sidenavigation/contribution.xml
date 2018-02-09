@@ -62,7 +62,7 @@
 		<property
 			id="onItemSelected"
 			type="ScriptText"
-			title="Event Item Click"
+			title="Item Clicked"
 			group="Events" />
 			
 		<initialization>

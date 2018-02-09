@@ -80,6 +80,13 @@
 			<p><em style="color:red">Update:</em> You have to use a google api key now in all cases!</p>
 		</td>
       </tr>
+	  <tr>
+        <td nowrap><a href="">ConVista SideNavigation</a><br><b><code style="color:#c7254e!important">NEW</code></b></td>
+        <td>
+			<img src="images/side.png" height="493" width="207">
+			<p><a href=""><small></small></a></p>
+		</td>
+      </tr>
 	</tbody>
   </table>
 
@@ -90,13 +97,14 @@
 <a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#prerequisitesid">Prerequisites</button>
   <div id="prerequisitesid" class="collapse">
-    <p class="justify">Design Studio, Release 1.6 SP0 or higher</p>
+    <p class="justify">Design Studio, Release 1.6 + or</p>
+	<p class="justify">Lumira Designer, Release 2.x</p>
 
- <p class="justify">SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away.</p>
+ <p class="justify">For maps component: SAP BW, UNX or HANA as DataSources with a type of address data, which can then be mapped by Google’s geocoder API (e.g. Rheinauhafen 15, Cologne) or represent lat-long values right away.</p>
  <p class="justify">Alternatively you could also use my custom data source providing test data for a quick hands-on:
  <a href="https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip">https://github.com/MartinPankraz/DesignStudioSDK-Components/blob/master/DesignStudioSDKComponentsPack_14.zip</a></p>
 
- <p class="justify">NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box)</p>
+ <p class="justify">NetWeaver or BO sever platform to deploy the extensions for production purposes (local mode works out of the box). Lumira Designer no longer supports NW!</p>
 
  <p class="justify">Google API Key that you can get from Google’s API Console (please note that local mode works without a key). The key will be used for Google's geocoder (used by both components). If you stick to the lat-long only version you don't need a key.</p>
   </div>
@@ -552,6 +560,138 @@ In contrast to Google Maps, OMS enables you to host your own tiles server. That 
 <p class="justify">Please note that Design Studio's background processing functionality in combination with <i>hideLoadingState</i> on one of the maps will result in strange marker update behavior. It seems like the DS framework doesn't update the extension's hooks correctly. You may, however use background processing without hiding loading state of the map just fine.</p>
 <br>
 </div>
+
+<button type="button" class="btn btn-lg btn-info collapsed ccButton" data-toggle="collapse" data-target="#convistasidenavid">SideNavigation</button>
+
+<div id="convistasidenavid" class="collapse">
+
+<p class="justify">This component enhances your dashboard navigation portfolio with the popular <a href="https://sapui5.hana.ondemand.com/#/entity/sap.tnt.SideNavigation">sap.tnt.SideNavigation</a>. It supports nesting up to one level. If you need more you have to look into the <a href="https://experience.sap.com/fiori-design-web/tree-table/">sapui5 tree table</a>. In fact my Hierarchy Selector is a specialized implementation of that very component.</p>
+
+<h3>Properties</h3>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Property Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SideNavigation Expanded?</td>
+        <td><p class="justify">Define expanded state of the SideNavigation.<p></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Methods</h3>
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Method Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td>addItem</td>
+		<td><p class="justify">Add top level item to SideNavigation list.</p></td>
+	  </tr>
+	  <tr>
+        <td>addSubItem</td>
+		<td><p class="justify">Add sub level item to SideNavigation list (One sub level only!).</p></td>
+	  </tr>
+	  <tr>
+        <td>addFixedItem</td>
+		<td><p class="justify">Add top level fixed item to SideNavigation list.</p></td>
+	  </tr>
+	  <tr>
+        <td>setItems</td>
+		<td>
+			<p class="justify">Add a list of items. The JSON strings needs to have the following structure:</p>
+			<code>[<br>
+			{"key": "1",<br>
+			"text": "TEST",<br>
+			"icon": "sap-icon://action",<br>
+			"sub": [{"key":"fifth", "text":"Fifth"},{"key":"sixth", "text":"Sixth"}],<br>
+			{…}<br>
+			]</code>
+			<br>
+		</td>
+	  </tr>
+	  <tr>
+        <td>getItems</td>
+		<td>
+			<p class="justify">Retrieve Items JSON String</p>
+		</td>
+	  </tr>
+	  <tr>
+        <td>setFixedItems</td>
+		<td>
+			<p class="justify">Add a list of fixed items. The JSON strings needs to have the following structure:</p>
+			<code>[<br>
+			{"key": "third",<br>
+			"text": "First",<br>
+			"icon": "sap-icon://action",<br>
+			{…}<br>
+			]</code>
+			<br>
+		</td>
+	  </tr>
+	  <tr>
+        <td>getFixedItems</td>
+		<td>
+			<p class="justify">Retrieve fixed items JSON String.</p>
+		</td>
+	  </tr>
+	  <tr>
+        <td>deleteItem</td>
+		<td><p class="justify">Delete item according to given key.</p></td>
+	  </tr>
+	  <tr>
+        <td>deleteFixedItem</td>
+		<td><p class="justify">Delete fixed item according to given key.</p></td>
+	  </tr>
+	  <tr>
+        <td>get / setExpanded</td>
+		<td><p class="justify">Adapt expanded state of the SideNavigation</p></td>
+	  </tr>
+	  <tr>
+        <td>getSelectedItemText</td>
+		<td><p class="justify">Retrieve text of last selected item.</p></td>
+	  </tr>
+	  <tr>
+        <td>getSelectedItemKey</td>
+		<td><p class="justify">Retrieve key of last selected item.</p></td>
+	  </tr>
+	  <tr>
+        <td>setSelectedItemByKey</td>
+		<td><p class="justify">Set selected item according to given key. Usually used to reflect navigational state due to dashboard jumps (without clicking items on SideNavigation).</p></td>
+	  </tr>
+	</tbody>
+  </table>
+
+<h3>Events</h3>
+	
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th nowrap>Event Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+	  <tr>
+        <td>Item Clicked</td>
+		<td><p class="justify">This even fires in case an item of the SideNavigation is clicked. Usually the key of the item is used to establish individual behaviour based on the clicked item.</p></td>
+	  </tr> 
+	</tbody>
+  </table>
+
+</div>
+
+<br>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>

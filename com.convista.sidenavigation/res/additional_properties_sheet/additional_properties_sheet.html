@@ -3,21 +3,177 @@
 		<title>Additional Properties Sheet</title>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="propertyPage.css">
+		<script src="/aad/resources/sap-ui-cachebuster/sap-ui-core.js" id='sap-ui-bootstrap' type='text/javascript' data-sap-ui-theme='sap_bluecrystal' 
+				data-sap-ui-libs="sap.m, sap.tnt, sap.ui.core"  data-sap-ui-bindingSyntax="complex" data-sap-ui-compatVersion="edge" data-sap-ui-preload="async"></script>
 		<script src="/aad/zen.rt.components.sdk/resources/js/sdk_propertysheets_handler.js"></script>
 		<script src="additional_properties_sheet.js"></script>
+		<script id="myView" type="ui5/xmlview">
+  			<mvc:View controllerName="MyController" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt">
+	<App>
+		<pages>
+			<NavContainer id="navCon">
+				<Page id="mainView">
+					<customHeader>
+						<Bar>
+							<contentMiddle>
+								<Title text="SideNavigation Configuration"/>
+							</contentMiddle>
+							<contentRight>
+								<Button icon="sap-icon://synchronize" tooltip="Synchronize model" press="synch"/>	
+							</contentRight>
+						</Bar>
+					</customHeader>
+					<content>
+						<IconTabBar id="idIconTabBarNoIcons" expanded="true" selectedKey="flexItems" class="sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter text="Display">
+									<CheckBox id="sideNavExpanded" text="Expanded" selected="true" select="handleExpandedCheckbox" />
+								</IconTabFilter>
+								<IconTabFilter key="flexItems" text="Items">
+									<OverflowToolbar id="flexItemsToolbar">
+						                <Button icon="sap-icon://add" tooltip="add item" press="handleAddButtonPress"/>
+										<ToolbarSpacer/>
+						            </OverflowToolbar>
+									<List id="flexItemList" items="{/flex}" includeItemInSelection="true">
+										<CustomListItem>
+											<tnt:ToolHeader>
+												<core:Icon size="2rem" src="{icon}" tooltip="SideNavigation Item Icon" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+												<VBox  class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+													<Label text="{text}" design="Bold"/>
+													<Label text="{key}" design="Standard"/>
+												</VBox>
+												<ToolbarSpacer />
+												<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+													<Button icon="sap-icon://arrow-top" tooltip="move up" press="handleMoveUp"/>
+													<Button icon="sap-icon://arrow-bottom" tooltip="move down" press="handleMoveDown"/>
+												</HBox>
+												<Button icon="sap-icon://feeder-arrow" tooltip="Navigate to sub items" press="handleSubNavigation"/>
+												<Button icon="sap-icon://decline" tooltip="Delete item" press="handleDeleteButtonPress"/>
+											</tnt:ToolHeader>
+										</CustomListItem>
+									</List>
+								</IconTabFilter>
+								<IconTabFilter key="fixItems" text="Fixed Items">
+									<OverflowToolbar id="fixedItemsToolbar">
+						                <Button icon="sap-icon://add" tooltip="add fixed item" press="handleAddButtonPress"/>
+										<ToolbarSpacer/>
+						            </OverflowToolbar>
+						            <List id="fixedItemList" items="{/fixed}" includeItemInSelection="true">
+										<CustomListItem>
+											<tnt:ToolHeader>
+												<core:Icon size="2rem" src="{icon}" tooltip="SideNavigation Item Icon" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+												<VBox  class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+													<Label text="{text}" design="Bold"/>
+													<Label text="{key}" design="Standard"/>
+												</VBox>
+												<ToolbarSpacer />
+												<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+													<Button icon="sap-icon://arrow-top" tooltip="move up" press="handleMoveUp"/>
+													<Button icon="sap-icon://arrow-bottom" tooltip="move down" press="handleMoveDown"/>
+												</HBox>
+												<Button icon="sap-icon://decline" tooltip="Delete item" press="handleDeleteButtonPress"/>
+											</tnt:ToolHeader>
+										</CustomListItem>
+									</List>
+								</IconTabFilter>
+								<IconTabFilter text="Hints">
+								<FormattedText htmlText="&lt;p&gt;Make sure to synch your changes by using the synch button on the top right corner on the main Configuration screen.&lt;/p&gt;
+									&lt;p&gt;In case of any questions reach out to:&lt;/p&gt;" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+								<Link
+									text="martin.pankraz@convista.com"
+									target="_blank"
+									href="mailto:martin.pankraz@convista.com"
+									class="sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiSmallMarginBottom"/>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+					</content>
+				</Page>
+				<Page id="subView" title="Sub-level Configuration" showNavButton="true"
+				navButtonPress="onNavBack">
+					<OverflowToolbar id="subItemsToolbar">
+		                <Button icon="sap-icon://add" tooltip="add sub item" press="handleAddButtonPress"/>
+						<ToolbarSpacer/>
+		            </OverflowToolbar>
+		            <List id="subItemList" items="{sub>/subItems}" includeItemInSelection="true">
+						<CustomListItem>
+							<tnt:ToolHeader>
+								<VBox  class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+									<Label text="{sub>text}" design="Bold"/>
+									<Label text="{sub>key}" design="Standard"/>
+								</VBox>
+								<ToolbarSpacer />
+								<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+									<Button icon="sap-icon://arrow-top" tooltip="move sub item up" press="handleMoveUp"/>
+									<Button icon="sap-icon://arrow-bottom" tooltip="move sub item down" press="handleMoveDown"/>
+								</HBox>
+								<Button icon="sap-icon://decline" tooltip="Delete item" press="handleDeleteButtonPress"/>
+							</tnt:ToolHeader>
+						</CustomListItem>
+					</List>
+				</Page>
+			</NavContainer>
+		</pages>
+	</App>
+</mvc:View>
+		</script>
+		<script id="myFragment" type="ui5/xmlview">
+			<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		title="Create Item"
+		class="sapUiContentPadding"
+		placement="Bottom"
+		initialFocus="keyInput">
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					id="createButton"
+					text="Create"
+					press="handleCreatePress" />
+				<Button
+					id="closeButton"
+					text="Close"
+					press="handleClosePress" />
+			</Toolbar>
+		</footer>
+		<Input
+			id="keyInput"
+			placeholder="unique_key"
+			description="Key"
+			width="100%"
+			fieldWidth="60%"
+			class="sapUiSmallMarginBottom" />
+		<Input
+			id="textInput"
+			placeholder="Display Text"
+			description="Text"
+			width="100%"
+			fieldWidth="60%"
+			class="sapUiSmallMarginBottom" />
+		<Input
+			id="iconInput"
+			placeholder="sap-icon://action"
+			description="Icon"
+			width="100%"
+			fieldWidth="60%"
+			class="sapUiSmallMarginBottom" />
+	</Popover>
+</core:FragmentDefinition>
+		</script>
+		<script>
+		
+			try{
+				new com.convista.sidenavigation.APS();
+			}catch(e){
+				alert(e);
+			}
+		</script>
 	</head>
-	<script>
-		try{
-			new com.convista.sidenavigation.APS();
-		}catch(e){
-			alert(e);
-		}
-	</script>
-	<body>
-		<label>Not implemented yet!
-		<!-- <input id="aps_placeholder" type="text" name="color" size="40" maxlength="40"> -->
-		</label>
-		<br>
-		<p>You need to use the API methods to feed the component. Have a look at setItems and addItem for example.</p>
+	<body class="sapUiBody" id="content">
 	</body>
 </html>

@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Additional Properties Sheet</title>
+		<title>Additional Properties Sheet (BETA)</title>
 		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="propertyPage.css">
@@ -18,7 +18,7 @@
 					<customHeader>
 						<Bar>
 							<contentMiddle>
-								<Title text="SideNavigation Configuration"/>
+								<Title text="SideNavigation Configuration (BETA)"/>
 							</contentMiddle>
 							<contentRight>
 								<Button icon="sap-icon://synchronize" tooltip="Synchronize model" press="synch"/>	
@@ -44,6 +44,7 @@
 													<Label text="{text}" design="Bold"/>
 													<Label text="{key}" design="Standard"/>
 												</VBox>
+												<Button icon="sap-icon://edit" tooltip="Edit entry" press="handleEditButtonPress"/>
 												<ToolbarSpacer />
 												<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
 													<Button icon="sap-icon://arrow-top" tooltip="move up" press="handleMoveUp"/>
@@ -68,6 +69,7 @@
 													<Label text="{text}" design="Bold"/>
 													<Label text="{key}" design="Standard"/>
 												</VBox>
+												<Button icon="sap-icon://edit" tooltip="Edit entry" press="handleEditButtonPress"/>
 												<ToolbarSpacer />
 												<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
 													<Button icon="sap-icon://arrow-top" tooltip="move up" press="handleMoveUp"/>
@@ -80,6 +82,7 @@
 								</IconTabFilter>
 								<IconTabFilter text="Hints">
 								<FormattedText htmlText="&lt;p&gt;Make sure to synch your changes by using the synch button on the top right corner on the main Configuration screen.&lt;/p&gt;
+									&lt;p&gt;If you encounter problems with the Configuration screen you can always use the component's API (e.g. addItem) as a fallback.&lt;/p&gt;
 									&lt;p&gt;In case of any questions reach out to:&lt;/p&gt;" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
 								<Link
 									text="martin.pankraz@convista.com"
@@ -104,6 +107,7 @@
 									<Label text="{sub>text}" design="Bold"/>
 									<Label text="{sub>key}" design="Standard"/>
 								</VBox>
+								<Button icon="sap-icon://edit" tooltip="Edit entry" press="handleEditButtonPress"/>
 								<ToolbarSpacer />
 								<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
 									<Button icon="sap-icon://arrow-top" tooltip="move sub item up" press="handleMoveUp"/>
@@ -135,6 +139,52 @@
 					id="createButton"
 					text="Create"
 					press="handleCreatePress" />
+				<Button
+					id="closeButton"
+					text="Close"
+					press="handleClosePress" />
+			</Toolbar>
+		</footer>
+		<Input
+			id="keyInput"
+			placeholder="unique_key"
+			description="Key"
+			width="100%"
+			fieldWidth="60%"
+			class="sapUiSmallMarginBottom" />
+		<Input
+			id="textInput"
+			placeholder="Display Text"
+			description="Text"
+			width="100%"
+			fieldWidth="60%"
+			class="sapUiSmallMarginBottom" />
+		<Input
+			id="iconInput"
+			placeholder="sap-icon://action"
+			description="Icon"
+			width="100%"
+			fieldWidth="60%"
+			class="sapUiSmallMarginBottom" />
+	</Popover>
+</core:FragmentDefinition>
+		</script>
+		<script id="myUpdateFragment" type="ui5/xmlview">
+			<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		title="Update Item"
+		class="sapUiContentPadding"
+		placement="Bottom"
+		initialFocus="keyInput">
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					id="updateButton"
+					text="Update"
+					press="handleUpdatePress" />
 				<Button
 					id="closeButton"
 					text="Close"

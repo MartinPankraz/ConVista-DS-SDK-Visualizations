@@ -23,14 +23,14 @@
 			type="String"
 			title="JSON String for Navigationlist"
 			group="Display"
-			visible="false"/>
+			visible="true"/>
 			
 		<property
 			id="jsonFixedItems"
 			type="String"
 			title="JSON String for Navigationlist (fixed)"
 			group="Display"
-			visible="false"/>
+			visible="true"/>
 		
 		<property
 			id="navigationExpanded"

@@ -10,8 +10,8 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 		   that.controller = new sap.ui.controller("MyController", {
 			   onInit : function (evt) {
 					var oModel = new sap.ui.model.json.JSONModel();
-					var flex = that.callRuntimeHandler("getJsonItems");
-					var fixed = that.callRuntimeHandler("getJsonFixedItems");
+					var flex = JSON.parse(that.callRuntimeHandler("getJsonItems"));
+					var fixed = JSON.parse(that.callRuntimeHandler("getJsonFixedItems"));
 					oModel.setData({
 						"flex": flex,
 						"fixed": fixed
@@ -24,6 +24,10 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 				onExit : function () {
 					if (this._oPopover) {
 						this._oPopover.destroy();
+					}
+					
+					if (this._oPopoverEdit) {
+						this._oPopoverEdit.destroy();
 					}
 				},
 				
@@ -58,6 +62,46 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 					var oButton = oEvent.getSource();
 					jQuery.sap.delayedCall(0, this, function () {
 						me._oPopover.openBy(oButton);
+					});
+				},
+				
+				handleEditButtonPress: function(oEvent){
+					var me = this;
+					if (!this._oPopoverEdit) {
+						this._oPopoverEdit = sap.ui.xmlfragment({
+							id: "updateItemPopover",
+							fragmentContent: jQuery("#myUpdateFragment").html()
+						}, this);
+						this.getView().addDependent(this._oPopoverEdit);
+					}
+					
+					var selectedPage = this.getView().byId("navCon").getCurrentPage().getId().split("--")[1];
+
+					var oList = oEvent.getSource().getParent();
+					var sPath =	null;
+					this.itemToBeUpdate = null;
+					
+					if(selectedPage === "mainView"){
+						sPath = oList.getBindingContext().getPath();
+						this.itemToBeUpdate = this.getView().getModel().getProperty(sPath);
+						sap.ui.core.Fragment.byId("updateItemPopover","iconInput").setVisible(true);
+					}else{
+						sap.ui.core.Fragment.byId("updateItemPopover","iconInput").setVisible(false);
+						sPath = oList.getBindingContext("sub").getPath();
+						this.itemToBeUpdate = this.getView().byId("subItemList").getModel("sub").getProperty(sPath);	
+					}
+					
+					sap.ui.core.Fragment.byId("updateItemPopover","keyInput").setValue(this.itemToBeUpdate.key);
+					sap.ui.core.Fragment.byId("updateItemPopover","textInput").setValue(this.itemToBeUpdate.text);
+					
+					if(selectedPage === "mainView"){
+						sap.ui.core.Fragment.byId("updateItemPopover","iconInput").setValue(this.itemToBeUpdate.icon);
+					}
+		 
+					// delay because addDependent will do a async rerendering and the actionSheet will immediately close without it.
+					var oButton = oEvent.getSource();
+					jQuery.sap.delayedCall(0, this, function () {
+						me._oPopoverEdit.openBy(oButton);
 					});
 				},
 				
@@ -110,6 +154,67 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 						}
 						sap.ui.core.Fragment.byId("createItemPopover","keyInput").setValueState("None");
 						this._oPopover.close();	
+					}
+				},
+				
+				handleUpdatePress: function(oEvent){
+					var key = sap.ui.core.Fragment.byId("updateItemPopover","keyInput").getValue();
+					var text = sap.ui.core.Fragment.byId("updateItemPopover","textInput").getValue();
+					var icon = sap.ui.core.Fragment.byId("updateItemPopover","iconInput").getValue();
+					
+					var oldKey = this.itemToBeUpdate.key;
+					
+					var propertyPath = "/flex";
+					var selectedTabKey = this.getView().byId("idIconTabBarNoIcons").getSelectedKey();
+					var selectedPage = this.getView().byId("navCon").getCurrentPage().getId().split("--")[1];
+					var secondModel = this.getView().byId("subItemList").getModel("sub");
+					
+					if(selectedPage === "mainView"){
+						if(selectedTabKey === "fixItems"){
+							propertyPath = "/fixed";
+						}
+					}else{
+						propertyPath = this.sPath + "/sub";
+					}
+					
+					var data = this.getView().getModel().getProperty(propertyPath);
+					var keyAlreadyUsed = false;
+
+					for(var i = 0; i < data.length; i++){
+						if(data[i].key === key && oldKey !== key){
+							keyAlreadyUsed = true;
+							break;
+						}
+						//found match to be updated
+						if(data[i].key === oldKey){
+							data[i].key = key;
+							data[i].text = text;
+							data[i].icon = icon;
+						}
+						if(data[i].sub){
+							for(var j = 0; j < data[i].sub.length; j++){
+								if(data[i].sub[j].key === key){
+									keyAlreadyUsed = true;
+									break;
+								}
+								if(data[i].sub[j].key === oldKey){
+									data[i].sub[j].key = key;
+									data[i].sub[j].text = text;
+								}
+							}	
+						}
+					}	
+					
+					if(keyAlreadyUsed || key === ""){
+						sap.m.MessageToast.show("Key already used or empty! It needs to be unique!");
+						sap.ui.core.Fragment.byId("updateItemPopover","keyInput").setValueState("Error");
+					}else{
+						this.getView().getModel().setProperty(propertyPath, data);
+						if(selectedPage === "subView"){
+							secondModel.setProperty("/subItems", data);
+						}
+						sap.ui.core.Fragment.byId("updateItemPopover","keyInput").setValueState("None");
+						this._oPopoverEdit.close();	
 					}
 				},
 				
@@ -230,7 +335,12 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 				},
 				
 				handleClosePress: function(oEvent){
-					this._oPopover.close();
+					if(this._oPopover){
+						this._oPopover.close();	
+					}
+					if(this._oPopoverEdit){
+						this._oPopoverEdit.close();	
+					}
 				},
 				
 				handleSubNavigation: function(oEvent){
@@ -265,6 +375,17 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 		   that.view = new sap.ui.xmlview({
 		     viewContent: jQuery("#myView").html()
 		   }).placeAt("content");
+		   
+//		   setTimeout(function() {
+//			   var oModel = new sap.ui.model.json.JSONModel();
+//			   var flex = JSON.parse(that.callRuntimeHandler("getJsonItems"));
+//			   var fixed = JSON.parse(that.callRuntimeHandler("getJsonFixedItems"));
+//			   oModel.setData({
+//				   "flex": flex,
+//				   "fixed": fixed
+//			   });
+//			   that.view.setModel(oModel);
+//			}, 5000);
 
 		 });
 	};
@@ -275,6 +396,14 @@ sap.designstudio.sdk.PropertyPage.subclass("com.convista.sidenavigation.APS",  f
 	
 	this.afterUpdate = function() {
 //		eclipse_logJavaScriptMessage("update0","error");
+//		var oModel = new sap.ui.model.json.JSONModel();
+//		var flex = this.callRuntimeHandler("getJsonItems");
+//		var fixed = this.callRuntimeHandler("getJsonFixedItems");
+//		oModel.setData({
+//			"flex": flex,
+//			"fixed": fixed
+//		});
+//		that.view.setModel(oModel);
 //		eclipse_logJavaScriptMessage("update1","error");
 	}
 

@@ -146,7 +146,7 @@
 			title="Expand first Level on Start"
 			type="boolean"
 			group="Display"
-			visible="true">
+			visible="false">
 		</property>
 		
 		<property
@@ -221,7 +221,7 @@
 			<defaultValue property="DTableExpandedInitially">false</defaultValue>
 			<defaultValue property="DVisibleRowCountMode">Auto</defaultValue>
 			<defaultValue property="DExpandAllLevel">2</defaultValue>
-			<defaultValue property="DExpandFirstLevel">true</defaultValue>
+			<defaultValue property="DExpandFirstLevel">false</defaultValue>
 			<defaultValue property="DShowRowLines">false</defaultValue>
 			<defaultValue property="DHideKeyOnKeyTextDisplay">true</defaultValue>
 			<defaultValue property="DShowColumnHeader">true</defaultValue>

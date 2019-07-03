@@ -39,3 +39,4 @@ Final Words
 Feel free to contact me for any advice on usage, installation, and plain trouble shooting or a chat about the awesomeness of Design Studio SDK if you like. Feedback and improvement suggestions are also very welcome.
 
 martin.pankraz@convista.com
+david.garcia@convista.com
